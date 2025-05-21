@@ -8,5 +8,7 @@ namespace DTO_QuanLyVatTu
 {
     public class TrangThaiVatTu
     {
+        public string TrangThaiID { get; set; }
+        public string TenTrangThai { get; set; }
     }
 }
