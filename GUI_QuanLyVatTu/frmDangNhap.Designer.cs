@@ -1,6 +1,6 @@
 ﻿namespace GUI_QuanLyVatTu
 {
-    partial class DangNhap
+    partial class frmDangNhap
     {
         /// <summary>
         ///  Required designer variable.
@@ -39,6 +39,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDangNhap));
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
@@ -54,7 +55,7 @@
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.FloralWhite;
-            guna2Panel1.BackgroundImage = Properties.Resources.Ảnh_đăng_nhập1;
+            guna2Panel1.BackgroundImage = Properties.Resources.Ảnh_dự_án_xưởng_vlxd;
             guna2Panel1.CustomizableEdges = customizableEdges1;
             guna2Panel1.Dock = DockStyle.Right;
             guna2Panel1.Location = new Point(509, 0);
@@ -62,7 +63,6 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Panel1.Size = new Size(540, 616);
             guna2Panel1.TabIndex = 0;
-            guna2Panel1.Paint += guna2Panel1_Paint;
             // 
             // guna2CirclePictureBox1
             // 
@@ -88,6 +88,7 @@
             txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtEmail.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            txtEmail.ForeColor = Color.Black;
             txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtEmail.Location = new Point(27, 249);
             txtEmail.Margin = new Padding(4, 6, 4, 6);
@@ -110,6 +111,7 @@
             txtMatKhau.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtMatKhau.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMatKhau.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            txtMatKhau.ForeColor = Color.Black;
             txtMatKhau.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMatKhau.Location = new Point(27, 343);
             txtMatKhau.Margin = new Padding(4, 6, 4, 6);
@@ -131,6 +133,7 @@
             btnDangNhap.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnDangNhap.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
             btnDangNhap.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnDangNhap.FillColor2 = Color.Blue;
             btnDangNhap.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnDangNhap.ForeColor = Color.White;
             btnDangNhap.Location = new Point(153, 496);
@@ -139,6 +142,7 @@
             btnDangNhap.Size = new Size(161, 55);
             btnDangNhap.TabIndex = 5;
             btnDangNhap.Text = "Đăng nhập";
+            btnDangNhap.Click += btnDangNhap_Click;
             // 
             // btnThoat
             // 
@@ -150,6 +154,7 @@
             btnThoat.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnThoat.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
             btnThoat.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnThoat.FillColor2 = Color.Blue;
             btnThoat.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnThoat.ForeColor = Color.White;
             btnThoat.Location = new Point(337, 496);
@@ -158,6 +163,7 @@
             btnThoat.Size = new Size(119, 55);
             btnThoat.TabIndex = 6;
             btnThoat.Text = "Thoát";
+            btnThoat.Click += btnThoat_Click;
             // 
             // chkGhiNhoMatKhau
             // 
@@ -204,12 +210,13 @@
             chkHienThiMatKhau.UncheckedState.BorderRadius = 0;
             chkHienThiMatKhau.UncheckedState.BorderThickness = 0;
             chkHienThiMatKhau.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            chkHienThiMatKhau.CheckedChanged += chkHienThiMatKhau_CheckedChanged;
             // 
-            // DangNhap
+            // frmDangNhap
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MistyRose;
+            BackColor = Color.FromArgb(128, 255, 255);
             ClientSize = new Size(1049, 616);
             Controls.Add(chkHienThiMatKhau);
             Controls.Add(guna2HtmlLabel1);
@@ -220,7 +227,9 @@
             Controls.Add(txtEmail);
             Controls.Add(guna2CirclePictureBox1);
             Controls.Add(guna2Panel1);
-            Name = "DangNhap";
+            ForeColor = SystemColors.ControlText;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "frmDangNhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng nhập";
             Load += Form1_Load;
