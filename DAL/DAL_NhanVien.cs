@@ -31,6 +31,8 @@ namespace DAL_QuanLyVatTu
                     nv.GhiChu = reader["GhiChu"].ToString();
                     nv.VaiTro = bool.Parse(reader["VaiTro"].ToString());
                     nv.TinhTrang = bool.Parse(reader["TinhTrang"].ToString());
+                    nv.Email = reader["Email"].ToString();
+                    nv.MatKhau = reader["MatKhau"].ToString();
 
                     return nv;
                 }
@@ -39,10 +41,10 @@ namespace DAL_QuanLyVatTu
         }
         public void update(NhanVien nv)
         {
-            string sql = "UPDATE NhanVien SET MatKhau = @0 WHERE MaNhanVien = @1";
+            string sql = "UPDATE NhanVien SET MatKhau = @0 WHERE NhanVienID = @1";
             List<object> parameters = new List<object>();
             parameters.Add(nv.MatKhau);
-            parameters.Add(nv.MaNhanVien);
+            parameters.Add(nv.NhanVienID);
             DBUtil.Update(sql, parameters);
         }
 
@@ -55,12 +57,15 @@ namespace DAL_QuanLyVatTu
                 while (reader.Read())
                 {
                     NhanVien entity = new NhanVien();
-                    entity.MaNhanVien = reader["MaNhanVien"].ToString(); // Fix: Use ToString() instead of GetString()
-                    entity.HoTen = reader["HoTen"].ToString(); // Fix: Use ToString() instead of GetString()
-                    entity.Email = reader["Email"].ToString(); // Fix: Use ToString() instead of GetString()
-                    entity.MatKhau = reader["MatKhau"].ToString(); // Fix: Use ToString() instead of GetString()
-                    entity.VaiTro = bool.Parse(reader["VaiTro"].ToString()); // Fix: Parse boolean values correctly
-                    entity.TrangThai = bool.Parse(reader["TrangThai"].ToString()); // Fix: Parse boolean values correctly
+                    entity.NhanVienID = reader["NhanVienID"].ToString();
+                    entity.HoTen = reader["HoTen"].ToString();
+                    entity.ChucVu = reader["ChucVu"].ToString();
+                    entity.SoDienThoai = reader["SoDienThoai"].ToString();
+                    entity.GhiChu = reader["GhiChu"].ToString();
+                    entity.VaiTro = bool.Parse(reader["VaiTro"].ToString());
+                    entity.TinhTrang = bool.Parse(reader["TinhTrang"].ToString());
+                    entity.Email = reader["Email"].ToString();
+                    entity.MatKhau = reader["MatKhau"].ToString();
                     list.Add(entity);
                 }
 
@@ -82,14 +87,17 @@ namespace DAL_QuanLyVatTu
         {
             try
             {
-                string sql = @"UPDATE NhanVien SET HoTen = @1, Email = @2, MatKhau = @3, VaiTro = @4, TrangThai = @5 WHERE MaNhanVien = @0";
+                string sql = @"UPDATE NhanVien SET HoTen = @1, ChucVu = @2, SoDienThoai = @3, GhiChu = @4, VaiTro = @5, TinhTrang = @6, Email = @7, MatKhau = @8 WHERE NhanVienID = @0";
                 List<object> thamSo = new List<object>();
-                thamSo.Add(nv.MaNhanVien);
+                thamSo.Add(nv.NhanVienID);
                 thamSo.Add(nv.HoTen);
+                thamSo.Add(nv.ChucVu);
+                thamSo.Add(nv.SoDienThoai);
+                thamSo.Add(nv.GhiChu);
+                thamSo.Add(nv.VaiTro);
+                thamSo.Add(nv.TinhTrang);
                 thamSo.Add(nv.Email);
                 thamSo.Add(nv.MatKhau);
-                thamSo.Add(nv.VaiTro);
-                thamSo.Add(nv.TrangThai);
                 DBUtil.Update(sql, thamSo);
             }
             catch (Exception ex)
@@ -102,7 +110,7 @@ namespace DAL_QuanLyVatTu
         {
             try
             {
-                string sql = "DELETE FROM NhanVien WHERE MaNhanVien = @0";
+                string sql = "DELETE FROM NhanVien WHERE NhanVienID = @0";
                 List<object> args = new List<object> { maNV };
                 DBUtil.Update(sql, args);
                 return null; // Xóa thành công, không có lỗi
@@ -116,7 +124,7 @@ namespace DAL_QuanLyVatTu
         public string generateMaNhanVien()
         {
             string prefix = "NV";
-            string sql = "SELECT TOP 1 MaNhanVien FROM NhanVien WHERE MaNhanVien LIKE 'NV%' ORDER BY MaNhanVien DESC";
+            string sql = "SELECT TOP 1 NhanVienID FROM NhanVien WHERE NhanVienID LIKE 'NV%' ORDER BY NhanVienID DESC";
 
             object result = DBUtil.ScalarQuery(sql, new List<object>());
 
@@ -137,8 +145,8 @@ namespace DAL_QuanLyVatTu
         {
             try
             {
-                string sql = "INSERT INTO NhanVien (MaNhanVien, HoTen, Email, MatKhau, VaiTro, TrangThai) VALUES (@0, @1, @2, @3, @4, @5)";
-                List<object> args = new List<object> { nv.MaNhanVien, nv.HoTen, nv.Email, nv.MatKhau, nv.VaiTro, nv.TrangThai };
+                string sql = "INSERT INTO NhanVien (NhanVienID, HoTen, ChucVu, SoDienThoai, GhiChu, VaiTro, TinhTrang, Email, MatKhau) VALUES (@0, @1, @2, @3, @4, @5, @6, @7, @8)";
+                List<object> args = new List<object> { nv.NhanVienID, nv.HoTen, nv.ChucVu, nv.SoDienThoai, nv.GhiChu, nv.VaiTro, nv.TinhTrang, nv.Email, nv.MatKhau };
                 DBUtil.Update(sql, args);
                 return null;
             }
