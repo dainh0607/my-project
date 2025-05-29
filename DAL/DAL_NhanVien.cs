@@ -102,7 +102,7 @@ namespace DAL_QuanLyVatTu
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 

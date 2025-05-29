@@ -1,6 +1,7 @@
 ﻿using BLL_QuanLyVatTu;
 using DAL_QuanLyVatTu;
 using DTO_QuanLyVatTu;
+using Guna.UI2.WinForms;
 using UTIL_PolyCafe;
 
 namespace GUI_QuanLyVatTu
@@ -16,6 +17,7 @@ namespace GUI_QuanLyVatTu
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            guna2ShadowForm1.SetShadowForm(this);
             txtEmail.Text = Properties.Settings.Default.SavedTaiKhoan;
             txtMatKhau.Text = Properties.Settings.Default.SavedMatKhau;
         }
@@ -30,6 +32,12 @@ namespace GUI_QuanLyVatTu
                 MessageBox.Show(this, "Tài khoản hoặc mật khẩu không chính xác");
                 return;
             }
+            // Kiểm tra trạng thái tài khoản
+            if (!nv.TinhTrang)
+            {
+                MessageBox.Show(this, "Tài khoản đã ngưng hoạt động, vui lòng liên hệ quản lý.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (chkGhiNhoMatKhau.Checked)
             {
                 Properties.Settings.Default.SavedTaiKhoan = txtEmail.Text;
@@ -40,11 +48,13 @@ namespace GUI_QuanLyVatTu
                 Properties.Settings.Default.SavedTaiKhoan = "";
                 Properties.Settings.Default.SavedMatKhau = "";
             }
-            Properties.Settings.Default.Save();//Ghi nhớ mật khẩu
+            Properties.Settings.Default.Save(); // Ghi nhớ mật khẩu
             AuthUtil.user = nv;
-            frmMenuQuanLy menuQuanLy = new frmMenuQuanLy();
+            frmLoadding frmLoadding = new frmLoadding();
+            frmLoadding.ShowDialog();
+            frmHome formHome = new frmHome(nv); // Pass the required 'NhanVien' parameter
             this.Hide();
-            menuQuanLy.ShowDialog();
+            formHome.ShowDialog();
             this.Show();
         }
 
@@ -60,6 +70,11 @@ namespace GUI_QuanLyVatTu
         private void chkHienThiMatKhau_CheckedChanged(object sender, EventArgs e)
         {
             txtMatKhau.PasswordChar = chkHienThiMatKhau.Checked ? '\0' : '*';
+        }
+
+        private void lblQuenMatKhau_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Vui lòng liên hệ quản lý để cập nhật lại thông tin mật khẩu!");
         }
     }
 }

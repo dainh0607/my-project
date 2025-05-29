@@ -15,5 +15,7 @@ namespace DTO_QuanLyVatTu
         public decimal DonGia { get; set; }
         public bool TrangThai { get; set; }
 
+        public string TrangThaiText => TrangThai ? "Đã thanh toán" : "Chờ thanh toán";
+
     }
 }

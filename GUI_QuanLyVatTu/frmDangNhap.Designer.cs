@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -39,6 +40,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDangNhap));
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -47,8 +54,14 @@
             btnDangNhap = new Guna.UI2.WinForms.Guna2GradientTileButton();
             btnThoat = new Guna.UI2.WinForms.Guna2GradientButton();
             chkGhiNhoMatKhau = new Guna.UI2.WinForms.Guna2CheckBox();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             chkHienThiMatKhau = new Guna.UI2.WinForms.Guna2CheckBox();
+            lblQuenMatKhau = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
+            guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -68,7 +81,7 @@
             // 
             guna2CirclePictureBox1.Image = Properties.Resources.Ảnh_đăng_nhập11;
             guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.Location = new Point(132, 12);
+            guna2CirclePictureBox1.Location = new Point(136, 12);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges3;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -90,6 +103,8 @@
             txtEmail.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txtEmail.ForeColor = Color.Black;
             txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtEmail.IconLeft = Properties.Resources.user1;
+            txtEmail.IconLeftSize = new Size(36, 36);
             txtEmail.Location = new Point(27, 249);
             txtEmail.Margin = new Padding(4, 6, 4, 6);
             txtEmail.Name = "txtEmail";
@@ -113,6 +128,8 @@
             txtMatKhau.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txtMatKhau.ForeColor = Color.Black;
             txtMatKhau.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtMatKhau.IconLeft = Properties.Resources.reset_password;
+            txtMatKhau.IconLeftSize = new Size(36, 36);
             txtMatKhau.Location = new Point(27, 343);
             txtMatKhau.Margin = new Padding(4, 6, 4, 6);
             txtMatKhau.Name = "txtMatKhau";
@@ -136,7 +153,7 @@
             btnDangNhap.FillColor2 = Color.Blue;
             btnDangNhap.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnDangNhap.ForeColor = Color.White;
-            btnDangNhap.Location = new Point(153, 496);
+            btnDangNhap.Location = new Point(153, 513);
             btnDangNhap.Name = "btnDangNhap";
             btnDangNhap.ShadowDecoration.CustomizableEdges = customizableEdges9;
             btnDangNhap.Size = new Size(161, 55);
@@ -157,7 +174,7 @@
             btnThoat.FillColor2 = Color.Blue;
             btnThoat.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnThoat.ForeColor = Color.White;
-            btnThoat.Location = new Point(337, 496);
+            btnThoat.Location = new Point(337, 513);
             btnThoat.Name = "btnThoat";
             btnThoat.ShadowDecoration.CustomizableEdges = customizableEdges11;
             btnThoat.Size = new Size(119, 55);
@@ -173,7 +190,7 @@
             chkGhiNhoMatKhau.CheckedState.BorderThickness = 0;
             chkGhiNhoMatKhau.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             chkGhiNhoMatKhau.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            chkGhiNhoMatKhau.Location = new Point(27, 441);
+            chkGhiNhoMatKhau.Location = new Point(27, 465);
             chkGhiNhoMatKhau.Name = "chkGhiNhoMatKhau";
             chkGhiNhoMatKhau.Size = new Size(182, 27);
             chkGhiNhoMatKhau.TabIndex = 8;
@@ -183,16 +200,6 @@
             chkGhiNhoMatKhau.UncheckedState.BorderThickness = 0;
             chkGhiNhoMatKhau.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
             // 
-            // guna2HtmlLabel1
-            // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Times New Roman", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(61, 167);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(372, 47);
-            guna2HtmlLabel1.TabIndex = 10;
-            guna2HtmlLabel1.Text = "Đăng Nhập Hệ Thống";
-            // 
             // chkHienThiMatKhau
             // 
             chkHienThiMatKhau.AutoSize = true;
@@ -201,7 +208,7 @@
             chkHienThiMatKhau.CheckedState.BorderThickness = 0;
             chkHienThiMatKhau.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             chkHienThiMatKhau.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            chkHienThiMatKhau.Location = new Point(274, 441);
+            chkHienThiMatKhau.Location = new Point(274, 465);
             chkHienThiMatKhau.Name = "chkHienThiMatKhau";
             chkHienThiMatKhau.Size = new Size(182, 27);
             chkHienThiMatKhau.TabIndex = 11;
@@ -212,14 +219,78 @@
             chkHienThiMatKhau.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
             chkHienThiMatKhau.CheckedChanged += chkHienThiMatKhau_CheckedChanged;
             // 
+            // lblQuenMatKhau
+            // 
+            lblQuenMatKhau.BackColor = Color.Transparent;
+            lblQuenMatKhau.Font = new Font("Times New Roman", 12F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 163);
+            lblQuenMatKhau.ForeColor = Color.RoyalBlue;
+            lblQuenMatKhau.Location = new Point(319, 423);
+            lblQuenMatKhau.Name = "lblQuenMatKhau";
+            lblQuenMatKhau.Size = new Size(132, 25);
+            lblQuenMatKhau.TabIndex = 12;
+            lblQuenMatKhau.Text = "Quên mật khẩu";
+            lblQuenMatKhau.Click += lblQuenMatKhau_Click;
+            // 
+            // guna2HtmlLabel2
+            // 
+            guna2HtmlLabel2.BackColor = Color.Transparent;
+            guna2HtmlLabel2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            guna2HtmlLabel2.Location = new Point(30, 166);
+            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            guna2HtmlLabel2.Size = new Size(426, 43);
+            guna2HtmlLabel2.TabIndex = 13;
+            guna2HtmlLabel2.Text = "Material Management System";
+            // 
+            // guna2GradientPanel1
+            // 
+            guna2GradientPanel1.BorderColor = Color.LightSlateGray;
+            guna2GradientPanel1.BorderThickness = 5;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges12;
+            guna2GradientPanel1.Location = new Point(402, -11);
+            guna2GradientPanel1.Name = "guna2GradientPanel1";
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            guna2GradientPanel1.Size = new Size(200, 644);
+            guna2GradientPanel1.TabIndex = 14;
+            // 
+            // guna2Panel2
+            // 
+            guna2Panel2.BackColor = Color.Lime;
+            guna2Panel2.CustomizableEdges = customizableEdges14;
+            guna2Panel2.ForeColor = SystemColors.ControlDark;
+            guna2Panel2.Location = new Point(-5, 599);
+            guna2Panel2.Name = "guna2Panel2";
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            guna2Panel2.Size = new Size(514, 17);
+            guna2Panel2.TabIndex = 15;
+            // 
+            // guna2Panel3
+            // 
+            guna2Panel3.BackColor = Color.Lime;
+            guna2Panel3.CustomizableEdges = customizableEdges16;
+            guna2Panel3.ForeColor = SystemColors.ControlDark;
+            guna2Panel3.Location = new Point(-5, 0);
+            guna2Panel3.Name = "guna2Panel3";
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            guna2Panel3.Size = new Size(514, 17);
+            guna2Panel3.TabIndex = 16;
+            // 
+            // guna2DragControl1
+            // 
+            guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            guna2DragControl1.TargetControl = this;
+            guna2DragControl1.UseTransparentDrag = true;
+            // 
             // frmDangNhap
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(128, 255, 255);
+            BackColor = Color.White;
             ClientSize = new Size(1049, 616);
+            Controls.Add(guna2Panel3);
+            Controls.Add(guna2Panel2);
+            Controls.Add(guna2HtmlLabel2);
+            Controls.Add(lblQuenMatKhau);
             Controls.Add(chkHienThiMatKhau);
-            Controls.Add(guna2HtmlLabel1);
             Controls.Add(chkGhiNhoMatKhau);
             Controls.Add(btnThoat);
             Controls.Add(btnDangNhap);
@@ -227,11 +298,14 @@
             Controls.Add(txtEmail);
             Controls.Add(guna2CirclePictureBox1);
             Controls.Add(guna2Panel1);
+            Controls.Add(guna2GradientPanel1);
             ForeColor = SystemColors.ControlText;
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmDangNhap";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Đăng nhập";
+            Text = "Đăng Nhập Hệ Thống Quản Lý Vật Liệu";
+            TransparencyKey = Color.Lime;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             ResumeLayout(false);
@@ -247,7 +321,13 @@
         private Guna.UI2.WinForms.Guna2GradientTileButton btnDangNhap;
         private Guna.UI2.WinForms.Guna2GradientButton btnThoat;
         private Guna.UI2.WinForms.Guna2CheckBox chkGhiNhoMatKhau;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2CheckBox chkHienThiMatKhau;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblQuenMatKhau;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }

@@ -17,5 +17,7 @@ namespace DTO_QuanLyVatTu
         public bool TinhTrang { get; set; }
         public string Email { get; set; }
         public string MatKhau { get; set; }
+
+        public string VaiTroText => VaiTro ? "Quản lý" : "Nhân viên";
     }
 }
