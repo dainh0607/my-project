@@ -14,7 +14,7 @@ namespace DTO_QuanLyVatTu
         public decimal DonGia { get; set; }
         public int SoLuongTon { get; set; }
         public string NhaCungCapID { get; set; }
-        public DateTime NgayNhap { get; set; }
+        public DateTime NgayTao { get; set; }
         public string GhiChu { get; set; }
         public string TrangThaiID { get; set; }
     }

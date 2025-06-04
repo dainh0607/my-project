@@ -63,7 +63,7 @@ namespace GUI_QuanLyVatTu
             dgvVatTu.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DonGia", Name = "DonGia", HeaderText = "Đơn giá" });
             dgvVatTu.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SoLuongTon", Name = "SoLuongTon", HeaderText = "Số lượng tồn" });
             dgvVatTu.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "NhaCungCapID", Name = "NhaCungCapID", HeaderText = "Nhà cung cấp" });
-            dgvVatTu.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "NgayNhap", Name = "NgayNhap", HeaderText = "Ngày nhập" });
+            dgvVatTu.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "NgayTao", Name = "NgayTao", HeaderText = "Ngày nhập" });
             dgvVatTu.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "GhiChu", Name = "GhiChu", HeaderText = "Ghi chú" });
             dgvVatTu.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TrangThaiID", Name = "TrangThaiID", HeaderText = "Trạng thái" });
 
@@ -98,7 +98,7 @@ namespace GUI_QuanLyVatTu
                 DonGia = decimal.TryParse(txtDonGia.Text, out var dg) ? dg : 0,
                 SoLuongTon = int.TryParse(txtSoLuongTon.Text, out var sl) ? sl : 0,
                 NhaCungCapID = cboNhaCungCap.SelectedValue?.ToString(),
-                NgayNhap = dtpNgayTao.Value,
+                NgayTao = dtpNgayTao.Value,
                 GhiChu = txtGhiChu.Text.Trim(),
                 TrangThaiID = cboTrangThai.SelectedValue?.ToString()
             };
@@ -223,7 +223,8 @@ namespace GUI_QuanLyVatTu
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             ResetForm();
-
+            LoadData();
+            txtTimKiem.Clear();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -257,7 +258,7 @@ namespace GUI_QuanLyVatTu
                 txtDonGia.Text = row.Cells["DonGia"].Value?.ToString();
                 txtSoLuongTon.Text = row.Cells["SoLuongTon"].Value?.ToString();
                 cboNhaCungCap.SelectedValue = row.Cells["NhaCungCapID"].Value?.ToString();
-                dtpNgayTao.Value = DateTime.TryParse(row.Cells["NgayNhap"].Value?.ToString(), out var dt) ? dt : DateTime.Now;
+                dtpNgayTao.Value = DateTime.TryParse(row.Cells["NgayTao"].Value?.ToString(), out var dt) ? dt : DateTime.Now;
                 txtGhiChu.Text = row.Cells["GhiChu"].Value?.ToString();
                 cboTrangThai.SelectedValue = row.Cells["TrangThaiID"].Value?.ToString();
 
@@ -270,6 +271,28 @@ namespace GUI_QuanLyVatTu
         {
             LoadData();
             LoadComboBoxData();
+        }
+
+
+        private void dgvVatTu_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var row = dgvVatTu.Rows[e.RowIndex];
+                txtMaVatTu.Text = row.Cells["VatTuID"].Value?.ToString();
+                txtTenVatTu.Text = row.Cells["TenVatTu"].Value?.ToString();
+                cboLoaiVatTu.SelectedValue = row.Cells["LoaiVatTuID"].Value?.ToString();
+                txtDonGia.Text = row.Cells["DonGia"].Value?.ToString();
+                txtSoLuongTon.Text = row.Cells["SoLuongTon"].Value?.ToString();
+                cboNhaCungCap.SelectedValue = row.Cells["NhaCungCapID"].Value?.ToString();
+                dtpNgayTao.Value = DateTime.TryParse(row.Cells["NgayTao"].Value?.ToString(), out var dt) ? dt : DateTime.Now;
+                txtGhiChu.Text = row.Cells["GhiChu"].Value?.ToString();
+                cboTrangThai.SelectedValue = row.Cells["TrangThaiID"].Value?.ToString();
+
+                btnThem.Enabled = false;
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+            }
         }
     }
 }

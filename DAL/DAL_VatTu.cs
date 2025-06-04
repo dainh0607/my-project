@@ -26,7 +26,7 @@ namespace DAL_QuanLyVatTu
                     DonGia = Convert.ToDecimal(reader["DonGia"]),
                     SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
                     NhaCungCapID = reader["NhaCungCapID"].ToString(),
-                    NgayNhap = Convert.ToDateTime(reader["NgayNhap"]),
+                    NgayTao = Convert.ToDateTime(reader["NgayTao"]),
                     GhiChu = reader["GhiChu"].ToString(),
                     TrangThaiID = reader["TrangThaiID"].ToString()
                 };
@@ -46,12 +46,12 @@ namespace DAL_QuanLyVatTu
         {
             try
             {
-                string sql = @"INSERT INTO VatTu (VatTuID, LoaiVatTuID, TenVatTu, DonGia, SoLuongTon, NhaCungCapID, NgayNhap, GhiChu, TrangThaiID)
+                string sql = @"INSERT INTO VatTu (VatTuID, LoaiVatTuID, TenVatTu, DonGia, SoLuongTon, NhaCungCapID, NgayTao, GhiChu, TrangThaiID)
                                VALUES (@0, @1, @2, @3, @4, @5, @6, @7, @8)";
                 List<object> args = new List<object>
                 {
                     vt.VatTuID, vt.LoaiVatTuID, vt.TenVatTu, vt.DonGia, vt.SoLuongTon,
-                    vt.NhaCungCapID, vt.NgayNhap, vt.GhiChu, vt.TrangThaiID
+                    vt.NhaCungCapID, vt.NgayTao, vt.GhiChu, vt.TrangThaiID
                 };
                 DBUtil.Update(sql, args);
                 return null;
@@ -68,12 +68,12 @@ namespace DAL_QuanLyVatTu
             {
                 string sql = @"UPDATE VatTu SET 
                                 LoaiVatTuID = @1, TenVatTu = @2, DonGia = @3, SoLuongTon = @4,
-                                NhaCungCapID = @5, NgayNhap = @6, GhiChu = @7, TrangThaiID = @8
+                                NhaCungCapID = @5, NgayTao = @6, GhiChu = @7, TrangThaiID = @8
                                 WHERE VatTuID = @0";
                 List<object> args = new List<object>
                 {
                     vt.VatTuID, vt.LoaiVatTuID, vt.TenVatTu, vt.DonGia, vt.SoLuongTon,
-                    vt.NhaCungCapID, vt.NgayNhap, vt.GhiChu, vt.TrangThaiID
+                    vt.NhaCungCapID, vt.NgayTao, vt.GhiChu, vt.TrangThaiID
                 };
                 DBUtil.Update(sql, args);
                 return null;
