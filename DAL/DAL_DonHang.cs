@@ -23,7 +23,7 @@ namespace DAL_QuanLyVatTu
                     KhachHangID = reader["KhachHangID"].ToString(),
                     NhanVienID = reader["NhanVienID"].ToString(),
                     NgayDat = Convert.ToDateTime(reader["NgayDat"]),
-                    TrangThai = Convert.ToBoolean(reader["TrangThai"]),
+                    TrangThai = reader["TrangThai"] == DBNull.Value ? "" : reader["TrangThai"].ToString(),
                     GhiChu = reader["GhiChu"].ToString()
                 };
                 list.Add(dh);
