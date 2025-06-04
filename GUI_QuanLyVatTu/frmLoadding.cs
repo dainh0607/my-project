@@ -26,8 +26,8 @@ namespace GUI_QuanLyVatTu
             }
             else
             {  
-            guna2CircleProgressBar1.Value += 1;
-            label_val.Text = (Convert.ToInt32(label_val.Text) + 1).ToString();
+            guna2CircleProgressBar1.Value += 2;
+            label_val.Text = (Convert.ToInt32(label_val.Text) + 2).ToString();
             }
         }
 

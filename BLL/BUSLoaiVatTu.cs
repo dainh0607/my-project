@@ -25,17 +25,16 @@ namespace BLL_QuanLyVatTu
             return dal.Insert(lvt);
         }
 
-        public string Update(LoaiVatTu lvt)
+        public string Update(LoaiVatTu loai)
         {
-            if (string.IsNullOrEmpty(lvt.LoaiVatTuID))
-                return "Mã loại vật tư không hợp lệ.";
-
-            return dal.Update(lvt);
+            string result = dal.Update(loai); // gọi DAL  
+            return result == "Success" ? "Success" : "Fail";
         }
 
         public string Delete(string id)
         {
-            return dal.Delete(id);
+            string result = dal.Delete(id); // gọi DAL  
+            return result == "Success" ? "Success" : "Fail";
         }
 
         public string GenerateID()

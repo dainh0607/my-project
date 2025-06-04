@@ -10,6 +10,11 @@ namespace BLL_QuanLyVatTu
 {
     public class BUSTrangThaiVatTu
     {
+        public object? GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
         public class BUS_TrangThaiVatTu
         {
             private DAL_TrangThaiVatTu dal = new DAL_TrangThaiVatTu();

@@ -48,7 +48,7 @@ namespace DAL_QuanLyVatTu
                     lvt.LoaiVatTuID, lvt.TenLoaiVatTu, lvt.NgayTao, lvt.GhiChu
                 };
                 DBUtil.Update(sql, args);
-                return null;
+                return "Success";
             }
             catch (Exception ex)
             {
@@ -62,16 +62,17 @@ namespace DAL_QuanLyVatTu
             {
                 string sql = "UPDATE LoaiVatTu SET TenLoaiVatTu = @1, NgayTao = @2, GhiChu = @3 WHERE LoaiVatTuID = @0";
                 List<object> args = new List<object>
-                {
-                    lvt.LoaiVatTuID, lvt.TenLoaiVatTu, lvt.NgayTao, lvt.GhiChu
-                };
+        {
+            lvt.LoaiVatTuID, lvt.TenLoaiVatTu, lvt.NgayTao, lvt.GhiChu
+        };
                 DBUtil.Update(sql, args);
-                return null;
+                return "Success"; // ✅ TRẢ VỀ CHUỖI NÀY
             }
             catch (Exception ex)
             {
                 return ex.Message;
             }
+
         }
 
         public string Delete(string id)
@@ -80,7 +81,7 @@ namespace DAL_QuanLyVatTu
             {
                 string sql = "DELETE FROM LoaiVatTu WHERE LoaiVatTuID = @0";
                 DBUtil.Update(sql, new List<object> { id });
-                return null;
+                return "Success";
             }
             catch (Exception ex)
             {

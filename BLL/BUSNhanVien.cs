@@ -71,5 +71,6 @@ namespace BLL_QuanLyVatTu
         {
             return dalNhanVien.Insert(nv);
         }
+
     }
 }

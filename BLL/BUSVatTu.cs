@@ -1,4 +1,5 @@
-﻿using DAL_QuanLyVatTu;
+﻿using DAL_PolyCafe;
+using DAL_QuanLyVatTu;
 using DTO_QuanLyVatTu;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,12 @@ namespace BLL_QuanLyVatTu
         {
             if (string.IsNullOrEmpty(vt.TenVatTu))
                 return "Tên vật tư không được để trống.";
+            if (string.IsNullOrEmpty(vt.LoaiVatTuID))
+                return "Loại vật tư không được để trống.";
+            if (string.IsNullOrEmpty(vt.NhaCungCapID))
+                return "Nhà cung cấp không được để trống.";
+            if (string.IsNullOrEmpty(vt.TrangThaiID))
+                return "Trạng thái không được để trống.";
             if (vt.DonGia <= 0)
                 return "Đơn giá phải lớn hơn 0.";
             if (vt.SoLuongTon < 0)
@@ -32,6 +39,18 @@ namespace BLL_QuanLyVatTu
         {
             if (string.IsNullOrEmpty(vt.VatTuID))
                 return "Mã vật tư không hợp lệ.";
+            if (string.IsNullOrEmpty(vt.TenVatTu))
+                return "Tên vật tư không được để trống.";
+            if (string.IsNullOrEmpty(vt.LoaiVatTuID))
+                return "Loại vật tư không được để trống.";
+            if (string.IsNullOrEmpty(vt.NhaCungCapID))
+                return "Nhà cung cấp không được để trống.";
+            if (string.IsNullOrEmpty(vt.TrangThaiID))
+                return "Trạng thái không được để trống.";
+            if (vt.DonGia <= 0)
+                return "Đơn giá phải lớn hơn 0.";
+            if (vt.SoLuongTon < 0)
+                return "Số lượng tồn không hợp lệ.";
             return dal.Update(vt);
         }
 
@@ -54,5 +73,16 @@ namespace BLL_QuanLyVatTu
             List<object> args = new List<object> { "%" + keyword + "%" };
             return dal.SelectBySql(sql, args);
         }
+
+        public string DeleteVatTu(string vatTuID)
+        {
+            if (dal.IsVatTuInUse(vatTuID))
+                return "Không thể xóa vật tư này vì đã phát sinh đơn hàng hoặc phiếu liên quan.";
+
+            return dal.Delete(vatTuID) ?? "Xóa vật tư thành công.";
+        }
+
+
+
     }
 }

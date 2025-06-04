@@ -114,5 +114,12 @@ namespace DAL_QuanLyVatTu
             }
             return prefix + "001";
         }
+
+        public bool IsVatTuInUse(string vatTuID)
+        {
+            string sql = "SELECT COUNT(*) FROM ChiTietDonHang WHERE VatTuID = @0";
+            object result = DBUtil.ScalarQuery(sql, new List<object> { vatTuID });
+            return Convert.ToInt32(result) > 0;
+        }
     }
 }

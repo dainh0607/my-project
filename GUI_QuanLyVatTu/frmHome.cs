@@ -169,12 +169,18 @@ namespace GUI_QuanLyVatTu
 
         private void btnQuanLyPhieuBan_Click(object sender, EventArgs e)
         {
-
+            frmQL_ChiTietDonHang qL_ChiTietDonHang = new frmQL_ChiTietDonHang();
+            this.Hide();
+            qL_ChiTietDonHang.ShowDialog();
+            this.Show();
         }
 
         private void btnTaoPhieuBan_Click(object sender, EventArgs e)
         {
-
+            frmQL_DonHang frmQL_DonHang = new frmQL_DonHang();
+            this.Hide();
+            frmQL_DonHang.ShowDialog();
+            this.Show();
         }
 
         private void btnBanHang_MouseEnter(object sender, EventArgs e)
@@ -204,7 +210,50 @@ namespace GUI_QuanLyVatTu
 
         private void guna2Button8_Click(object sender, EventArgs e)
         {
+            frmQL_NhanVien frmQL_NhanVien = new frmQL_NhanVien();
+            this.Hide();
+            frmQL_NhanVien.ShowDialog();
+            this.Show();
+        }
 
+        private void btnLoaiVatTu_Click(object sender, EventArgs e)
+        {
+            frmQL_LoaiVatTu frmQL_LoaiVatTu = new frmQL_LoaiVatTu();
+            this.Hide();
+            frmQL_LoaiVatTu.ShowDialog();
+            this.Show();
+        }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+            frmQL_NhaCungCap frmQL_NhaCungCap = new frmQL_NhaCungCap();
+            this.Hide();
+            frmQL_NhaCungCap.ShowDialog();
+            this.Show();
+        }
+
+        private void btnDonHang_Click(object sender, EventArgs e)
+        {
+            frmQL_DonHang frmQL_DonHang = new frmQL_DonHang();
+            this.Hide();
+            frmQL_DonHang.ShowDialog();
+            this.Show();
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            frmQL_KhachHang frmQL_KhachHang = new frmQL_KhachHang();
+            this.Hide();
+            frmQL_KhachHang.ShowDialog();
+            this.Show();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            frmQL_VatTu frmQL_VatTu = new frmQL_VatTu();
+            this.Hide();
+            frmQL_VatTu.ShowDialog();
+            this.Show();
         }
     }
 }

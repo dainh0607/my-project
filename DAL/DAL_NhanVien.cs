@@ -12,6 +12,9 @@ namespace DAL_QuanLyVatTu
 {
     public class DAL_NhanVien
     {
+        // Fix for CS0103: Declare and initialize 'dalNhanVien'  
+        private static DAL_NhanVien dalNhanVien = new DAL_NhanVien();
+
         public NhanVien getNhanVien1(string email, string password)
         {
             string sql = "SELECT Top 1 * FROM NhanVien WHERE Email=@0 AND MatKhau=@1";
@@ -39,6 +42,7 @@ namespace DAL_QuanLyVatTu
             }
             return null;
         }
+
         public void update(NhanVien nv)
         {
             string sql = "UPDATE NhanVien SET MatKhau = @0 WHERE NhanVienID = @1";
@@ -113,11 +117,11 @@ namespace DAL_QuanLyVatTu
                 string sql = "DELETE FROM NhanVien WHERE NhanVienID = @0";
                 List<object> args = new List<object> { maNV };
                 DBUtil.Update(sql, args);
-                return null; // Xóa thành công, không có lỗi
+                return "Xóa nhân viên thành công.";
             }
             catch (Exception ex)
             {
-                return ex.Message; // Trả về thông báo lỗi nếu có
+                return "Lỗi khi xóa: " + ex.Message;
             }
         }
 
@@ -130,15 +134,15 @@ namespace DAL_QuanLyVatTu
 
             if (result != null)
             {
-                string maCu = result.ToString(); // Ví dụ: NV005
-                string so = maCu.Substring(2);   // Lấy "005"
+                string maCu = result.ToString(); // Ví dụ: NV005  
+                string so = maCu.Substring(2);   // Lấy "005"  
                 if (int.TryParse(so, out int num))
                 {
-                    return prefix + (num + 1).ToString("D3"); // Tăng và định dạng lại thành 3 số
+                    return prefix + (num + 1).ToString("D3"); // Tăng và định dạng lại thành 3 số  
                 }
             }
 
-            return prefix + "001"; // Nếu không có mã nào
+            return prefix + "001"; // Nếu không có mã nào  
         }
 
         public string Insert(NhanVien nv)
@@ -155,5 +159,18 @@ namespace DAL_QuanLyVatTu
                 return ex.Message;
             }
         }
+
+        public List<NhanVien> SearchNhanVien(string keyword)
+        {
+            string sql = @"SELECT * FROM NhanVien WHERE   
+           NhanVienID LIKE @kw OR  
+           HoTen LIKE @kw OR  
+           ChucVu LIKE @kw OR  
+           SoDienThoai LIKE @kw OR  
+           GhiChu LIKE @kw";
+            var args = new List<object> { "%" + keyword + "%" };
+            return dalNhanVien.SelectBySql(sql, args);
+        }
+
     }
 }
