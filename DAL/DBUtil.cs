@@ -12,7 +12,7 @@ namespace DAL_PolyCafe
     public class DBUtil
     {
         //Khai báo biến kết nối CSDL
-        private static string connString = @"Data Source=MSI\MISASME2019;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Encrypt=False";
+        private static string connString = @"Data Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         //<summary> xây dụng SqlCommand
         public static SqlCommand GetCommand(string sql, List<Object> args, CommandType cmdType)
