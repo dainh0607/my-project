@@ -169,7 +169,7 @@ namespace GUI_QuanLyVatTu
 
         private void btnQuanLyPhieuBan_Click(object sender, EventArgs e)
         {
-            frmQL_ChiTietDonHang qL_ChiTietDonHang = new frmQL_ChiTietDonHang();
+            frmQL_DonHang qL_ChiTietDonHang = new frmQL_DonHang();
             this.Hide();
             qL_ChiTietDonHang.ShowDialog();
             this.Show();

@@ -2,12 +2,7 @@
 using DTO_QuanLyVatTu;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTIL_PolyCafe;
 using UTIL_QuanLyVatTu;
@@ -54,10 +49,10 @@ namespace GUI_QuanLyVatTu
             return new DonHang
             {
                 DonHangID = txtMaDonHang.Text.Trim(),
-                KhachHangID = cboMaKhachHang.SelectedValue?.ToString() ?? "",
+                KhachHangID = cboMaKhachHang.SelectedValue != null ? cboMaKhachHang.SelectedValue.ToString() : "",
                 NhanVienID = txtMaNhanVien.Text.Trim(),
                 NgayDat = dtpNgayDat.Value,
-                TrangThai = cboTrangThai.SelectedItem?.ToString() ?? "Chưa thanh toán",
+                TrangThai = cboTrangThai.SelectedItem != null ? cboTrangThai.SelectedItem.ToString() : "Chưa thanh toán",
                 GhiChu = txtGhiChu.Text.Trim()
             };
         }
@@ -80,7 +75,7 @@ namespace GUI_QuanLyVatTu
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (cboTrangThai.SelectedItem?.ToString() == "Đã giao")
+            if (cboTrangThai.SelectedItem != null && cboTrangThai.SelectedItem.ToString() == "Đã giao")
             {
                 MessageBox.Show("Không thể sửa trạng thái và ghi chú khi đơn hàng đã giao!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -144,15 +139,13 @@ namespace GUI_QuanLyVatTu
             cboMaKhachHang.DisplayMember = "TenKhachHang";
             cboMaKhachHang.ValueMember = "KhachHangID";
             cboMaKhachHang.SelectedIndex = -1;
+
             cboTrangThai.Items.Clear();
-            cboTrangThai.Items.AddRange(new string[]
-            {
-                "Đã giao",
-                "Chưa xử lí",
-                "Đang vận chuyển",
-                "Đã hủy",
-                "Chưa thanh toán"
-            });
+            cboTrangThai.Items.Add("Đã giao");
+            cboTrangThai.Items.Add("Chưa xử lí");
+            cboTrangThai.Items.Add("Đang vận chuyển");
+            cboTrangThai.Items.Add("Đã hủy");
+            cboTrangThai.Items.Add("Chưa thanh toán");
             cboTrangThai.SelectedIndex = 4;
 
             LoadData();
@@ -161,14 +154,22 @@ namespace GUI_QuanLyVatTu
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string keyword = searchUtil.RemoveDiacritics(txtTimKiem.Text.Trim().ToLower());
+            List<DonHang> danhSachDonHang = bus.GetAll();
+            List<DonHang> ketQua = new List<DonHang>();
 
-            var list = bus.GetAll().Where(d =>
-                searchUtil.RemoveDiacritics(d.DonHangID.ToLower()).Contains(keyword) ||
-                searchUtil.RemoveDiacritics(d.KhachHangID.ToLower()).Contains(keyword) ||
-                searchUtil.RemoveDiacritics(d.GhiChu?.ToLower() ?? "").Contains(keyword)
-            ).ToList();
+            foreach (DonHang dh in danhSachDonHang)
+            {
+                string ma = searchUtil.RemoveDiacritics(dh.DonHangID.ToLower());
+                string khach = searchUtil.RemoveDiacritics(dh.KhachHangID.ToLower());
+                string ghiChu = searchUtil.RemoveDiacritics((dh.GhiChu ?? "").ToLower());
 
-            dgvDonHang.DataSource = list;
+                if (ma.Contains(keyword) || khach.Contains(keyword) || ghiChu.Contains(keyword))
+                {
+                    ketQua.Add(dh);
+                }
+            }
+
+            dgvDonHang.DataSource = ketQua;
         }
 
         private void dgvDonHang_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -176,24 +177,36 @@ namespace GUI_QuanLyVatTu
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvDonHang.Rows[e.RowIndex];
+
                 txtMaDonHang.Text = row.Cells["DonHangID"].Value.ToString();
                 cboMaKhachHang.SelectedValue = row.Cells["KhachHangID"].Value.ToString();
                 txtMaNhanVien.Text = row.Cells["NhanVienID"].Value.ToString();
                 dtpNgayDat.Value = Convert.ToDateTime(row.Cells["NgayDat"].Value);
+
                 string trangThai = row.Cells["TrangThai"].Value?.ToString() ?? "";
-                foreach (var item in cboTrangThai.Items)
+
+                for (int i = 0; i < cboTrangThai.Items.Count; i++)
                 {
-                    if (item.ToString().Equals(trangThai, StringComparison.OrdinalIgnoreCase))
+                    if (cboTrangThai.Items[i].ToString().Equals(trangThai, StringComparison.OrdinalIgnoreCase))
                     {
-                        cboTrangThai.SelectedItem = item;
+                        cboTrangThai.SelectedIndex = i;
                         break;
                     }
                 }
+
                 bool isLocked = trangThai == "Đã giao";
                 cboMaKhachHang.Enabled = !isLocked;
                 cboTrangThai.Enabled = !isLocked;
                 txtGhiChu.ReadOnly = isLocked;
+
                 txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();
+
+                string maDonHang = row.Cells["DonHangID"].Value.ToString();
+                frmQL_ChiTietDonHang frmChiTiet = new frmQL_ChiTietDonHang();
+                frmChiTiet.DonHangID = maDonHang;
+                frmChiTiet.ShowDialog();
+
+                LoadData();
             }
         }
     }

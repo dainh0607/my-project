@@ -10,8 +10,6 @@ namespace BLL_QuanLyVatTu
 {
     public class BUSChiTietDonHang
     {
-        public class BUS_ChiTietDonHang
-        {
             private DAL_ChiTietDonHang dal = new DAL_ChiTietDonHang();
 
             public List<ChiTietDonHang> GetAll()
@@ -52,6 +50,5 @@ namespace BLL_QuanLyVatTu
             {
                 return dal.GenerateID();
             }
-        }
     }
 }
