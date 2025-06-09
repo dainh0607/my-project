@@ -2,6 +2,7 @@
 using DTO_QuanLyVatTu;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,9 +45,14 @@ namespace BLL_QuanLyVatTu
 
         public List<LoaiVatTu> Search(string keyword)
         {
-            string sql = "SELECT * FROM LoaiVatTu WHERE LoaiVatTuID LIKE @0 OR TenLoaiVatTu LIKE @0 OR GhiChu LIKE @0";
-            List<object> args = new List<object> { "%" + keyword + "%" };
-            return dal.SelectBySql(sql, args);
+            string sql = "SELECT * FROM LoaiVatTu WHERE LoaiVatTuID LIKE @0 OR TenLoaiVatTu LIKE @1 OR GhiChu LIKE @2";
+            List<object> args = new List<object>
+            {
+                "%" + keyword + "%",
+                "%" + keyword + "%",
+                "%" + keyword + "%"
+            };
+            return dal.SelectBySql(sql, args, CommandType.Text);
         }
     }
 }

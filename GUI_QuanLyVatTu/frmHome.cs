@@ -1,5 +1,5 @@
-﻿using DTO_QuanLyVatTu;
-using Microsoft.VisualBasic.ApplicationServices;
+﻿using BLL_QuanLyVatTu;
+using DTO_QuanLyVatTu;
 
 namespace GUI_QuanLyVatTu
 {
@@ -38,6 +38,7 @@ namespace GUI_QuanLyVatTu
             RoundRightCorners(btnBanHang, 20);
             // Gọi hàm phân quyền
             PhanQuyen();
+
         }
 
         private void PhanQuyen()
@@ -51,7 +52,7 @@ namespace GUI_QuanLyVatTu
                 btnLoaiVatTu.Visible = true;
                 btnNhanVien.Visible = true;
                 btnNhaCungCap.Visible = true;
-                btnDonHang.Visible = true;
+                btnHoaDon.Visible = true;
                 btnKhachHang.Visible = true;
                 btnBaoCaoThongKe.Visible = true;
                 pnlSubMenu.Visible = false;
@@ -66,7 +67,7 @@ namespace GUI_QuanLyVatTu
                 btnLoaiVatTu.Visible = false;
                 btnNhanVien.Visible = false;
                 btnNhaCungCap.Visible = false;
-                btnDonHang.Visible = false;
+                btnHoaDon.Visible = false;
                 btnKhachHang.Visible = false;
                 btnBaoCaoThongKe.Visible = false;
 
@@ -162,24 +163,12 @@ namespace GUI_QuanLyVatTu
             }
         }
 
-        private void btnBanHang_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void btnQuanLyPhieuBan_Click(object sender, EventArgs e)
+        private void btnTaoPhieuBan_Click(object sender, EventArgs e)
         {
             frmQL_DonHang qL_ChiTietDonHang = new frmQL_DonHang();
             this.Hide();
             qL_ChiTietDonHang.ShowDialog();
-            this.Show();
-        }
-
-        private void btnTaoPhieuBan_Click(object sender, EventArgs e)
-        {
-            frmQL_DonHang frmQL_DonHang = new frmQL_DonHang();
-            this.Hide();
-            frmQL_DonHang.ShowDialog();
             this.Show();
         }
 

@@ -3,6 +3,7 @@ using DTO_QuanLyVatTu;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,10 +12,10 @@ namespace DAL_QuanLyVatTu
 {
     public class DAL_HoaDon
     {
-        public List<HoaDon> SelectBySql(string sql, List<object> args)
+        public List<HoaDon> SelectBySql(string sql, List<Object> args, CommandType cmdType)
         {
             List<HoaDon> list = new List<HoaDon>();
-            SqlDataReader reader = DBUtil.Query(sql, args);
+            SqlDataReader reader = DBUtil.Query(sql, args, CommandType.Text);
             while (reader.Read())
             {
                 HoaDon hd = new HoaDon
@@ -33,7 +34,7 @@ namespace DAL_QuanLyVatTu
         public List<HoaDon> SelectAll()
         {
             string sql = "SELECT * FROM HoaDon";
-            return SelectBySql(sql, new List<object>());
+            return SelectBySql(sql, new List<object>(), CommandType.Text);
         }
 
         public string Insert(HoaDon hd)

@@ -1,9 +1,10 @@
-﻿using DAL_QuanLyVatTu;
-using DAL_PolyCafe;
+﻿using DAL_PolyCafe;
+using DAL_QuanLyVatTu;
 using DTO_QuanLyVatTu;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,10 +13,10 @@ namespace DAL_QuanLyVatTu
 {
     public class DAL_LoaiVatTu
     {
-        public List<LoaiVatTu> SelectBySql(string sql, List<object> args)
+        public List<LoaiVatTu> SelectBySql(string sql, List<Object> arg, CommandType cmdType)
         {
             List<LoaiVatTu> list = new List<LoaiVatTu>();
-            SqlDataReader reader = DBUtil.Query(sql, args);
+            SqlDataReader reader = DBUtil.Query(sql, arg, CommandType.Text);
 
             while (reader.Read())
             {
@@ -35,7 +36,7 @@ namespace DAL_QuanLyVatTu
         public List<LoaiVatTu> SelectAll()
         {
             string sql = "SELECT * FROM LoaiVatTu";
-            return SelectBySql(sql, new List<object>());
+            return SelectBySql(sql, new List<object>(), CommandType.Text);
         }
 
         public string Insert(LoaiVatTu lvt)
@@ -66,7 +67,7 @@ namespace DAL_QuanLyVatTu
             lvt.LoaiVatTuID, lvt.TenLoaiVatTu, lvt.NgayTao, lvt.GhiChu
         };
                 DBUtil.Update(sql, args);
-                return "Success"; // ✅ TRẢ VỀ CHUỖI NÀY
+                return "Success";
             }
             catch (Exception ex)
             {
@@ -93,7 +94,7 @@ namespace DAL_QuanLyVatTu
         {
             string prefix = "LVT";
             string sql = "SELECT TOP 1 LoaiVatTuID FROM LoaiVatTu WHERE LoaiVatTuID LIKE 'LVT%' ORDER BY LoaiVatTuID DESC";
-            object result = DBUtil.ScalarQuery(sql, new List<object>());
+            object result = DBUtil.ScalarQuery(sql, new List<object>(), CommandType.Text);
             if (result != null)
             {
                 string currentID = result.ToString();

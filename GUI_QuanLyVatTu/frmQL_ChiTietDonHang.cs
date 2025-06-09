@@ -33,6 +33,11 @@ namespace GUI_QuanLyVatTu
 
         private void LoadData()
         {
+            if (string.IsNullOrWhiteSpace(DonHangID))
+            {
+                dgvChiTietDonHang.DataSource = null;
+                return;
+            }
             var list = busChiTietDonHang.GetByDonHangID(DonHangID);
             dgvChiTietDonHang.DataSource = list;
 
@@ -261,7 +266,6 @@ namespace GUI_QuanLyVatTu
 
             ChiTietDonHang ct = GetFormData();
 
-            // Cập nhật đơn giá nếu cần (có thể nhân lại nếu bạn không lưu tổng)
             decimal donGiaGoc = LayDonGiaTheoVatTu(ct.VatTuID);
             ct.DonGia = donGiaGoc * ct.SoLuong;
 
@@ -276,6 +280,11 @@ namespace GUI_QuanLyVatTu
             {
                 MessageBox.Show("Lỗi: " + result, "Thông báo lỗi");
             }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

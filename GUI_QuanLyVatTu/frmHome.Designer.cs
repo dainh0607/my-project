@@ -32,6 +32,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -56,13 +63,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -74,24 +74,26 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             pnlMenu = new Guna.UI2.WinForms.Guna2Panel();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            pnlSubMenu2 = new Guna.UI2.WinForms.Guna2Panel();
+            btnQuanLyPhieuBan = new Guna.UI2.WinForms.Guna2Button();
+            btnTaoPhieuBan = new Guna.UI2.WinForms.Guna2Button();
             pnlSubMenu = new Guna.UI2.WinForms.Guna2Panel();
             btnBaoCaoThongKe = new Guna.UI2.WinForms.Guna2Button();
             btnKhachHang = new Guna.UI2.WinForms.Guna2Button();
-            btnDonHang = new Guna.UI2.WinForms.Guna2Button();
+            btnHoaDon = new Guna.UI2.WinForms.Guna2Button();
             btnNhaCungCap = new Guna.UI2.WinForms.Guna2Button();
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             btnNhanVien = new Guna.UI2.WinForms.Guna2Button();
             btnLoaiVatTu = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            btnVatTu = new Guna.UI2.WinForms.Guna2Button();
             btnQuanLy = new Guna.UI2.WinForms.Guna2Button();
             btnBanHang = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            pnlSubMenu2 = new Guna.UI2.WinForms.Guna2Panel();
-            btnQuanLyPhieuBan = new Guna.UI2.WinForms.Guna2Button();
-            btnTaoPhieuBan = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel_top = new Guna.UI2.WinForms.Guna2Panel();
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -100,10 +102,11 @@
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
+            panelHienThi = new Guna.UI2.WinForms.Guna2Panel();
             pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
-            pnlSubMenu.SuspendLayout();
             pnlSubMenu2.SuspendLayout();
+            pnlSubMenu.SuspendLayout();
             guna2Panel_top.SuspendLayout();
             SuspendLayout();
             // 
@@ -138,16 +141,76 @@
             guna2CirclePictureBox1.TabIndex = 4;
             guna2CirclePictureBox1.TabStop = false;
             // 
+            // pnlSubMenu2
+            // 
+            pnlSubMenu2.Controls.Add(btnQuanLyPhieuBan);
+            pnlSubMenu2.Controls.Add(btnTaoPhieuBan);
+            pnlSubMenu2.CustomizableEdges = customizableEdges6;
+            pnlSubMenu2.Location = new Point(3, 169);
+            pnlSubMenu2.Name = "pnlSubMenu2";
+            pnlSubMenu2.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            pnlSubMenu2.Size = new Size(271, 139);
+            pnlSubMenu2.TabIndex = 12;
+            pnlSubMenu2.Paint += pnlSubMenu2_Paint;
+            // 
+            // btnQuanLyPhieuBan
+            // 
+            btnQuanLyPhieuBan.CustomizableEdges = customizableEdges2;
+            btnQuanLyPhieuBan.DisabledState.BorderColor = Color.DarkGray;
+            btnQuanLyPhieuBan.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnQuanLyPhieuBan.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnQuanLyPhieuBan.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnQuanLyPhieuBan.Dock = DockStyle.Top;
+            btnQuanLyPhieuBan.FillColor = Color.FromArgb(18, 48, 100);
+            btnQuanLyPhieuBan.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnQuanLyPhieuBan.ForeColor = Color.White;
+            btnQuanLyPhieuBan.HoverState.FillColor = Color.DodgerBlue;
+            btnQuanLyPhieuBan.Image = (Image)resources.GetObject("btnQuanLyPhieuBan.Image");
+            btnQuanLyPhieuBan.ImageAlign = HorizontalAlignment.Left;
+            btnQuanLyPhieuBan.ImageOffset = new Point(5, 0);
+            btnQuanLyPhieuBan.ImageSize = new Size(35, 35);
+            btnQuanLyPhieuBan.Location = new Point(0, 0);
+            btnQuanLyPhieuBan.Name = "btnQuanLyPhieuBan";
+            btnQuanLyPhieuBan.Padding = new Padding(20, 0, 0, 0);
+            btnQuanLyPhieuBan.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            btnQuanLyPhieuBan.Size = new Size(271, 56);
+            btnQuanLyPhieuBan.TabIndex = 5;
+            btnQuanLyPhieuBan.Text = "Chi tiết đơn hàng";
+            btnQuanLyPhieuBan.TextAlign = HorizontalAlignment.Left;
+            // 
+            // btnTaoPhieuBan
+            // 
+            btnTaoPhieuBan.CustomizableEdges = customizableEdges4;
+            btnTaoPhieuBan.DisabledState.BorderColor = Color.DarkGray;
+            btnTaoPhieuBan.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnTaoPhieuBan.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnTaoPhieuBan.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnTaoPhieuBan.FillColor = Color.FromArgb(18, 48, 100);
+            btnTaoPhieuBan.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTaoPhieuBan.ForeColor = Color.White;
+            btnTaoPhieuBan.HoverState.FillColor = Color.DodgerBlue;
+            btnTaoPhieuBan.Image = (Image)resources.GetObject("btnTaoPhieuBan.Image");
+            btnTaoPhieuBan.ImageAlign = HorizontalAlignment.Left;
+            btnTaoPhieuBan.ImageOffset = new Point(5, 0);
+            btnTaoPhieuBan.ImageSize = new Size(35, 35);
+            btnTaoPhieuBan.Location = new Point(-2, 62);
+            btnTaoPhieuBan.Name = "btnTaoPhieuBan";
+            btnTaoPhieuBan.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            btnTaoPhieuBan.Size = new Size(256, 56);
+            btnTaoPhieuBan.TabIndex = 0;
+            btnTaoPhieuBan.Text = "Tạo đơn hàng";
+            btnTaoPhieuBan.Click += btnTaoPhieuBan_Click;
+            // 
             // pnlSubMenu
             // 
             pnlSubMenu.Controls.Add(btnBaoCaoThongKe);
             pnlSubMenu.Controls.Add(btnKhachHang);
-            pnlSubMenu.Controls.Add(btnDonHang);
+            pnlSubMenu.Controls.Add(btnHoaDon);
             pnlSubMenu.Controls.Add(btnNhaCungCap);
             pnlSubMenu.Controls.Add(guna2Button5);
             pnlSubMenu.Controls.Add(btnNhanVien);
             pnlSubMenu.Controls.Add(btnLoaiVatTu);
-            pnlSubMenu.Controls.Add(guna2Button4);
+            pnlSubMenu.Controls.Add(btnVatTu);
             pnlSubMenu.CustomizableEdges = customizableEdges24;
             pnlSubMenu.Dock = DockStyle.Bottom;
             pnlSubMenu.Location = new Point(0, 256);
@@ -209,31 +272,31 @@
             btnKhachHang.TextAlign = HorizontalAlignment.Left;
             btnKhachHang.Click += btnKhachHang_Click;
             // 
-            // btnDonHang
+            // btnHoaDon
             // 
-            btnDonHang.CustomizableEdges = customizableEdges12;
-            btnDonHang.DisabledState.BorderColor = Color.DarkGray;
-            btnDonHang.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnDonHang.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnDonHang.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnDonHang.Dock = DockStyle.Top;
-            btnDonHang.FillColor = Color.FromArgb(18, 48, 100);
-            btnDonHang.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
-            btnDonHang.ForeColor = Color.White;
-            btnDonHang.HoverState.FillColor = Color.DodgerBlue;
-            btnDonHang.Image = (Image)resources.GetObject("btnDonHang.Image");
-            btnDonHang.ImageAlign = HorizontalAlignment.Left;
-            btnDonHang.ImageOffset = new Point(5, 0);
-            btnDonHang.ImageSize = new Size(35, 35);
-            btnDonHang.Location = new Point(0, 226);
-            btnDonHang.Name = "btnDonHang";
-            btnDonHang.Padding = new Padding(20, 0, 0, 0);
-            btnDonHang.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            btnDonHang.Size = new Size(271, 56);
-            btnDonHang.TabIndex = 4;
-            btnDonHang.Text = "Đơn hàng";
-            btnDonHang.TextAlign = HorizontalAlignment.Left;
-            btnDonHang.Click += btnDonHang_Click;
+            btnHoaDon.CustomizableEdges = customizableEdges12;
+            btnHoaDon.DisabledState.BorderColor = Color.DarkGray;
+            btnHoaDon.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnHoaDon.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnHoaDon.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnHoaDon.Dock = DockStyle.Top;
+            btnHoaDon.FillColor = Color.FromArgb(18, 48, 100);
+            btnHoaDon.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
+            btnHoaDon.ForeColor = Color.White;
+            btnHoaDon.HoverState.FillColor = Color.DodgerBlue;
+            btnHoaDon.Image = (Image)resources.GetObject("btnHoaDon.Image");
+            btnHoaDon.ImageAlign = HorizontalAlignment.Left;
+            btnHoaDon.ImageOffset = new Point(5, 0);
+            btnHoaDon.ImageSize = new Size(35, 35);
+            btnHoaDon.Location = new Point(0, 226);
+            btnHoaDon.Name = "btnHoaDon";
+            btnHoaDon.Padding = new Padding(20, 0, 0, 0);
+            btnHoaDon.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            btnHoaDon.Size = new Size(271, 56);
+            btnHoaDon.TabIndex = 4;
+            btnHoaDon.Text = "Hóa đơn";
+            btnHoaDon.TextAlign = HorizontalAlignment.Left;
+            btnHoaDon.Click += btnDonHang_Click;
             // 
             // btnNhaCungCap
             // 
@@ -308,7 +371,6 @@
             btnNhanVien.TabIndex = 9;
             btnNhanVien.Text = "Nhân viên";
             btnNhanVien.TextAlign = HorizontalAlignment.Left;
-            btnNhanVien.Click += guna2Button8_Click;
             // 
             // btnLoaiVatTu
             // 
@@ -336,31 +398,30 @@
             btnLoaiVatTu.TextAlign = HorizontalAlignment.Left;
             btnLoaiVatTu.Click += btnLoaiVatTu_Click;
             // 
-            // guna2Button4
+            // btnVatTu
             // 
-            guna2Button4.CustomizableEdges = customizableEdges22;
-            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.Dock = DockStyle.Top;
-            guna2Button4.FillColor = Color.FromArgb(18, 48, 100);
-            guna2Button4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
-            guna2Button4.ForeColor = Color.White;
-            guna2Button4.HoverState.FillColor = Color.DodgerBlue;
-            guna2Button4.Image = (Image)resources.GetObject("guna2Button4.Image");
-            guna2Button4.ImageAlign = HorizontalAlignment.Left;
-            guna2Button4.ImageOffset = new Point(5, 0);
-            guna2Button4.ImageSize = new Size(35, 35);
-            guna2Button4.Location = new Point(0, 0);
-            guna2Button4.Name = "guna2Button4";
-            guna2Button4.Padding = new Padding(20, 0, 0, 0);
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges23;
-            guna2Button4.Size = new Size(271, 58);
-            guna2Button4.TabIndex = 5;
-            guna2Button4.Text = "Vật tư";
-            guna2Button4.TextAlign = HorizontalAlignment.Left;
-            guna2Button4.Click += guna2Button4_Click;
+            btnVatTu.CustomizableEdges = customizableEdges22;
+            btnVatTu.DisabledState.BorderColor = Color.DarkGray;
+            btnVatTu.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnVatTu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnVatTu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnVatTu.Dock = DockStyle.Top;
+            btnVatTu.FillColor = Color.FromArgb(18, 48, 100);
+            btnVatTu.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
+            btnVatTu.ForeColor = Color.White;
+            btnVatTu.HoverState.FillColor = Color.DodgerBlue;
+            btnVatTu.Image = (Image)resources.GetObject("btnVatTu.Image");
+            btnVatTu.ImageAlign = HorizontalAlignment.Left;
+            btnVatTu.ImageOffset = new Point(5, 0);
+            btnVatTu.ImageSize = new Size(35, 35);
+            btnVatTu.Location = new Point(0, 0);
+            btnVatTu.Name = "btnVatTu";
+            btnVatTu.Padding = new Padding(20, 0, 0, 0);
+            btnVatTu.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            btnVatTu.Size = new Size(271, 58);
+            btnVatTu.TabIndex = 5;
+            btnVatTu.Text = "Vật tư";
+            btnVatTu.TextAlign = HorizontalAlignment.Left;
             // 
             // btnQuanLy
             // 
@@ -389,7 +450,6 @@
             btnQuanLy.Size = new Size(268, 56);
             btnQuanLy.TabIndex = 10;
             btnQuanLy.Text = "Quản lý";
-            btnQuanLy.Click += btnQuanLy_Click;
             // 
             // btnBanHang
             // 
@@ -418,7 +478,6 @@
             btnBanHang.Size = new Size(268, 56);
             btnBanHang.TabIndex = 2;
             btnBanHang.Text = "Bán hàng";
-            btnBanHang.Click += btnBanHang_Click;
             // 
             // guna2Panel2
             // 
@@ -428,67 +487,6 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges31;
             guna2Panel2.Size = new Size(812, 42);
             guna2Panel2.TabIndex = 1;
-            // 
-            // pnlSubMenu2
-            // 
-            pnlSubMenu2.Controls.Add(btnQuanLyPhieuBan);
-            pnlSubMenu2.Controls.Add(btnTaoPhieuBan);
-            pnlSubMenu2.CustomizableEdges = customizableEdges6;
-            pnlSubMenu2.Location = new Point(0, 168);
-            pnlSubMenu2.Name = "pnlSubMenu2";
-            pnlSubMenu2.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            pnlSubMenu2.Size = new Size(271, 139);
-            pnlSubMenu2.TabIndex = 12;
-            pnlSubMenu2.Paint += pnlSubMenu2_Paint;
-            // 
-            // btnQuanLyPhieuBan
-            // 
-            btnQuanLyPhieuBan.CustomizableEdges = customizableEdges2;
-            btnQuanLyPhieuBan.DisabledState.BorderColor = Color.DarkGray;
-            btnQuanLyPhieuBan.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnQuanLyPhieuBan.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnQuanLyPhieuBan.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnQuanLyPhieuBan.Dock = DockStyle.Top;
-            btnQuanLyPhieuBan.FillColor = Color.FromArgb(18, 48, 100);
-            btnQuanLyPhieuBan.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnQuanLyPhieuBan.ForeColor = Color.White;
-            btnQuanLyPhieuBan.HoverState.FillColor = Color.DodgerBlue;
-            btnQuanLyPhieuBan.Image = (Image)resources.GetObject("btnQuanLyPhieuBan.Image");
-            btnQuanLyPhieuBan.ImageAlign = HorizontalAlignment.Left;
-            btnQuanLyPhieuBan.ImageOffset = new Point(5, 0);
-            btnQuanLyPhieuBan.ImageSize = new Size(35, 35);
-            btnQuanLyPhieuBan.Location = new Point(0, 0);
-            btnQuanLyPhieuBan.Name = "btnQuanLyPhieuBan";
-            btnQuanLyPhieuBan.Padding = new Padding(20, 0, 0, 0);
-            btnQuanLyPhieuBan.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            btnQuanLyPhieuBan.Size = new Size(271, 56);
-            btnQuanLyPhieuBan.TabIndex = 5;
-            btnQuanLyPhieuBan.Text = "Chi tiết đơn hàng";
-            btnQuanLyPhieuBan.TextAlign = HorizontalAlignment.Left;
-            btnQuanLyPhieuBan.Click += btnQuanLyPhieuBan_Click;
-            // 
-            // btnTaoPhieuBan
-            // 
-            btnTaoPhieuBan.CustomizableEdges = customizableEdges4;
-            btnTaoPhieuBan.DisabledState.BorderColor = Color.DarkGray;
-            btnTaoPhieuBan.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnTaoPhieuBan.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnTaoPhieuBan.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnTaoPhieuBan.FillColor = Color.FromArgb(18, 48, 100);
-            btnTaoPhieuBan.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTaoPhieuBan.ForeColor = Color.White;
-            btnTaoPhieuBan.HoverState.FillColor = Color.DodgerBlue;
-            btnTaoPhieuBan.Image = (Image)resources.GetObject("btnTaoPhieuBan.Image");
-            btnTaoPhieuBan.ImageAlign = HorizontalAlignment.Left;
-            btnTaoPhieuBan.ImageOffset = new Point(5, 0);
-            btnTaoPhieuBan.ImageSize = new Size(35, 35);
-            btnTaoPhieuBan.Location = new Point(-2, 62);
-            btnTaoPhieuBan.Name = "btnTaoPhieuBan";
-            btnTaoPhieuBan.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            btnTaoPhieuBan.Size = new Size(256, 56);
-            btnTaoPhieuBan.TabIndex = 0;
-            btnTaoPhieuBan.Text = "Tạo đơn hàng";
-            btnTaoPhieuBan.Click += btnTaoPhieuBan_Click;
             // 
             // guna2Panel_top
             // 
@@ -597,12 +595,22 @@
             guna2DragControl1.TargetControl = guna2Panel_top;
             guna2DragControl1.UseTransparentDrag = true;
             // 
+            // panelHienThi
+            // 
+            panelHienThi.CustomizableEdges = customizableEdges45;
+            panelHienThi.Location = new Point(271, 47);
+            panelHienThi.Name = "panelHienThi";
+            panelHienThi.ShadowDecoration.CustomizableEdges = customizableEdges46;
+            panelHienThi.Size = new Size(1137, 673);
+            panelHienThi.TabIndex = 2;
+            // 
             // frmHome
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(235, 240, 250);
             ClientSize = new Size(1408, 720);
+            Controls.Add(panelHienThi);
             Controls.Add(guna2Panel_top);
             Controls.Add(pnlMenu);
             FormBorderStyle = FormBorderStyle.None;
@@ -612,8 +620,8 @@
             Load += Home_Load;
             pnlMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
-            pnlSubMenu.ResumeLayout(false);
             pnlSubMenu2.ResumeLayout(false);
+            pnlSubMenu.ResumeLayout(false);
             guna2Panel_top.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -635,8 +643,8 @@
         private Guna.UI2.WinForms.Guna2Button btnNhaCungCap;
         private Guna.UI2.WinForms.Guna2Button btnLoaiVatTu;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button btnDonHang;
+        private Guna.UI2.WinForms.Guna2Button btnVatTu;
+        private Guna.UI2.WinForms.Guna2Button btnHoaDon;
         private Guna.UI2.WinForms.Guna2Panel pnlSubMenu;
         private Guna.UI2.WinForms.Guna2Button btnQuanLy;
         private Guna.UI2.WinForms.Guna2Panel pnlSubMenu2;
@@ -646,5 +654,6 @@
         private Guna.UI2.WinForms.Guna2Button btnKhachHang;
         private Guna.UI2.WinForms.Guna2Button btnBaoCaoThongKe;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2Panel panelHienThi;
     }
 }

@@ -3,6 +3,7 @@ using DTO_QuanLyVatTu;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,10 +12,10 @@ namespace DAL_QuanLyVatTu
 {
     public class DAL_KhachHang
     {
-        public List<KhachHang> SelectBySql(string sql, List<object> args)
+        public List<KhachHang> SelectBySql(string sql, List<Object> args, CommandType cmdType)
         {
             List<KhachHang> list = new List<KhachHang>();
-            SqlDataReader reader = DBUtil.Query(sql, args);
+            SqlDataReader reader = DBUtil.Query(sql, args, CommandType.Text);
             while (reader.Read())
             {
                 KhachHang kh = new KhachHang
@@ -35,7 +36,7 @@ namespace DAL_QuanLyVatTu
         public List<KhachHang> SelectAll()
         {
             string sql = "SELECT * FROM KhachHang";
-            return SelectBySql(sql, new List<object>());
+            return SelectBySql(sql, new List<object>(), CommandType.Text);
         }
 
         public string Insert(KhachHang kh)

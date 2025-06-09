@@ -47,7 +47,7 @@ namespace GUI_QuanLyVatTu
             };
 
             string addResult = busLoai.Add(loai);
-            if (addResult == "Success") // Assuming "Success" indicates successful addition
+            if (addResult == "Success")
             {
                 MessageBox.Show("Thêm thành công!");
                 LamMoi();
@@ -74,7 +74,7 @@ namespace GUI_QuanLyVatTu
             };
 
             string updateResult = busLoai.Update(loai);
-            if (updateResult == "Success") // Assuming "Success" indicates successful update
+            if (updateResult == "Success")
             {
                 MessageBox.Show("Cập nhật thành công!");
                 LamMoi();
@@ -93,7 +93,7 @@ namespace GUI_QuanLyVatTu
             if (result == DialogResult.Yes)
             {
                 string deleteResult = busLoai.Delete(maLoai);
-                if (deleteResult == "Success") // Assuming "Success" indicates successful deletion
+                if (deleteResult == "Success")
                 {
                     MessageBox.Show("Xoá thành công!");
                     LamMoi();
@@ -135,7 +135,6 @@ namespace GUI_QuanLyVatTu
                 dtpNgayTao.Value = Convert.ToDateTime(row.Cells["NgayTao"].Value);
                 txtGhiChu.Text = row.Cells["GhiChu"].Value?.ToString();
 
-                // Cập nhật trạng thái nút
                 btnThem.Enabled = false;
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;

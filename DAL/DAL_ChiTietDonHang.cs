@@ -3,18 +3,17 @@ using DTO_QuanLyVatTu;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace DAL_QuanLyVatTu
 {
     public class DAL_ChiTietDonHang
     {
-        public List<ChiTietDonHang> SelectBySql(string sql, List<object> args)
+        public List<ChiTietDonHang> SelectBySql(string sql, List<object> args, CommandType cmdType)
         {
             List<ChiTietDonHang> list = new List<ChiTietDonHang>();
-            SqlDataReader reader = DBUtil.Query(sql, args);
+            SqlDataReader reader = DBUtil.Query(sql, args, cmdType); // Sửa lại để cmdType được truyền đúng
+
             while (reader.Read())
             {
                 ChiTietDonHang ct = new ChiTietDonHang
@@ -28,19 +27,20 @@ namespace DAL_QuanLyVatTu
                 };
                 list.Add(ct);
             }
+            reader.Close(); // Đừng quên đóng reader!
             return list;
         }
 
         public List<ChiTietDonHang> SelectAll()
         {
             string sql = "SELECT * FROM ChiTietDonHang";
-            return SelectBySql(sql, new List<object>());
+            return SelectBySql(sql, new List<object>(), CommandType.Text);
         }
 
         public List<ChiTietDonHang> SelectByDonHangID(string donHangID)
         {
             string sql = "SELECT * FROM ChiTietDonHang WHERE DonHangID = @0";
-            return SelectBySql(sql, new List<object> { donHangID });
+            return SelectBySql(sql, new List<object> { donHangID }, CommandType.Text);
         }
 
         public string Insert(ChiTietDonHang ct)
