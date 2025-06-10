@@ -18,20 +18,6 @@ namespace BLL_QuanLyVatTu
             return dal.SelectAll();
         }
 
-        public string Add(LoaiVatTu lvt)
-        {
-            if (string.IsNullOrEmpty(lvt.TenLoaiVatTu))
-                return "Tên loại vật tư không được để trống.";
-
-            return dal.Insert(lvt);
-        }
-
-        public string Update(LoaiVatTu loai)
-        {
-            string result = dal.Update(loai); // gọi DAL  
-            return result == "Success" ? "Success" : "Fail";
-        }
-
         public string Delete(string id)
         {
             string result = dal.Delete(id); // gọi DAL  
@@ -53,6 +39,20 @@ namespace BLL_QuanLyVatTu
                 "%" + keyword + "%"
             };
             return dal.SelectBySql(sql, args, CommandType.Text);
+        }
+
+        public string Add(DTO_LoaiVatTu loai)
+        {
+            if (string.IsNullOrEmpty(loai.TenLoaiVatTu))
+                return "Tên loại vật tư không được để trống.";
+
+            return dal.Insert(loai);
+        }
+
+        public string Update(DTO_LoaiVatTu loai)
+        {
+            string result = dal.Update(loai); // gọi DAL  
+            return result == "Success" ? "Success" : "Fail";
         }
     }
 }

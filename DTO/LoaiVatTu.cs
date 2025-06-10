@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO_QuanLyVatTu
 {
-    public class LoaiVatTu
+    public class DTO_LoaiVatTu
     {
         public string LoaiVatTuID { get; set; }
         public string TenLoaiVatTu { get; set; }

@@ -12,7 +12,7 @@ namespace DAL_PolyCafe
     public class DBUtil
     {
         //Khai báo biến kết nối CSDL
-        private static string connString = @"Data Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private static string connString = @"Data Source=DESKTOP-RV9L127\ZUKA;Initial Catalog=Xuong_QuanLyVatTu_TB01820;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
 
         //<summary> xây dụng SqlCommand
         public static SqlCommand GetCommand(string sql, List<Object> args, CommandType cmdType)

@@ -39,43 +39,6 @@ namespace DAL_QuanLyVatTu
             return SelectBySql(sql, new List<object>(), CommandType.Text);
         }
 
-        public string Insert(LoaiVatTu lvt)
-        {
-            try
-            {
-                string sql = "INSERT INTO LoaiVatTu (LoaiVatTuID, TenLoaiVatTu, NgayTao, GhiChu) VALUES (@0, @1, @2, @3)";
-                List<object> args = new List<object>
-                {
-                    lvt.LoaiVatTuID, lvt.TenLoaiVatTu, lvt.NgayTao, lvt.GhiChu
-                };
-                DBUtil.Update(sql, args);
-                return "Success";
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-        }
-
-        public string Update(LoaiVatTu lvt)
-        {
-            try
-            {
-                string sql = "UPDATE LoaiVatTu SET TenLoaiVatTu = @1, NgayTao = @2, GhiChu = @3 WHERE LoaiVatTuID = @0";
-                List<object> args = new List<object>
-        {
-            lvt.LoaiVatTuID, lvt.TenLoaiVatTu, lvt.NgayTao, lvt.GhiChu
-        };
-                DBUtil.Update(sql, args);
-                return "Success";
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-
-        }
-
         public string Delete(string id)
         {
             try
@@ -105,6 +68,42 @@ namespace DAL_QuanLyVatTu
                 }
             }
             return prefix + "001";
+        }
+
+        public string Insert(DTO_LoaiVatTu loai)
+        {
+            try
+            {
+                string sql = "INSERT INTO LoaiVatTu (LoaiVatTuID, TenLoaiVatTu, NgayTao, GhiChu) VALUES (@0, @1, @2, @3)";
+                List<object> args = new List<object>
+                {
+                    loai.LoaiVatTuID, loai.TenLoaiVatTu, loai.NgayTao, loai.GhiChu
+                };
+                DBUtil.Update(sql, args);
+                return "Success";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        public string Update(DTO_LoaiVatTu loai)
+        {
+            try
+            {
+                string sql = "UPDATE LoaiVatTu SET TenLoaiVatTu = @1, NgayTao = @2, GhiChu = @3 WHERE LoaiVatTuID = @0";
+                List<object> args = new List<object>
+        {
+            loai.LoaiVatTuID, loai.TenLoaiVatTu, loai.NgayTao, loai.GhiChu
+        };
+                DBUtil.Update(sql, args);
+                return "Success";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
     }
 }

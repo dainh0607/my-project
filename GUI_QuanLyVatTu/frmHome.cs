@@ -244,5 +244,42 @@ namespace GUI_QuanLyVatTu
             frmQL_VatTu.ShowDialog();
             this.Show();
         }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            frmQL_NhanVien frmQL_VatTu = new frmQL_NhanVien();
+            this.Hide();
+            frmQL_VatTu.ShowDialog();
+            this.Show();
+        }
+
+        private void btnQuanLyPhieuBan_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQL_ChiTietDonHang frmQL_VatTu = new frmQL_ChiTietDonHang();
+            frmQL_VatTu.ShowDialog();
+            this.Show();
+        }
+
+        private void btnBaoCaoThongKe_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmThongKeDoanhThuTheoVatTu frmQL_VatTu = new frmThongKeDoanhThuTheoVatTu();
+            frmQL_VatTu.ShowDialog();
+            this.Show();
+        }
+
+        private void btnVatTu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQL_VatTu frmQL_VatTu = new frmQL_VatTu();
+            frmQL_VatTu.ShowDialog();
+            this.Show();
+        }
+
+        private void btnQuanLy_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

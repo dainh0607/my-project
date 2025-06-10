@@ -285,6 +285,24 @@ namespace GUI_QuanLyVatTu
             }
         }
 
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void txtGhiChu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
