@@ -70,7 +70,7 @@ namespace DAL_QuanLyVatTu
             return prefix + "001";
         }
 
-        public string Insert(DTO_LoaiVatTu loai)
+        public string Insert(LoaiVatTu loai)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace DAL_QuanLyVatTu
             }
         }
 
-        public string Update(DTO_LoaiVatTu loai)
+        public string Update(LoaiVatTu loai)
         {
             try
             {

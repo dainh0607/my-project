@@ -1,4 +1,5 @@
 ﻿using BLL_QuanLyVatTu;
+using DAL_QuanLyVatTu;
 using DTO_QuanLyVatTu;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace GUI_QuanLyVatTu
     public partial class frmQL_LoaiVatTu : Form
     {
         BUSLoaiVatTu busLoai = new BUSLoaiVatTu();
-        List<DTO_LoaiVatTu> danhSachLoai = new List<DTO_LoaiVatTu>();
+        List<LoaiVatTu> danhSachLoai = new List<LoaiVatTu>();
         public frmQL_LoaiVatTu()
         {
             InitializeComponent();
@@ -23,14 +24,7 @@ namespace GUI_QuanLyVatTu
 
         void LamMoi()
         {
-            danhSachLoai = busLoai.GetAll()
-                .Select(x => new DTO_LoaiVatTu
-                {
-                    LoaiVatTuID = x.LoaiVatTuID,
-                    TenLoaiVatTu = x.TenLoaiVatTu,
-                    NgayTao = x.NgayTao,
-                    GhiChu = x.GhiChu
-                }).ToList();
+            danhSachLoai = busLoai.GetAll();
             dgvLoaiVatTu.DataSource = danhSachLoai;
 
             txtLoaiVatTu.Text = busLoai.GenerateID();
@@ -45,7 +39,7 @@ namespace GUI_QuanLyVatTu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            var loai = new DTO_LoaiVatTu
+            var loai = new LoaiVatTu
             {
                 LoaiVatTuID = txtLoaiVatTu.Text,
                 TenLoaiVatTu = txtTenLoaiVatTu.Text.Trim(),
@@ -72,7 +66,7 @@ namespace GUI_QuanLyVatTu
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            var loai = new DTO_LoaiVatTu
+            var loai = new LoaiVatTu
             {
                 LoaiVatTuID = txtLoaiVatTu.Text,
                 TenLoaiVatTu = txtTenLoaiVatTu.Text.Trim(),

@@ -106,13 +106,4 @@ namespace DAL_QuanLyVatTu
             return list;
         }
     }
-
-    // DTO phụ cho loại vật tư
-    public class LoaiVatTu
-    {
-        public string LoaiVatTuID { get; set; }
-        public string TenLoaiVatTu { get; set; }
-        public DateTime NgayTao { get; internal set; }
-        public string? GhiChu { get; internal set; }
-    }
 }

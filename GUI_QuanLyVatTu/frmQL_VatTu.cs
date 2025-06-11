@@ -294,5 +294,10 @@ namespace GUI_QuanLyVatTu
                 btnXoa.Enabled = true;
             }
         }
+
+        private void guna2HtmlLabel9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

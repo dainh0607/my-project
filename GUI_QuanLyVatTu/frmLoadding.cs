@@ -25,9 +25,9 @@ namespace GUI_QuanLyVatTu
                 this.Close();
             }
             else
-            {  
-            guna2CircleProgressBar1.Value += 2;
-            label_val.Text = (Convert.ToInt32(label_val.Text) + 2).ToString();
+            {
+                guna2CircleProgressBar1.Value += 2;
+                label_val.Text = (Convert.ToInt32(label_val.Text) + 2).ToString();
             }
         }
 
@@ -38,8 +38,12 @@ namespace GUI_QuanLyVatTu
 
         private void frmLoadding_Load(object sender, EventArgs e)
         {
-            guna2ShadowForm1.SetShadowForm(this);
             timer1.Start();
+        }
+
+        private void label_val_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

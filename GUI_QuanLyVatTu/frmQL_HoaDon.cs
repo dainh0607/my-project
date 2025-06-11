@@ -21,5 +21,10 @@ namespace GUI_QuanLyVatTu
         {
 
         }
+
+        private void btnThemHoaDon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

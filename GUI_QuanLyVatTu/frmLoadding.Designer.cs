@@ -116,6 +116,7 @@
             label_val.Size = new Size(84, 96);
             label_val.TabIndex = 2;
             label_val.Text = "0";
+            label_val.Click += label_val_Click;
             // 
             // label1
             // 

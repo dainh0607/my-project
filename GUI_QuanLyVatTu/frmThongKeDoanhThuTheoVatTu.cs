@@ -14,7 +14,7 @@ namespace GUI_QuanLyVatTu
 {
     public partial class frmThongKeDoanhThuTheoVatTu : Form
     {
-        private BUS_ThongKeDoanhThuTheoVatTu busTKDT = new BUS_ThongKeDoanhThuTheoVatTu();
+        private BUSThongKeDoanhThuTheoVatTu busTKDT = new BUSThongKeDoanhThuTheoVatTu();
 
         public frmThongKeDoanhThuTheoVatTu()
         {

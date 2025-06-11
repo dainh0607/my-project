@@ -1,4 +1,5 @@
-﻿using DAL_QuanLyVatTu;
+﻿
+using DAL_QuanLyVatTu;
 using DTO_QuanLyVatTu;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,7 @@ namespace BLL_QuanLyVatTu
             return dal.SelectBySql(sql, args, CommandType.Text);
         }
 
-        public string Add(DTO_LoaiVatTu loai)
+        public string Add(LoaiVatTu loai)
         {
             if (string.IsNullOrEmpty(loai.TenLoaiVatTu))
                 return "Tên loại vật tư không được để trống.";
@@ -49,7 +50,7 @@ namespace BLL_QuanLyVatTu
             return dal.Insert(loai);
         }
 
-        public string Update(DTO_LoaiVatTu loai)
+        public string Update(LoaiVatTu loai)
         {
             string result = dal.Update(loai); // gọi DAL  
             return result == "Success" ? "Success" : "Fail";
