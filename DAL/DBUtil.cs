@@ -11,10 +11,8 @@ namespace DAL_PolyCafe
 {
     public class DBUtil
     {
-        //Khai báo biến kết nối CSDL
-        private static string connString = @"Data Source=DESKTOP-RV9L127\ZUKA;Initial Catalog=Xuong_QuanLyVatTu_TB01820;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+        private static string connString = @"Data Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
 
-        //<summary> xây dụng SqlCommand
         public static SqlCommand GetCommand(string sql, List<Object> args, CommandType cmdType)
         {
             SqlConnection conn = new SqlConnection(connString);
@@ -22,12 +20,12 @@ namespace DAL_PolyCafe
             cmd.CommandType = cmdType;
             for (int i = 0; i < args.Count; i++)
             {
-                cmd.Parameters.AddWithValue($"@{i}", args[i]);
+                cmd.Parameters.AddWithValue($"@{i
+    }", args[i]);
             }
             return cmd;
         }
 
-        //<summary>Thực hiện lệnh SQL thao tác Insert-Delete-Update
         public static void Update(string sql, List<Object> args, CommandType cmdType = CommandType.Text)
         {
             SqlCommand cmd = GetCommand(sql, args, cmdType);
@@ -45,7 +43,6 @@ namespace DAL_PolyCafe
             }
         }
 
-        //<summary>Thực hiện lệnh SQL thao tác truy vấn (select) dữ liệu
         public static SqlDataReader Query(string sql, List<Object> args, CommandType cmdType = CommandType.Text)
         {
             try
@@ -60,7 +57,6 @@ namespace DAL_PolyCafe
             }
         }
 
-        //<summary>Thực hiện lệnh SQL thao tác truy vấn (select) dữ liệu
         public static T Value<T>(string sql, List<Object> args, CommandType cmdType = CommandType.Text) where T : new() 
         {
             try
@@ -99,7 +95,7 @@ namespace DAL_PolyCafe
         {
             SqlCommand cmd = GetCommand(sql, args, cmdType);
             cmd.Connection.Open();
-            return cmd.ExecuteScalar(); // Lấy 1 giá trị
+            return cmd.ExecuteScalar();
         }
 
     }
