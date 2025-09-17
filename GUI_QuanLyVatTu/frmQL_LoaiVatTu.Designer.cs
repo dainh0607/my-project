@@ -264,6 +264,7 @@
             dtpNgayTao.CustomizableEdges = customizableEdges9;
             dtpNgayTao.FillColor = Color.FromArgb(192, 255, 192);
             dtpNgayTao.Font = new Font("Segoe UI", 9F);
+            dtpNgayTao.ForeColor = Color.Black;
             dtpNgayTao.Format = DateTimePickerFormat.Long;
             dtpNgayTao.Location = new Point(31, 178);
             dtpNgayTao.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);

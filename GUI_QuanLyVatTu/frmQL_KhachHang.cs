@@ -16,5 +16,10 @@ namespace GUI_QuanLyVatTu
         {
             InitializeComponent();
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

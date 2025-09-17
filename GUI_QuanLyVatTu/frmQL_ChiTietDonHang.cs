@@ -282,5 +282,10 @@ namespace GUI_QuanLyVatTu
                 MessageBox.Show("Lỗi: " + result, "Thông báo lỗi");
             }
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

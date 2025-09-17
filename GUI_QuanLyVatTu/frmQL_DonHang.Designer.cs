@@ -529,10 +529,12 @@
             // 
             // dtpNgayDat
             // 
+            dtpNgayDat.BorderRadius = 10;
             dtpNgayDat.Checked = true;
             dtpNgayDat.CustomizableEdges = customizableEdges25;
-            dtpNgayDat.FillColor = Color.White;
+            dtpNgayDat.FillColor = Color.Lavender;
             dtpNgayDat.Font = new Font("Segoe UI", 9F);
+            dtpNgayDat.ForeColor = Color.Black;
             dtpNgayDat.Format = DateTimePickerFormat.Long;
             dtpNgayDat.Location = new Point(14, 151);
             dtpNgayDat.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
