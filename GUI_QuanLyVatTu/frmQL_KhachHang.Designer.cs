@@ -239,6 +239,7 @@
             btnTimKiem.Size = new Size(110, 33);
             btnTimKiem.TabIndex = 27;
             btnTimKiem.Text = " Tìm kiếm";
+            btnTimKiem.Click += btnTimKiem_Click;
             // 
             // guna2BorderlessForm1
             // 

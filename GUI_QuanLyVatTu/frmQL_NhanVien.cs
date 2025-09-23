@@ -133,7 +133,6 @@ namespace GUI_QuanLyVatTu
                 SoDienThoai = txtSDT.Text.Trim(),
                 Email = txtEmail.Text.Trim(),
                 MatKhau = txtMatKhau.Text.Trim(),
-                GhiChu = txtGhiChu.Text.Trim(),
                 VaiTro = rdoQuanLy.Checked,
                 TinhTrang = rdoHoatDong.Checked
             };

@@ -117,7 +117,7 @@ namespace GUI_QuanLyVatTu
 
             if (string.IsNullOrEmpty(keyword))
             {
-                LamMoi(); // Hiển thị lại toàn bộ
+                LamMoi(); 
                 return;
             }
 

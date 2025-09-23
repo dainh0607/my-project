@@ -12,7 +12,6 @@ namespace DAL_QuanLyVatTu
 {
     public class DAL_NhanVien
     {
-        // Fix for CS0103: Declare and initialize 'dalNhanVien'  
         private static DAL_NhanVien dalNhanVien = new DAL_NhanVien();
 
         public NhanVien getNhanVien1(string email, string password)
@@ -31,7 +30,6 @@ namespace DAL_QuanLyVatTu
                     nv.HoTen = reader["HoTen"].ToString();
                     nv.ChucVu = reader["ChucVu"].ToString();
                     nv.SoDienThoai = reader["SoDienThoai"].ToString();
-                    nv.GhiChu = reader["GhiChu"].ToString();
                     nv.VaiTro = bool.Parse(reader["VaiTro"].ToString());
                     nv.TinhTrang = bool.Parse(reader["TinhTrang"].ToString());
                     nv.Email = reader["Email"].ToString();
@@ -65,7 +63,6 @@ namespace DAL_QuanLyVatTu
                     entity.HoTen = reader["HoTen"].ToString();
                     entity.ChucVu = reader["ChucVu"].ToString();
                     entity.SoDienThoai = reader["SoDienThoai"].ToString();
-                    entity.GhiChu = reader["GhiChu"].ToString();
                     entity.VaiTro = bool.Parse(reader["VaiTro"].ToString());
                     entity.TinhTrang = bool.Parse(reader["TinhTrang"].ToString());
                     entity.Email = reader["Email"].ToString();
@@ -97,7 +94,6 @@ namespace DAL_QuanLyVatTu
                 thamSo.Add(nv.HoTen);
                 thamSo.Add(nv.ChucVu);
                 thamSo.Add(nv.SoDienThoai);
-                thamSo.Add(nv.GhiChu);
                 thamSo.Add(nv.VaiTro);
                 thamSo.Add(nv.TinhTrang);
                 thamSo.Add(nv.Email);
@@ -149,8 +145,8 @@ namespace DAL_QuanLyVatTu
         {
             try
             {
-                string sql = "INSERT INTO NhanVien (NhanVienID, HoTen, ChucVu, SoDienThoai, GhiChu, VaiTro, TinhTrang, Email, MatKhau) VALUES (@0, @1, @2, @3, @4, @5, @6, @7, @8)";
-                List<object> args = new List<object> { nv.NhanVienID, nv.HoTen, nv.ChucVu, nv.SoDienThoai, nv.GhiChu, nv.VaiTro, nv.TinhTrang, nv.Email, nv.MatKhau };
+                string sql = "INSERT INTO NhanVien (NhanVienID, HoTen, ChucVu, SoDienThoai, VaiTro, TinhTrang, Email, MatKhau) VALUES (@0, @1, @2, @3, @4, @5, @6, @7)";
+                List<object> args = new List<object> { nv.NhanVienID, nv.HoTen, nv.ChucVu, nv.SoDienThoai, nv.VaiTro, nv.TinhTrang, nv.Email, nv.MatKhau };
                 DBUtil.Update(sql, args);
                 return null;
             }
@@ -166,8 +162,7 @@ namespace DAL_QuanLyVatTu
            NhanVienID LIKE @kw OR  
            HoTen LIKE @kw OR  
            ChucVu LIKE @kw OR  
-           SoDienThoai LIKE @kw OR  
-           GhiChu LIKE @kw";
+           SoDienThoai LIKE @kw";
             var args = new List<object> { "%" + keyword + "%" };
             return dalNhanVien.SelectBySql(sql, args);
         }
