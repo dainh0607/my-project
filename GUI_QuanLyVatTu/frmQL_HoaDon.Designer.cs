@@ -349,6 +349,7 @@
             txtHoaDonID.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txtHoaDonID.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtHoaDonID.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtHoaDonID.Enabled = false;
             txtHoaDonID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtHoaDonID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtHoaDonID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
@@ -357,6 +358,7 @@
             txtHoaDonID.Name = "txtHoaDonID";
             txtHoaDonID.PasswordChar = '\0';
             txtHoaDonID.PlaceholderText = "Mã hóa đơn";
+            txtHoaDonID.ReadOnly = true;
             txtHoaDonID.SelectedText = "";
             txtHoaDonID.ShadowDecoration.CustomizableEdges = customizableEdges22;
             txtHoaDonID.Size = new Size(202, 33);
@@ -494,6 +496,7 @@
             txtKhachHangID.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txtKhachHangID.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtKhachHangID.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtKhachHangID.Enabled = false;
             txtKhachHangID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtKhachHangID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtKhachHangID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
@@ -502,6 +505,7 @@
             txtKhachHangID.Name = "txtKhachHangID";
             txtKhachHangID.PasswordChar = '\0';
             txtKhachHangID.PlaceholderText = "Mã khách hàng";
+            txtKhachHangID.ReadOnly = true;
             txtKhachHangID.SelectedText = "";
             txtKhachHangID.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txtKhachHangID.Size = new Size(263, 33);
