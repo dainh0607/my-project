@@ -43,12 +43,32 @@ namespace GUI_QuanLyVatTu
             cboDonHangID.DataSource = list;
             cboDonHangID.DisplayMember = "DonHangID";
             cboDonHangID.ValueMember = "DonHangID";
+            cboDonHangID.SelectedIndex = -1;
+
+            cboDonHangID.SelectedIndexChanged -= cboDonHangID_SelectedIndexChanged;
+            cboDonHangID.SelectedIndexChanged += cboDonHangID_SelectedIndexChanged;
         }
 
         private void LoadComboThanhToan()
         {
             cboThanhToan.DataSource = DAL_HoaDon.PaymentMethods;
         }
+
+        private void cboDonHangID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboDonHangID.SelectedItem is DonHang selectedDonHang)
+            {
+                txtKhachHangID.Text = selectedDonHang.KhachHangID ?? "";
+                return;
+            }
+            if (cboDonHangID.SelectedItem is DataRowView drv)
+            {
+                txtKhachHangID.Text = drv["KhachHangID"]?.ToString() ?? "";
+                return;
+            }
+            txtKhachHangID.Clear();
+        }
+
 
         private void btnThemHoaDon_Click(object sender, EventArgs e)
         {
@@ -116,8 +136,7 @@ namespace GUI_QuanLyVatTu
                 return;
             }
 
-            DialogResult confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa hóa đơn này?",
-                                                   "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa hóa đơn này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (confirm == DialogResult.No) return;
 
             string result = busHoaDon.Delete(txtHoaDonID.Text);
@@ -146,6 +165,8 @@ namespace GUI_QuanLyVatTu
             if (cboDonHangID.Items.Count > 0) cboDonHangID.SelectedIndex = 0;
             if (cboThanhToan.Items.Count > 0) cboThanhToan.SelectedIndex = 0;
             dtpNgayThanhToan.Value = DateTime.Now;
+
+            dgvHoaDon.ClearSelection();
         }
 
         private void btnTimKiemHoaDon_Click(object sender, EventArgs e)
@@ -164,15 +185,6 @@ namespace GUI_QuanLyVatTu
 
             dgvHoaDon.DataSource = null;
             dgvHoaDon.DataSource = result;
-        }
-
-        private void cboDonHangID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboDonHangID.SelectedValue == null) return;
-            string donHangId = cboDonHangID.SelectedValue.ToString();
-            DAL_DonHang dalDonHang = new DAL_DonHang();
-            string khId = dalDonHang.GetKhachHangIDByDonHangID(donHangId);
-            txtKhachHangID.Text = khId;
         }
 
 

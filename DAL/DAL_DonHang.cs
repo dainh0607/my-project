@@ -3,6 +3,7 @@ using DTO_QuanLyVatTu;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -120,5 +121,28 @@ namespace DAL_QuanLyVatTu
             object result = DBUtil.ScalarQuery(sql, new List<object> { donHangId });
             return result?.ToString();
         }
+
+        public DonHang GetByID(string id)
+        {
+            string query = "SELECT * FROM DonHang WHERE DonHangID = @id";
+            SqlParameter[] parameters = { new SqlParameter("@id", id) };
+            DataTable dt = DBUtil.ExecuteQuery(query, parameters);
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                return new DonHang
+                {
+                    DonHangID = row["DonHangID"].ToString(),
+                    KhachHangID = row["KhachHangID"].ToString(),
+                    NhanVienID = row["NhanVienID"].ToString(),
+                    NgayDat = Convert.ToDateTime(row["NgayDat"]),
+                    TrangThai = row["TrangThai"].ToString(),
+                    GhiChu = row["GhiChu"].ToString()
+                };
+            }
+            return null;
+        }
+
     }
 }

@@ -98,5 +98,23 @@ namespace DAL_PolyCafe
             return cmd.ExecuteScalar();
         }
 
+        public static DataTable ExecuteQuery(string sql, SqlParameter[] parameters, CommandType cmdType = CommandType.Text)
+        {
+            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.CommandType = cmdType;
+                if (parameters != null)
+                {
+                    cmd.Parameters.AddRange(parameters);
+                }
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
+
     }
 }

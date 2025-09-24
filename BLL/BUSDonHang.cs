@@ -42,5 +42,11 @@ namespace BLL_QuanLyVatTu
         {
             return dal.GenerateID();
         }
+
+        public DonHang GetByID(string id)
+        {
+            return dal.GetByID(id);
+        }
+
     }
 }
