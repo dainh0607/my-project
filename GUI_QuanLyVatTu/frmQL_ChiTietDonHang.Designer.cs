@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -68,9 +70,8 @@
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            btnThoat = new Guna.UI2.WinForms.Guna2GradientButton();
             btnSua = new Guna.UI2.WinForms.Guna2GradientButton();
             cboTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
             txtDonGia = new Guna.UI2.WinForms.Guna2TextBox();
@@ -94,7 +95,6 @@
             guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             dgvChiTietVatTu = new Guna.UI2.WinForms.Guna2DataGridView();
-            btnThoat = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2GroupBox1.SuspendLayout();
             guna2GroupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvChiTietDonHang).BeginInit();
@@ -132,6 +132,29 @@
             guna2GroupBox1.Size = new Size(1115, 286);
             guna2GroupBox1.TabIndex = 52;
             guna2GroupBox1.Text = "Hệ Thống Quản Lý Chi Tiết Đơn Hàng";
+            // 
+            // btnThoat
+            // 
+            btnThoat.BackColor = Color.Transparent;
+            btnThoat.BorderRadius = 10;
+            btnThoat.CustomizableEdges = customizableEdges1;
+            btnThoat.DisabledState.BorderColor = Color.DarkGray;
+            btnThoat.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnThoat.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnThoat.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            btnThoat.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnThoat.FillColor = Color.Crimson;
+            btnThoat.FillColor2 = Color.FromArgb(255, 192, 192);
+            btnThoat.Font = new Font("Segoe UI", 9F);
+            btnThoat.ForeColor = Color.White;
+            btnThoat.Location = new Point(1007, 223);
+            btnThoat.Margin = new Padding(2);
+            btnThoat.Name = "btnThoat";
+            btnThoat.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnThoat.Size = new Size(86, 46);
+            btnThoat.TabIndex = 45;
+            btnThoat.Text = "Thoát";
+            btnThoat.Click += btnThoat_Click;
             // 
             // btnSua
             // 
@@ -552,6 +575,7 @@
             dgvChiTietDonHang.ThemeStyle.RowsStyle.Height = 33;
             dgvChiTietDonHang.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvChiTietDonHang.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvChiTietDonHang.CellContentClick += dgvChiTietDonHang_CellContentClick;
             dgvChiTietDonHang.CellDoubleClick += dgvChiTietDonHang_CellDoubleClick;
             // 
             // guna2BorderlessForm2
@@ -638,30 +662,8 @@
             dgvChiTietVatTu.ThemeStyle.RowsStyle.Height = 33;
             dgvChiTietVatTu.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvChiTietVatTu.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvChiTietVatTu.CellContentClick += dgvChiTietVatTu_CellContentClick;
             dgvChiTietVatTu.CellDoubleClick += dgvChiTietVatTu_CellDoubleClick;
-            // 
-            // btnThoat
-            // 
-            btnThoat.BackColor = Color.Transparent;
-            btnThoat.BorderRadius = 10;
-            btnThoat.CustomizableEdges = customizableEdges1;
-            btnThoat.DisabledState.BorderColor = Color.DarkGray;
-            btnThoat.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnThoat.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnThoat.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
-            btnThoat.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnThoat.FillColor = Color.Crimson;
-            btnThoat.FillColor2 = Color.FromArgb(255, 192, 192);
-            btnThoat.Font = new Font("Segoe UI", 9F);
-            btnThoat.ForeColor = Color.White;
-            btnThoat.Location = new Point(1007, 223);
-            btnThoat.Margin = new Padding(2);
-            btnThoat.Name = "btnThoat";
-            btnThoat.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnThoat.Size = new Size(86, 46);
-            btnThoat.TabIndex = 45;
-            btnThoat.Text = "Thoát";
-            btnThoat.Click += btnThoat_Click;
             // 
             // frmQL_ChiTietDonHang
             // 

@@ -92,6 +92,8 @@ namespace DAL_QuanLyVatTu
 
         public string Delete(string id)
         {
+            if(string.IsNullOrWhiteSpace(id))
+                return "Mã chi tiết đơn hàng không hợp lệ.";
             try
             {
                 string sql = "DELETE FROM ChiTietDonHang WHERE ChiTietDonHangID = @0";
