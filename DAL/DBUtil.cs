@@ -11,7 +11,7 @@ namespace DAL_PolyCafe
 {
     public class DBUtil
     {
-        private static string connString = @"Data Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+        private static string connString = @"Data Source=THOAN2410;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
         public static SqlCommand GetCommand(string sql, List<Object> args, CommandType cmdType)
         {
             SqlConnection conn = new SqlConnection(connString);

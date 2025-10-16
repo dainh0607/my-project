@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BLL_QuanLyVatTu.BUSNhaCungCap;
 
 namespace GUI_QuanLyVatTu
 {
@@ -55,7 +56,7 @@ namespace GUI_QuanLyVatTu
             }
             else
             {
-                MessageBox.Show("Thêm thất bại! Kiểm tra lại dữ liệu.");
+                MessageBox.Show(addResult, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
