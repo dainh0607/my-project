@@ -9,14 +9,11 @@ namespace GUI_QuanLyVatTu
     public partial class frmDangNhap : Form
     {
         BUSNhanVien BUSNhanVien = new BUSNhanVien();
+        BUSDangNhap BUSDangNhap = new BUSDangNhap();
 
         public frmDangNhap()
         {
             InitializeComponent();
-
-
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,37 +24,59 @@ namespace GUI_QuanLyVatTu
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string username = txtEmail.Text;
-            string password = txtMatKhau.Text;
-            NhanVien nv = BUSNhanVien.DangNhap(username, password);
-            if (nv == null)
+            try
             {
-                MessageBox.Show(this, "Tài khoản hoặc mật khẩu không chính xác");
-                return;
+                string email = txtEmail.Text.Trim();
+                string matKhau = txtMatKhau.Text.Trim();
+
+                BUSDangNhap busDangNhap = new BUSDangNhap();
+                string ketQua = busDangNhap.KiemTraDangNhap(email, matKhau);
+                if (ketQua != "Đăng nhập thành công!")
+                {
+                    MessageBox.Show(this, ketQua, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DAL_NhanVien dalNhanVien = new DAL_NhanVien();
+                NhanVien nv = dalNhanVien.getNhanVien1(email, matKhau);
+
+                if (nv == null)
+                {
+                    MessageBox.Show(this, "Tài khoản hoặc mật khẩu không chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!nv.TinhTrang)
+                {
+                    MessageBox.Show(this, "Tài khoản đã ngưng hoạt động, vui lòng liên hệ quản lý.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (chkGhiNhoMatKhau.Checked)
+                {
+                    Properties.Settings.Default.SavedTaiKhoan = txtEmail.Text;
+                    Properties.Settings.Default.SavedMatKhau = txtMatKhau.Text;
+                }
+                else
+                {
+                    Properties.Settings.Default.SavedTaiKhoan = "";
+                    Properties.Settings.Default.SavedMatKhau = "";
+                }
+
+                Properties.Settings.Default.Save();
+                AuthUtil.user = nv;
+                frmLoadding frmLoadding = new frmLoadding();
+                frmLoadding.ShowDialog();
+
+                frmHome formHome = new frmHome(nv);
+                this.Hide();
+                formHome.ShowDialog();
+                this.Show();
             }
-            if (!nv.TinhTrang)
+            catch (Exception ex)
             {
-                MessageBox.Show(this, "Tài khoản đã ngưng hoạt động, vui lòng liên hệ quản lý.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show(this, "Lỗi đăng nhập: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (chkGhiNhoMatKhau.Checked)
-            {
-                Properties.Settings.Default.SavedTaiKhoan = txtEmail.Text;
-                Properties.Settings.Default.SavedMatKhau = txtMatKhau.Text;
-            }
-            else
-            {
-                Properties.Settings.Default.SavedTaiKhoan = "";
-                Properties.Settings.Default.SavedMatKhau = "";
-            }
-            Properties.Settings.Default.Save(); // Ghi nhớ mật khẩu
-            AuthUtil.user = nv;
-            frmLoadding frmLoadding = new frmLoadding();
-            frmLoadding.ShowDialog();
-            frmHome formHome = new frmHome(nv); // Pass the required 'NhanVien' parameter
-            this.Hide();
-            formHome.ShowDialog();
-            this.Show();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

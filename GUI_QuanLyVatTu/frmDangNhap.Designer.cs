@@ -194,7 +194,7 @@
             chkGhiNhoMatKhau.Name = "chkGhiNhoMatKhau";
             chkGhiNhoMatKhau.Size = new Size(182, 27);
             chkGhiNhoMatKhau.TabIndex = 8;
-            chkGhiNhoMatKhau.Text = "Ghi nhớ mật khẩu";
+            chkGhiNhoMatKhau.Text = "Ghi nhớ tài khoản";
             chkGhiNhoMatKhau.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
             chkGhiNhoMatKhau.UncheckedState.BorderRadius = 0;
             chkGhiNhoMatKhau.UncheckedState.BorderThickness = 0;
