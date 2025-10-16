@@ -433,6 +433,7 @@
             dgvDonHang.ThemeStyle.RowsStyle.Height = 33;
             dgvDonHang.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvDonHang.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            
             dgvDonHang.CellDoubleClick += dgvDonHang_CellDoubleClick;
             // 
             // guna2GroupBox4

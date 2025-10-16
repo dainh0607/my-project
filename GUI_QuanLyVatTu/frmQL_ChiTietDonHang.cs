@@ -22,28 +22,11 @@ namespace GUI_QuanLyVatTu
             InitializeComponent();
         }
 
-        private void InitChiTietPhieuTable()
-        {
-            dtChiTietPhieu.Columns.Add("VatTuID");
-            dtChiTietPhieu.Columns.Add("TenVatTu");
-            dtChiTietPhieu.Columns.Add("SoLuong");
-            dtChiTietPhieu.Columns.Add("DonGia");
-
-            dgvChiTietDonHang.DataSource = dtChiTietPhieu;
-        }
-
+       
         private void LoadData()
         {
-            if (string.IsNullOrWhiteSpace(DonHangID))
-            {
-                dgvChiTietDonHang.DataSource = null;
-                return;
-            }
-            var list = busChiTietDonHang.GetByDonHangID(DonHangID);
-            dgvChiTietDonHang.DataSource = list;
-
-            dgvChiTietDonHang.Columns["TrangThai"].Visible = false;
-            dgvChiTietDonHang.Columns["TrangThaiText"].HeaderText = "Trạng Thái";
+            dgvChiTietDonHang.DataSource = busChiTietDonHang.GetAll();
+            dgvChiTietDonHang.ClearSelection();
         }
 
         private void LoadComboBoxTrangThai()
@@ -202,8 +185,9 @@ namespace GUI_QuanLyVatTu
             DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa toàn bộ vật tư đã chọn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                dtChiTietPhieu.Clear();
+                busChiTietDonHang.Delete(txtMaChiTietDonHang.Text);
                 MessageBox.Show("Đã xóa toàn bộ vật tư!", "Thông báo");
+                LoadData();
             }
         }
 
@@ -237,7 +221,7 @@ namespace GUI_QuanLyVatTu
         {
             LoadComboBoxTrangThai();
             LoadVatTu();
-            InitChiTietPhieuTable();
+            
             SetReadOnlyFields();
 
             txtMaDonHang.Text = DonHangID ?? "";
@@ -286,6 +270,16 @@ namespace GUI_QuanLyVatTu
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvChiTietDonHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvChiTietVatTu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

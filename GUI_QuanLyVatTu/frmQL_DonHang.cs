@@ -41,7 +41,7 @@ namespace GUI_QuanLyVatTu
         {
             dgvDonHang.DataSource = bus.GetAll();
             dgvDonHang.ClearSelection();
-            ResetForm();
+            
         }
 
         private DonHang GetInput()
@@ -103,23 +103,14 @@ namespace GUI_QuanLyVatTu
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string id = txtMaDonHang.Text.Trim();
-            if (string.IsNullOrEmpty(id)) return;
 
-            DialogResult dr = MessageBox.Show("Bạn có chắc muốn xóa đơn hàng này không?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
+
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa đơn hàng đã chọn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                string result = bus.Delete(id);
-
-                if (result == null)
-                {
-                    MessageBox.Show("Xóa đơn hàng thành công!", "Thông báo");
-                    LoadData();
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi: " + result, "Thông báo lỗi");
-                }
+                bus.Delete(txtMaDonHang.Text);
+                MessageBox.Show("Đã xóa toàn bộ vật tư!", "Thông báo");
+                LoadData();
             }
         }
 
@@ -174,6 +165,9 @@ namespace GUI_QuanLyVatTu
 
         private void dgvDonHang_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
+            
+
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvDonHang.Rows[e.RowIndex];
@@ -208,6 +202,10 @@ namespace GUI_QuanLyVatTu
 
                 LoadData();
             }
+
+
+
+
         }
     }
 }
