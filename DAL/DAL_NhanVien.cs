@@ -88,7 +88,7 @@ namespace DAL_QuanLyVatTu
         {
             try
             {
-                string sql = @"UPDATE NhanVien SET HoTen = @1, ChucVu = @2, SoDienThoai = @3, GhiChu = @4, VaiTro = @5, TinhTrang = @6, Email = @7, MatKhau = @8 WHERE NhanVienID = @0";
+                string sql = @"UPDATE NhanVien SET HoTen = @1, ChucVu = @2, SoDienThoai = @3, VaiTro = @4, TinhTrang = @5, Email = @6, MatKhau = @7 WHERE NhanVienID = @0";
                 List<object> thamSo = new List<object>();
                 thamSo.Add(nv.NhanVienID);
                 thamSo.Add(nv.HoTen);

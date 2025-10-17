@@ -1,9 +1,11 @@
 ﻿using DAL_QuanLyVatTu;
 using DTO_QuanLyVatTu;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BLL_QuanLyVatTu
@@ -29,10 +31,48 @@ namespace BLL_QuanLyVatTu
         {
             try
             {
-                if (string.IsNullOrEmpty(nv.NhanVienID))
+                if (string.IsNullOrEmpty(nv.HoTen) ||
+                    string.IsNullOrEmpty(nv.ChucVu) ||
+                    string.IsNullOrEmpty(nv.SoDienThoai) ||
+                    string.IsNullOrEmpty(nv.Email) ||
+                    string.IsNullOrEmpty(nv.MatKhau))
                 {
-                    return "Mã nhân viên không hợp lệ.";
+                    return "Vui lòng điền đầy đủ thông tin.";
                 }
+
+                if (!Regex.IsMatch(nv.HoTen, @"^[\p{L}\s]+$"))
+                {
+                    return "Tên người dùng chỉ bao gồm chữ.";
+                }
+
+                if (!Regex.IsMatch(nv.SoDienThoai, @"^\d+$"))
+                {
+                    return "Số điện thoại chỉ bao gồm số.";
+                }
+
+                if (nv.SoDienThoai.Length < 10)
+                {
+                    return "Số điện thoại phải có đủ 10 số.";
+                }
+                else if (nv.SoDienThoai.Length > 10)
+                {
+                    return "Số điện thoại đã vượt quá 10 số.";
+                }
+
+                if (nv.MatKhau.Length < 6)
+                    return "Mật khẩu phải có tối thiểu 6 ký tự.";
+
+                string[] dauSoHopLe = { "03", "05", "07", "08", "09", "02" };
+                if (!dauSoHopLe.Any(ds => nv.SoDienThoai.StartsWith(ds)))
+                {
+                    return "Đầu số điện thoại phải khớp với các nhà mạng di động (03, 05, 07, 08, 09, 02).";
+                }
+
+                if (string.IsNullOrEmpty(nv.Email))
+                    return "Vui lòng nhập Email.";
+                if (!nv.Email.EndsWith("@gmail.com", StringComparison.OrdinalIgnoreCase))
+                    return "Email phải có đuôi @gmail.com.";
+
                 dalNhanVien.updateNhanVien(nv);
                 return string.Empty;
             }
@@ -69,6 +109,65 @@ namespace BLL_QuanLyVatTu
 
         public string InsertNhanVien(NhanVien nv)
         {
+            if (string.IsNullOrEmpty(nv.HoTen) &&
+                string.IsNullOrEmpty(nv.ChucVu) &&
+                string.IsNullOrEmpty(nv.SoDienThoai) &&
+                string.IsNullOrEmpty(nv.Email) &&
+                string.IsNullOrEmpty(nv.MatKhau))
+            {
+                return "Vui lòng điền đầy đủ thông tin.";
+            }
+
+            if (string.IsNullOrEmpty(nv.SoDienThoai))
+            {
+                return "Vui lòng Nhập số điện thoại.";
+            }
+
+            if (string.IsNullOrEmpty(nv.Email))
+            {
+                return "Vui lòng Nhập Email.";
+            }
+
+            if (!Regex.IsMatch(nv.HoTen, @"^[\p{L}\s]+$"))
+            {
+                return "Tên người dùng chỉ bao gồm chữ.";
+            }
+
+            if (!Regex.IsMatch(nv.SoDienThoai, @"^\d+$"))
+            {
+                return "Số điện thoại chỉ bao gồm số.";
+            }
+
+            if (nv.SoDienThoai.Length < 10)
+            {
+                return "Số điện thoại phải có đủ 10 số.";
+            }
+            else if (nv.SoDienThoai.Length > 10)
+            {
+                return "Số điện thoại đã vượt quá 10 số.";
+            }
+
+            if (nv.MatKhau.Length < 6)
+                return "Mật khẩu phải có tối thiểu 6 ký tự.";
+
+            string[] dauSoHopLe = { "03", "05", "07", "08", "09", "02" };
+            if (!dauSoHopLe.Any(ds => nv.SoDienThoai.StartsWith(ds)))
+            {
+                return "Đầu số điện thoại phải khớp với các nhà mạng di động (03, 05, 07, 08, 09, 02).";
+            }
+
+            if (!nv.Email.EndsWith("@gmail.com", StringComparison.OrdinalIgnoreCase))
+                return "Email phải có đuôi @gmail.com.";
+
+            var dsNhanVien = dalNhanVien.selectAll();
+            bool trung = dsNhanVien.Any(x =>
+                x.Email.Equals(nv.Email, StringComparison.OrdinalIgnoreCase) ||
+                x.SoDienThoai.Equals(nv.SoDienThoai));
+
+            if (trung)
+            {
+                return "Nhân viên này đã tồn tại trong hệ thống.";
+            }
             return dalNhanVien.Insert(nv);
         }
 
