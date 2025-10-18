@@ -1,9 +1,9 @@
-﻿using DAL_PolyCafe;
-using DTO_QuanLyVatTu;
+﻿using DTO_QuanLyVatTu;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using DAL_QuanLyVatTu;
 
 namespace DAL_QuanLyVatTu
 {

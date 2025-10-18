@@ -1,5 +1,4 @@
-﻿using DAL_PolyCafe;
-using DAL_QuanLyVatTu;
+﻿using DAL_QuanLyVatTu;
 using DTO_QuanLyVatTu;
 using Microsoft.Data.SqlClient;
 using System;
@@ -8,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL_QuanLyVatTu;
 
 namespace DAL_QuanLyVatTu
 {

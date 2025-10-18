@@ -1,5 +1,4 @@
-﻿using DAL_PolyCafe;
-using DTO_QuanLyVatTu;
+﻿using DTO_QuanLyVatTu;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -7,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL_QuanLyVatTu; 
 
 namespace DAL_QuanLyVatTu
 {
@@ -25,8 +25,9 @@ namespace DAL_QuanLyVatTu
                     NhanVienID = reader["NhanVienID"].ToString(),
                     NgayDat = Convert.ToDateTime(reader["NgayDat"]),
                     TrangThai = reader["TrangThai"] == DBNull.Value ? "" : reader["TrangThai"].ToString(),
-                    GhiChu = reader["GhiChu"].ToString()
-                };
+                    GhiChu = reader["GhiChu"].ToString(),
+                    PhuongThucThanhToan = reader["PhuongThucThanhToan"] == DBNull.Value ? "" : reader["PhuongThucThanhToan"].ToString()
+            };
                 list.Add(dh);
             }
             return list;
@@ -42,8 +43,8 @@ namespace DAL_QuanLyVatTu
         {
             try
             {
-                string sql = "INSERT INTO DonHang (DonHangID, KhachHangID, NhanVienID, NgayDat, TrangThai, GhiChu) " +
-                             "VALUES (@0, @1, @2, @3, @4, @5)";
+                string sql = "INSERT INTO DonHang (DonHangID, KhachHangID, NhanVienID, NgayDat, TrangThai, GhiChu, PhuongThucThanhToan) " +
+                             "VALUES (@0, @1, @2, @3, @4, @5, @6)";
                 List<object> args = new List<object>
                 {
                     dh.DonHangID,
@@ -51,7 +52,8 @@ namespace DAL_QuanLyVatTu
                     dh.NhanVienID,
                     dh.NgayDat,
                     dh.TrangThai,
-                    dh.GhiChu
+                    dh.GhiChu,
+                    dh.PhuongThucThanhToan
                 };
                 DBUtil.Update(sql, args);
                 return null;
@@ -66,7 +68,7 @@ namespace DAL_QuanLyVatTu
         {
             try
             {
-                string sql = "UPDATE DonHang SET KhachHangID = @1, NhanVienID = @2, NgayDat = @3, TrangThai = @4, GhiChu = @5 WHERE DonHangID = @0";
+                string sql = "UPDATE DonHang SET KhachHangID = @1, NhanVienID = @2, NgayDat = @3, TrangThai = @4, GhiChu = @5, PhuongThucThanhToan = @6 WHERE DonHangID = @0";
                 List<object> args = new List<object>
                 {
                     dh.DonHangID,
@@ -74,7 +76,8 @@ namespace DAL_QuanLyVatTu
                     dh.NhanVienID,
                     dh.NgayDat,
                     dh.TrangThai,
-                    dh.GhiChu
+                    dh.GhiChu,
+                    dh.PhuongThucThanhToan
                 };
                 DBUtil.Update(sql, args);
                 return null;
@@ -138,7 +141,8 @@ namespace DAL_QuanLyVatTu
                     NhanVienID = row["NhanVienID"].ToString(),
                     NgayDat = Convert.ToDateTime(row["NgayDat"]),
                     TrangThai = row["TrangThai"].ToString(),
-                    GhiChu = row["GhiChu"].ToString()
+                    GhiChu = row["GhiChu"].ToString(),
+                    PhuongThucThanhToan = row["PhuongThucThanhToan"].ToString()
                 };
             }
             return null;

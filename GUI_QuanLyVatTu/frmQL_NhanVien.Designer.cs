@@ -104,6 +104,7 @@
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
             dgvNhanVien = new Guna.UI2.WinForms.Guna2DataGridView();
+            sqlCommand2 = new Microsoft.Data.SqlClient.SqlCommand();
             guna2GroupBox1.SuspendLayout();
             gbxTinhTrang.SuspendLayout();
             gbxVaiTro.SuspendLayout();
@@ -133,7 +134,6 @@
             txtTimKiem.Location = new Point(547, 2);
             txtTimKiem.Margin = new Padding(5, 6, 5, 6);
             txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.PasswordChar = '\0';
             txtTimKiem.PlaceholderText = "Tìm kiếm...";
             txtTimKiem.SelectedText = "";
             txtTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -278,7 +278,6 @@
             txtMatKhau.Location = new Point(845, 188);
             txtMatKhau.Margin = new Padding(5, 6, 5, 6);
             txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.PasswordChar = '\0';
             txtMatKhau.PlaceholderText = "Nhập số mật khẩu";
             txtMatKhau.SelectedText = "";
             txtMatKhau.ShadowDecoration.CustomizableEdges = customizableEdges8;
@@ -312,7 +311,6 @@
             txtEmail.Location = new Point(566, 188);
             txtEmail.Margin = new Padding(5, 6, 5, 6);
             txtEmail.Name = "txtEmail";
-            txtEmail.PasswordChar = '\0';
             txtEmail.PlaceholderText = "Nhập số điện thoại";
             txtEmail.SelectedText = "";
             txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges10;
@@ -448,7 +446,6 @@
             txtSDT.Location = new Point(253, 188);
             txtSDT.Margin = new Padding(5, 6, 5, 6);
             txtSDT.Name = "txtSDT";
-            txtSDT.PasswordChar = '\0';
             txtSDT.PlaceholderText = "Nhập số điện thoại";
             txtSDT.SelectedText = "";
             txtSDT.ShadowDecoration.CustomizableEdges = customizableEdges16;
@@ -623,7 +620,6 @@
             txtMaNhanVien.Location = new Point(13, 92);
             txtMaNhanVien.Margin = new Padding(5, 6, 5, 6);
             txtMaNhanVien.Name = "txtMaNhanVien";
-            txtMaNhanVien.PasswordChar = '\0';
             txtMaNhanVien.PlaceholderText = "Mã nhân viên";
             txtMaNhanVien.SelectedText = "";
             txtMaNhanVien.ShadowDecoration.CustomizableEdges = customizableEdges28;
@@ -646,7 +642,6 @@
             txtHoTen.Location = new Point(253, 92);
             txtHoTen.Margin = new Padding(5, 6, 5, 6);
             txtHoTen.Name = "txtHoTen";
-            txtHoTen.PasswordChar = '\0';
             txtHoTen.PlaceholderText = "Nhập tên nhân viên";
             txtHoTen.SelectedText = "";
             txtHoTen.ShadowDecoration.CustomizableEdges = customizableEdges30;
@@ -669,7 +664,6 @@
             txtGhiChu.Location = new Point(566, 90);
             txtGhiChu.Margin = new Padding(5, 6, 5, 6);
             txtGhiChu.Name = "txtGhiChu";
-            txtGhiChu.PasswordChar = '\0';
             txtGhiChu.PlaceholderText = "Nhập ghi chú...";
             txtGhiChu.SelectedText = "";
             txtGhiChu.ShadowDecoration.CustomizableEdges = customizableEdges32;
@@ -758,6 +752,11 @@
             dgvNhanVien.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dgvNhanVien.CellDoubleClick += dgvNhanVien_CellDoubleClick;
             // 
+            // sqlCommand2
+            // 
+            sqlCommand2.CommandTimeout = 30;
+            sqlCommand2.EnableOptimizedParameterBinding = false;
+            // 
             // frmQL_NhanVien
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -820,5 +819,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMatKhau;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand2;
     }
 }

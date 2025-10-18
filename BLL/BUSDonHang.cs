@@ -21,8 +21,13 @@ namespace BLL_QuanLyVatTu
         {
             if (string.IsNullOrWhiteSpace(dh.KhachHangID))
                 return "Khách hàng không được để trống.";
+
             if (string.IsNullOrWhiteSpace(dh.NhanVienID))
                 return "Nhân viên không được để trống.";
+
+            if (string.IsNullOrEmpty(dh.PhuongThucThanhToan))
+                return "Vui lòng chọn phương thức thanh toán.";
+
             return dal.Insert(dh);
         }
 
@@ -30,11 +35,24 @@ namespace BLL_QuanLyVatTu
         {
             if (string.IsNullOrWhiteSpace(dh.DonHangID))
                 return "Mã đơn hàng không hợp lệ.";
+
+            if (string.IsNullOrWhiteSpace(dh.KhachHangID))
+                return "Khách hàng không được để trống.";
+
+            if (string.IsNullOrWhiteSpace(dh.NhanVienID))
+                return "Nhân viên không được để trống.";
+
+            if (string.IsNullOrEmpty(dh.PhuongThucThanhToan))
+                return "Vui lòng chọn phương thức thanh toán.";
+
             return dal.Update(dh);
         }
 
         public string Delete(string id)
         {
+            if (string.IsNullOrWhiteSpace(id))
+                return "Mã đơn hàng không hợp lệ.";
+
             return dal.Delete(id);
         }
 

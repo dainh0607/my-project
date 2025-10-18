@@ -7,7 +7,7 @@ using Microsoft.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL_PolyCafe
+namespace DAL_QuanLyVatTu
 {
     public class DBUtil
     {
@@ -113,6 +113,11 @@ namespace DAL_PolyCafe
                 adapter.Fill(dt);
                 return dt;
             }
+        }
+
+        public static SqlConnection GetConnection()
+        {
+            return new SqlConnection(connString);
         }
 
     }

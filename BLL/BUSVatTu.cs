@@ -1,5 +1,4 @@
-﻿using DAL_PolyCafe;
-using DAL_QuanLyVatTu;
+﻿using DAL_QuanLyVatTu;
 using DTO_QuanLyVatTu;
 using System;
 using System.Collections.Generic;

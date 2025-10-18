@@ -14,5 +14,6 @@ namespace DTO_QuanLyVatTu
         public DateTime NgayDat { get; set; }
         public string TrangThai { get; set; }
         public string GhiChu { get; set; }
+        public string PhuongThucThanhToan { get; set; }
     }
 }

@@ -1,11 +1,11 @@
-﻿using DAL_PolyCafe;
-using DTO_QuanLyVatTu;
+﻿using DTO_QuanLyVatTu;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL_QuanLyVatTu;
 
 namespace DAL_QuanLyVatTu
 {
