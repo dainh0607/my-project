@@ -36,12 +36,19 @@ namespace GUI_QuanLyVatTu
                 LoadComboBoxData();
                 LoadData();
                 CapNhatThongKe();
+
+                // Gắn sự kiện khi chọn combobox
+                cboTrangThai.SelectionChangeCommitted += cboTrangThai_SelectionChangeCommitted;
+                cboPhuongThucThanhToan.SelectionChangeCommitted += cboPhuongThucThanhToan_SelectionChangeCommitted;
+                cboNhanVien.SelectionChangeCommitted += cboNhanVien_SelectionChangeCommitted;
+                cboKhachHang.SelectionChangeCommitted += cboKhachHang_SelectionChangeCommitted;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void LoadComboBoxData()
         {
@@ -139,7 +146,7 @@ namespace GUI_QuanLyVatTu
             dgvThongKe.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        private void btnThongKe_Click(object sender, EventArgs e)
+        private void ThucHienThongKe()
         {
             try
             {
@@ -152,8 +159,8 @@ namespace GUI_QuanLyVatTu
                     return;
                 }
 
-                string nhanVienID = cboNhanVien.SelectedValue?.ToString();
-                string khachHangID = cboKhachHang.SelectedValue?.ToString();
+                string nhanVienID = cboNhanVien.SelectedIndex >= 0 ? cboNhanVien.SelectedValue.ToString() : null;
+                string khachHangID = cboKhachHang.SelectedIndex >= 0 ? cboKhachHang.SelectedValue.ToString() : null;
                 string trangThai = cboTrangThai.Text;
                 string phuongThuc = cboPhuongThucThanhToan.Text;
 
@@ -161,13 +168,18 @@ namespace GUI_QuanLyVatTu
                 dgvThongKe.DataSource = data;
                 DinhDangBang();
                 CapNhatThongKe();
+                LoadChartDoanhThuTheoThang();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi thống kê: " + ex.Message);
             }
+        }
 
-            LoadChartDoanhThuTheoThang();
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            ThucHienThongKe();
         }
 
         private void CapNhatThongKe()
@@ -245,6 +257,26 @@ namespace GUI_QuanLyVatTu
             cboPhuongThucThanhToan.SelectedIndex = -1;
             LoadData();
             CapNhatThongKe();
+        }
+
+        private void cboTrangThai_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            ThucHienThongKe();
+        }
+
+        private void cboPhuongThucThanhToan_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            ThucHienThongKe();
+        }
+
+        private void cboNhanVien_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            ThucHienThongKe();
+        }
+
+        private void cboKhachHang_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            ThucHienThongKe();
         }
     }
 }

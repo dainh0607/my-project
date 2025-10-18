@@ -242,6 +242,7 @@
             btnBaoCaoThongKe.TabIndex = 11;
             btnBaoCaoThongKe.Text = "Báo cáo/thống kê";
             btnBaoCaoThongKe.TextAlign = HorizontalAlignment.Left;
+            btnBaoCaoThongKe.Click += btnBaoCaoThongKe_Click;
             // 
             // btnKhachHang
             // 
@@ -539,7 +540,6 @@
             txtTimKiem.Location = new Point(405, 6);
             txtTimKiem.Margin = new Padding(3, 4, 3, 4);
             txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.PasswordChar = '\0';
             txtTimKiem.PlaceholderText = "Search";
             txtTimKiem.SelectedText = "";
             txtTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges36;

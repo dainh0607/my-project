@@ -97,8 +97,9 @@
             dtpNgayBatDau.BorderRadius = 10;
             dtpNgayBatDau.Checked = true;
             dtpNgayBatDau.CustomizableEdges = customizableEdges1;
-            dtpNgayBatDau.FillColor = Color.Transparent;
+            dtpNgayBatDau.FillColor = SystemColors.GradientInactiveCaption;
             dtpNgayBatDau.Font = new Font("Segoe UI", 9F);
+            dtpNgayBatDau.ForeColor = Color.Black;
             dtpNgayBatDau.Format = DateTimePickerFormat.Long;
             dtpNgayBatDau.Location = new Point(25, 74);
             dtpNgayBatDau.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -114,8 +115,9 @@
             dtpNgayKetThuc.BorderRadius = 10;
             dtpNgayKetThuc.Checked = true;
             dtpNgayKetThuc.CustomizableEdges = customizableEdges3;
-            dtpNgayKetThuc.FillColor = Color.Transparent;
+            dtpNgayKetThuc.FillColor = SystemColors.GradientInactiveCaption;
             dtpNgayKetThuc.Font = new Font("Segoe UI", 9F);
+            dtpNgayKetThuc.ForeColor = Color.Black;
             dtpNgayKetThuc.Format = DateTimePickerFormat.Long;
             dtpNgayKetThuc.Location = new Point(312, 74);
             dtpNgayKetThuc.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -143,6 +145,7 @@
             cboTrangThai.ShadowDecoration.CustomizableEdges = customizableEdges6;
             cboTrangThai.Size = new Size(177, 36);
             cboTrangThai.TabIndex = 7;
+            cboTrangThai.SelectedIndexChanged += cboTrangThai_SelectionChangeCommitted;
             // 
             // grbChucNang
             // 
@@ -224,6 +227,7 @@
             cboKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges12;
             cboKhachHang.Size = new Size(222, 36);
             cboKhachHang.TabIndex = 15;
+            cboKhachHang.SelectedIndexChanged += cboKhachHang_SelectionChangeCommitted;
             // 
             // cboNhanVien
             // 
@@ -242,6 +246,7 @@
             cboNhanVien.ShadowDecoration.CustomizableEdges = customizableEdges14;
             cboNhanVien.Size = new Size(222, 36);
             cboNhanVien.TabIndex = 14;
+            cboNhanVien.SelectedIndexChanged += cboNhanVien_SelectionChangeCommitted;
             // 
             // guna2HtmlLabel5
             // 
@@ -282,6 +287,7 @@
             cboPhuongThucThanhToan.ShadowDecoration.CustomizableEdges = customizableEdges16;
             cboPhuongThucThanhToan.Size = new Size(213, 36);
             cboPhuongThucThanhToan.TabIndex = 11;
+            cboPhuongThucThanhToan.SelectedIndexChanged += cboPhuongThucThanhToan_SelectionChangeCommitted;
             // 
             // guna2HtmlLabel3
             // 

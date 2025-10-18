@@ -222,5 +222,9 @@ namespace GUI_QuanLyVatTu
         {
         }
 
+        private void btnBaoCaoThongKe_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmThongKeDoanhThu());
+        }
     }
 }
