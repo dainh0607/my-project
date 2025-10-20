@@ -52,17 +52,29 @@ namespace BLL_QuanLyVatTu
 
         private Result Validate(NhaCungCap ncc, bool isNew)
         {
+            List<string> errors = new List<string>();
+
             if (string.IsNullOrWhiteSpace(ncc.TenNhaCungCap))
-                return new Result { Success = false, Message = "Tên nhà cung cấp không được để trống." };
+                errors.Add("Tên nhà cung cấp không được để trống.");
 
-            if (!string.IsNullOrWhiteSpace(ncc.SoDienThoai) && !System.Text.RegularExpressions.Regex.IsMatch(ncc.SoDienThoai, @"^\d{10,11}$"))
-                return new Result { Success = false, Message = "Số điện thoại không hợp lệ (10–11 chữ số)." };
+            if (string.IsNullOrWhiteSpace(ncc.SoDienThoai))
+                errors.Add("Số điện thoại không được để trống.");
+            else if (!Regex.IsMatch(ncc.SoDienThoai, @"^\d{10,11}$"))
+                errors.Add("Số điện thoại không hợp lệ (10–11 chữ số).");
 
-            if (!string.IsNullOrWhiteSpace(ncc.Email) && !System.Text.RegularExpressions.Regex.IsMatch(ncc.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
-                return new Result { Success = false, Message = "Email không hợp lệ." };
+            if (string.IsNullOrWhiteSpace(ncc.Email))
+                errors.Add("Email không được để trống.");
+            else if (!Regex.IsMatch(ncc.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                errors.Add("Email không hợp lệ.");
+
+            if (string.IsNullOrWhiteSpace(ncc.DiaChi))
+                errors.Add("Địa chỉ không được để trống.");
 
             if (isNew && GetAll().Any(x => x.TenNhaCungCap.Equals(ncc.TenNhaCungCap, StringComparison.OrdinalIgnoreCase)))
-                return new Result { Success = false, Message = "Tên nhà cung cấp đã tồn tại." };
+                errors.Add("Tên nhà cung cấp đã tồn tại.");
+
+            if (errors.Count > 0)
+                return new Result { Success = false, Message = string.Join("\n", errors) };
 
             return new Result { Success = true };
         }

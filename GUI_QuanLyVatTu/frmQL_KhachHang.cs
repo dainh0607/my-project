@@ -43,7 +43,31 @@ namespace GUI_QuanLyVatTu
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            string keyword = txtTimKiem.Text.Trim().ToLower();
 
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            BUSKhachHang bus = new BUSKhachHang();
+            List<KhachHang> danhSachNhanVien = bus.GetAll();
+
+            var ketQua = danhSachNhanVien
+                .Where(nv =>
+                    (!string.IsNullOrEmpty(nv.KhachHangID) && nv.KhachHangID.ToLower().Contains(keyword)) ||
+                    (!string.IsNullOrEmpty(nv.HoTen) && nv.HoTen.ToLower().Contains(keyword))
+                ).ToList();
+
+            if (ketQua.Count > 0)
+            {
+                dgvKhachHang.DataSource = ketQua;
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy nhân viên nào phù hợp!", "Kết quả tìm kiếm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void frmQL_KhachHang_Load(object sender, EventArgs e)

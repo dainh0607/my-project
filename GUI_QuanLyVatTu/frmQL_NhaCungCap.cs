@@ -140,10 +140,30 @@ namespace GUI_QuanLyVatTu
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string keyword = txtTenNCC.Text.Trim();
-            List<NhaCungCap> list = busNCC.Search(keyword);
-            dgvNhaCungCap.DataSource = list;
-            dgvNhaCungCap.ClearSelection();
+            string keyword = txtTimKiem.Text.Trim().ToLower();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            BUSNhaCungCap bus = new BUSNhaCungCap();
+            List<NhaCungCap> danhSachNhanVien = bus.GetAll();
+            var ketQua = danhSachNhanVien
+                .Where(nv =>
+                    (!string.IsNullOrEmpty(nv.NhaCungCapID) && nv.NhaCungCapID.ToLower().Contains(keyword)) ||
+                    (!string.IsNullOrEmpty(nv.TenNhaCungCap) && nv.TenNhaCungCap.ToLower().Contains(keyword))
+                ).ToList();
+
+            if (ketQua.Count > 0)
+            {
+                dgvNhaCungCap.DataSource = ketQua;
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy nhân viên nào phù hợp!", "Kết quả tìm kiếm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void dgvNhaCungCap_CellClick(object sender, DataGridViewCellEventArgs e)
