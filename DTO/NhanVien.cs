@@ -19,6 +19,5 @@ namespace DTO_QuanLyVatTu
 
         public string VaiTroText => VaiTro ? "Quản lý" : "Nhân viên";
         public string TinhTrangText => TinhTrang ? "Hoạt động" : "Tạm dừng";
-
     }
 }

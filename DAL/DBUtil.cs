@@ -11,7 +11,11 @@ namespace DAL_QuanLyVatTu
 {
     public class DBUtil
     {
+<<<<<<< HEAD
         private static string connString = @"Data Source=MSI\SQLEXPRESS;Initial Catalog=Xuong_QuanLyVatTu;Encrypt=True;Trust Server Certificate=True;Authentication=ActiveDirectoryIntegrated";
+=======
+        private static string connString = @"Data Source=THOAN2410;Initial Catalog=qlvattu;Integrated Security=True;Trust Server Certificate=True";
+>>>>>>> 294c2ba8d0721b62bb0eabbb91583fec1003c275
         public static SqlCommand GetCommand(string sql, List<Object> args, CommandType cmdType)
         {
             SqlConnection conn = new SqlConnection(connString);

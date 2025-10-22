@@ -138,13 +138,31 @@ namespace GUI_QuanLyVatTu
             currentFormChild = formChild;
             formChild.TopLevel = false;
             formChild.FormBorderStyle = FormBorderStyle.None;
-            formChild.Dock = DockStyle.Fill;
+
+            // Đặt kích thước form con = panel hiển thị
+            formChild.Size = panelHienThi.ClientSize;
+            formChild.Location = new Point(0, 0);
+
+            // Thêm form con vào panel
             panelHienThi.Controls.Clear();
             panelHienThi.Controls.Add(formChild);
-            panelHienThi.Tag = formChild;
             formChild.BringToFront();
             formChild.Show();
+
+            // Sự kiện tự động resize theo panelHienThi
+            panelHienThi.Resize -= PanelHienThi_Resize;
+            panelHienThi.Resize += PanelHienThi_Resize;
         }
+
+        // Xử lý co giãn form con khi panelHienThi thay đổi kích thước
+        private void PanelHienThi_Resize(object sender, EventArgs e)
+        {
+            if (currentFormChild != null)
+            {
+                currentFormChild.Size = panelHienThi.ClientSize;
+            }
+        }
+
 
         private void btnTaoPhieuBan_Click(object sender, EventArgs e)
         {
@@ -193,7 +211,7 @@ namespace GUI_QuanLyVatTu
 
         private void btnDonHang_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmQL_HoaDon());
+
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)

@@ -118,6 +118,7 @@ namespace DAL_QuanLyVatTu
             }
             return prefix + "001";
         }
+
         public string GetKhachHangIDByDonHangID(string donHangId)
         {
             string sql = "SELECT KhachHangID FROM DonHang WHERE DonHangID = @0";
