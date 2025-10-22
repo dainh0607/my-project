@@ -26,7 +26,7 @@ namespace DAL_QuanLyVatTu
                     NgayDat = Convert.ToDateTime(reader["NgayDat"]),
                     TrangThai = reader["TrangThai"] == DBNull.Value ? "" : reader["TrangThai"].ToString(),
                     GhiChu = reader["GhiChu"].ToString(),
-                    PhuongThucThanhToan = reader["PhuongThucThanhToan"] == DBNull.Value ? "" : reader["PhuongThucThanhToan"].ToString()
+                   
             };
                 list.Add(dh);
             }
@@ -43,8 +43,8 @@ namespace DAL_QuanLyVatTu
         {
             try
             {
-                string sql = "INSERT INTO DonHang (DonHangID, KhachHangID, NhanVienID, NgayDat, TrangThai, GhiChu, PhuongThucThanhToan) " +
-                             "VALUES (@0, @1, @2, @3, @4, @5, @6)";
+                string sql = "INSERT INTO DonHang (DonHangID, KhachHangID, NhanVienID, NgayDat, TrangThai, GhiChu) " +
+                             "VALUES (@0, @1, @2, @3, @4, @5)";
                 List<object> args = new List<object>
                 {
                     dh.DonHangID,
@@ -53,7 +53,7 @@ namespace DAL_QuanLyVatTu
                     dh.NgayDat,
                     dh.TrangThai,
                     dh.GhiChu,
-                    dh.PhuongThucThanhToan
+                   
                 };
                 DBUtil.Update(sql, args);
                 return null;
@@ -68,7 +68,7 @@ namespace DAL_QuanLyVatTu
         {
             try
             {
-                string sql = "UPDATE DonHang SET KhachHangID = @1, NhanVienID = @2, NgayDat = @3, TrangThai = @4, GhiChu = @5, PhuongThucThanhToan = @6 WHERE DonHangID = @0";
+                string sql = "UPDATE DonHang SET KhachHangID = @1, NhanVienID = @2, NgayDat = @3, TrangThai = @4, GhiChu = @5 WHERE DonHangID = @0";
                 List<object> args = new List<object>
                 {
                     dh.DonHangID,
@@ -77,7 +77,7 @@ namespace DAL_QuanLyVatTu
                     dh.NgayDat,
                     dh.TrangThai,
                     dh.GhiChu,
-                    dh.PhuongThucThanhToan
+                    
                 };
                 DBUtil.Update(sql, args);
                 return null;
@@ -143,7 +143,7 @@ namespace DAL_QuanLyVatTu
                     NgayDat = Convert.ToDateTime(row["NgayDat"]),
                     TrangThai = row["TrangThai"].ToString(),
                     GhiChu = row["GhiChu"].ToString(),
-                    PhuongThucThanhToan = row["PhuongThucThanhToan"].ToString()
+                  
                 };
             }
             return null;

@@ -25,9 +25,8 @@ namespace BLL_QuanLyVatTu
             if (string.IsNullOrWhiteSpace(dh.NhanVienID))
                 return "Nhân viên không được để trống.";
 
-            if (string.IsNullOrEmpty(dh.PhuongThucThanhToan))
-                return "Vui lòng chọn phương thức thanh toán.";
-
+            
+            dh.DonHangID = GenerateID();
             return dal.Insert(dh);
         }
 
@@ -42,8 +41,7 @@ namespace BLL_QuanLyVatTu
             if (string.IsNullOrWhiteSpace(dh.NhanVienID))
                 return "Nhân viên không được để trống.";
 
-            if (string.IsNullOrEmpty(dh.PhuongThucThanhToan))
-                return "Vui lòng chọn phương thức thanh toán.";
+            
 
             return dal.Update(dh);
         }
