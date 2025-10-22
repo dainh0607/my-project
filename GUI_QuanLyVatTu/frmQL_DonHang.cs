@@ -216,8 +216,15 @@ namespace GUI_QuanLyVatTu
 
         }
 
+
         private void dgvDonHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        { }
+
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
+            frmInHoaDon frmInHD = new frmInHoaDon();
+            frmInHD.ShowDialog();
 
         }
     }
