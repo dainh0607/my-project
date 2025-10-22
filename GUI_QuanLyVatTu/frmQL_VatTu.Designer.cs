@@ -136,7 +136,6 @@
             txtGhiChu.Location = new Point(19, 482);
             txtGhiChu.Margin = new Padding(4, 5, 4, 5);
             txtGhiChu.Name = "txtGhiChu";
-            txtGhiChu.PasswordChar = '\0';
             txtGhiChu.PlaceholderText = "Nhập ghi chú...";
             txtGhiChu.SelectedText = "";
             txtGhiChu.ShadowDecoration.CustomizableEdges = customizableEdges16;
@@ -195,7 +194,6 @@
             txtTimKiem.Location = new Point(219, 3);
             txtTimKiem.Margin = new Padding(4, 5, 4, 5);
             txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.PasswordChar = '\0';
             txtTimKiem.PlaceholderText = "Tìm kiếm...";
             txtTimKiem.SelectedText = "";
             txtTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -241,7 +239,6 @@
             txtMaVatTu.Location = new Point(19, 87);
             txtMaVatTu.Margin = new Padding(4, 5, 4, 5);
             txtMaVatTu.Name = "txtMaVatTu";
-            txtMaVatTu.PasswordChar = '\0';
             txtMaVatTu.PlaceholderText = "Nhập mã";
             txtMaVatTu.SelectedText = "";
             txtMaVatTu.ShadowDecoration.CustomizableEdges = customizableEdges26;
@@ -425,7 +422,6 @@
             txtSoLuongTon.Location = new Point(19, 381);
             txtSoLuongTon.Margin = new Padding(4, 5, 4, 5);
             txtSoLuongTon.Name = "txtSoLuongTon";
-            txtSoLuongTon.PasswordChar = '\0';
             txtSoLuongTon.PlaceholderText = "Nhập số lượng";
             txtSoLuongTon.SelectedText = "";
             txtSoLuongTon.ShadowDecoration.CustomizableEdges = customizableEdges10;
@@ -485,7 +481,6 @@
             txtDonGia.Location = new Point(22, 268);
             txtDonGia.Margin = new Padding(4, 5, 4, 5);
             txtDonGia.Name = "txtDonGia";
-            txtDonGia.PasswordChar = '\0';
             txtDonGia.PlaceholderText = "Nhập đơn giá";
             txtDonGia.SelectedText = "";
             txtDonGia.ShadowDecoration.CustomizableEdges = customizableEdges12;
@@ -532,7 +527,6 @@
             txtTenVatTu.Location = new Point(249, 268);
             txtTenVatTu.Margin = new Padding(4, 5, 4, 5);
             txtTenVatTu.Name = "txtTenVatTu";
-            txtTenVatTu.PasswordChar = '\0';
             txtTenVatTu.PlaceholderText = "Nhập tên vật tư";
             txtTenVatTu.SelectedText = "";
             txtTenVatTu.ShadowDecoration.CustomizableEdges = customizableEdges14;
@@ -633,6 +627,7 @@
             guna2GroupBox4.Size = new Size(603, 651);
             guna2GroupBox4.TabIndex = 45;
             guna2GroupBox4.Text = "Danh Sách Nhà Cung Cấp";
+            guna2GroupBox4.Click += guna2GroupBox4_Click;
             // 
             // frmQL_VatTu
             // 

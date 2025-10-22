@@ -41,7 +41,7 @@ namespace GUI_QuanLyVatTu
         {
             dgvDonHang.DataSource = bus.GetAll();
             dgvDonHang.ClearSelection();
-            
+
         }
 
         private DonHang GetInput()
@@ -166,7 +166,7 @@ namespace GUI_QuanLyVatTu
         private void dgvDonHang_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            
+
 
             if (e.RowIndex >= 0)
             {
@@ -206,6 +206,12 @@ namespace GUI_QuanLyVatTu
 
 
 
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            frmInHoaDon frmInHD = new frmInHoaDon();
+            frmInHD.ShowDialog();
         }
     }
 }

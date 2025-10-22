@@ -206,5 +206,12 @@ namespace GUI_QuanLyVatTu
                 cboThanhToan.Text = row.Cells["PhuongThucThanhToan"].Value?.ToString();
             }
         }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            //Mở form In Hóa Đơn
+            frmInHoaDon frmInHD = new frmInHoaDon();
+            frmInHD.ShowDialog();
+        }
     }
 }
