@@ -52,7 +52,6 @@ namespace GUI_QuanLyVatTu
             if (currentUser.VaiTro) // Quản lý
             {
                 btnQuanLy.Visible = true;
-                btnQuanLyPhieuBan.Visible = true;
                 btnTaoPhieuBan.Visible = true;
                 btnLoaiVatTu.Visible = true;
                 btnNhanVien.Visible = true;
@@ -66,7 +65,6 @@ namespace GUI_QuanLyVatTu
             else // Nhân viên
             {
                 btnQuanLy.Visible = false;
-                btnQuanLyPhieuBan.Visible = true;
                 btnTaoPhieuBan.Visible = true;
                 btnLoaiVatTu.Visible = false;
                 btnNhanVien.Visible = false;
@@ -208,10 +206,6 @@ namespace GUI_QuanLyVatTu
             openChildForm(new frmQL_NhanVien());
         }
 
-        private void btnQuanLyPhieuBan_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frmQL_ChiTietDonHang());
-        }
 
         private void btnVatTu_Click(object sender, EventArgs e)
         {
