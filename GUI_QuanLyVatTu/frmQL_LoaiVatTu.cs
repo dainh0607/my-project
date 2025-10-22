@@ -117,7 +117,7 @@ namespace GUI_QuanLyVatTu
 
             if (string.IsNullOrEmpty(keyword))
             {
-                LamMoi(); 
+                LamMoi();
                 return;
             }
 
@@ -141,6 +141,11 @@ namespace GUI_QuanLyVatTu
                 btnXoa.Enabled = true;
             }
 
+        }
+
+        private void txtLoaiVatTu_TextChanged(object sender, EventArgs e)
+        {
+            txtLoaiVatTu.Enabled = false;
         }
     }
 }

@@ -299,5 +299,10 @@ namespace GUI_QuanLyVatTu
         {
 
         }
+
+        private void txtMaVatTu_TextChanged(object sender, EventArgs e)
+        {
+            txtMaVatTu.Enabled = false;
+        }
     }
 }

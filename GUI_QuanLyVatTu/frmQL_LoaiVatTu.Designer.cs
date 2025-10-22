@@ -437,6 +437,7 @@
             txtLoaiVatTu.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txtLoaiVatTu.Size = new Size(142, 45);
             txtLoaiVatTu.TabIndex = 37;
+            txtLoaiVatTu.TextChanged += txtLoaiVatTu_TextChanged;
             // 
             // txtTenLoaiVatTu
             // 

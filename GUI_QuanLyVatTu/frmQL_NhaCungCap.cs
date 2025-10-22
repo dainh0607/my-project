@@ -166,7 +166,8 @@ namespace GUI_QuanLyVatTu
             }
         }
 
-        private void dgvNhaCungCap_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvNhaCungCap_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {

@@ -243,6 +243,7 @@
             txtMaVatTu.ShadowDecoration.CustomizableEdges = customizableEdges26;
             txtMaVatTu.Size = new Size(180, 42);
             txtMaVatTu.TabIndex = 13;
+            txtMaVatTu.TextChanged += txtMaVatTu_TextChanged;
             // 
             // btnTimKiem
             // 

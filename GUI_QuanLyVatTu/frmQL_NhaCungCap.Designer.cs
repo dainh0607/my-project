@@ -177,11 +177,11 @@
             dgvNhaCungCap.ThemeStyle.RowsStyle.Height = 33;
             dgvNhaCungCap.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvNhaCungCap.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dgvNhaCungCap.CellClick += dgvNhaCungCap_CellClick;
+            dgvNhaCungCap.CellContentClick += dgvNhaCungCap_CellContentClick;
             // 
             // guna2GroupBox1
             // 
-            guna2GroupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            guna2GroupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2GroupBox1.BorderRadius = 15;
             guna2GroupBox1.Controls.Add(guna2HtmlLabel2);
             guna2GroupBox1.Controls.Add(guna2HtmlLabel1);
