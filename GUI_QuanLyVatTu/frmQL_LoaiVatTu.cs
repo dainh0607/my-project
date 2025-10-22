@@ -26,7 +26,7 @@ namespace GUI_QuanLyVatTu
         {
             danhSachLoai = busLoai.GetAll();
             dgvLoaiVatTu.DataSource = danhSachLoai;
-
+            txtLoaiVatTu.Enabled = false;
             txtLoaiVatTu.Text = busLoai.GenerateID();
             txtTenLoaiVatTu.Clear();
             txtGhiChu.Clear();

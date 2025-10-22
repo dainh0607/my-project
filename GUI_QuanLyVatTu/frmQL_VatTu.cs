@@ -26,12 +26,7 @@ namespace GUI_QuanLyVatTu
             InitializeComponent();
         }
 
-        private void frmQL_VatTu_Load(object sender, EventArgs e)
-        {
-            LoadComboBoxData();
-            LoadData();
-            ResetForm();
-        }
+        
 
         private void LoadComboBoxData()
         {
@@ -76,6 +71,7 @@ namespace GUI_QuanLyVatTu
         {
             txtMaVatTu.Text = _busVatTu.GenerateID();
             txtTenVatTu.Clear();
+            txtMaVatTu.Enabled = false;
             cboLoaiVatTu.SelectedIndex = -1;
             txtDonGia.Clear();
             txtSoLuongTon.Clear();
@@ -269,6 +265,7 @@ namespace GUI_QuanLyVatTu
         }
         private void frmQL_VatTu_Load_1(object sender, EventArgs e)
         {
+            ResetForm();
             LoadData();
             LoadComboBoxData();
         }
