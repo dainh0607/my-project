@@ -59,7 +59,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
@@ -136,7 +135,6 @@
             txtGhiChu.Location = new Point(19, 482);
             txtGhiChu.Margin = new Padding(4, 5, 4, 5);
             txtGhiChu.Name = "txtGhiChu";
-            txtGhiChu.PasswordChar = '\0';
             txtGhiChu.PlaceholderText = "Nhập ghi chú...";
             txtGhiChu.SelectedText = "";
             txtGhiChu.ShadowDecoration.CustomizableEdges = customizableEdges16;
@@ -192,10 +190,9 @@
             txtTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTimKiem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTimKiem.Location = new Point(219, 3);
+            txtTimKiem.Location = new Point(221, 3);
             txtTimKiem.Margin = new Padding(4, 5, 4, 5);
             txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.PasswordChar = '\0';
             txtTimKiem.PlaceholderText = "Tìm kiếm...";
             txtTimKiem.SelectedText = "";
             txtTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -241,7 +238,6 @@
             txtMaVatTu.Location = new Point(19, 87);
             txtMaVatTu.Margin = new Padding(4, 5, 4, 5);
             txtMaVatTu.Name = "txtMaVatTu";
-            txtMaVatTu.PasswordChar = '\0';
             txtMaVatTu.PlaceholderText = "Nhập mã";
             txtMaVatTu.SelectedText = "";
             txtMaVatTu.ShadowDecoration.CustomizableEdges = customizableEdges26;
@@ -358,7 +354,7 @@
             guna2GroupBox1.Controls.Add(txtMaVatTu);
             guna2GroupBox1.Controls.Add(guna2HtmlLabel3);
             guna2GroupBox1.CustomizableEdges = customizableEdges27;
-            guna2GroupBox1.Font = new Font("Segoe UI", 9F);
+            guna2GroupBox1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
             guna2GroupBox1.Location = new Point(11, 11);
             guna2GroupBox1.Margin = new Padding(2);
@@ -373,8 +369,9 @@
             dtpNgayTao.BorderRadius = 10;
             dtpNgayTao.Checked = true;
             dtpNgayTao.CustomizableEdges = customizableEdges7;
-            dtpNgayTao.FillColor = Color.FromArgb(192, 255, 192);
+            dtpNgayTao.FillColor = Color.Silver;
             dtpNgayTao.Font = new Font("Segoe UI", 9F);
+            dtpNgayTao.ForeColor = Color.Black;
             dtpNgayTao.Format = DateTimePickerFormat.Long;
             dtpNgayTao.Location = new Point(249, 381);
             dtpNgayTao.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -390,7 +387,7 @@
             cboTrangThai.FormattingEnabled = true;
             cboTrangThai.Location = new Point(20, 166);
             cboTrangThai.Name = "cboTrangThai";
-            cboTrangThai.Size = new Size(179, 28);
+            cboTrangThai.Size = new Size(179, 31);
             cboTrangThai.TabIndex = 55;
             // 
             // cboNhaCungCap
@@ -398,7 +395,7 @@
             cboNhaCungCap.FormattingEnabled = true;
             cboNhaCungCap.Location = new Point(249, 182);
             cboNhaCungCap.Name = "cboNhaCungCap";
-            cboNhaCungCap.Size = new Size(223, 28);
+            cboNhaCungCap.Size = new Size(223, 31);
             cboNhaCungCap.TabIndex = 54;
             // 
             // cboLoaiVatTu
@@ -406,7 +403,7 @@
             cboLoaiVatTu.FormattingEnabled = true;
             cboLoaiVatTu.Location = new Point(249, 93);
             cboLoaiVatTu.Name = "cboLoaiVatTu";
-            cboLoaiVatTu.Size = new Size(223, 28);
+            cboLoaiVatTu.Size = new Size(223, 31);
             cboLoaiVatTu.TabIndex = 53;
             // 
             // txtSoLuongTon
@@ -425,7 +422,6 @@
             txtSoLuongTon.Location = new Point(19, 381);
             txtSoLuongTon.Margin = new Padding(4, 5, 4, 5);
             txtSoLuongTon.Name = "txtSoLuongTon";
-            txtSoLuongTon.PasswordChar = '\0';
             txtSoLuongTon.PlaceholderText = "Nhập số lượng";
             txtSoLuongTon.SelectedText = "";
             txtSoLuongTon.ShadowDecoration.CustomizableEdges = customizableEdges10;
@@ -485,7 +481,6 @@
             txtDonGia.Location = new Point(22, 268);
             txtDonGia.Margin = new Padding(4, 5, 4, 5);
             txtDonGia.Name = "txtDonGia";
-            txtDonGia.PasswordChar = '\0';
             txtDonGia.PlaceholderText = "Nhập đơn giá";
             txtDonGia.SelectedText = "";
             txtDonGia.ShadowDecoration.CustomizableEdges = customizableEdges12;
@@ -532,7 +527,6 @@
             txtTenVatTu.Location = new Point(249, 268);
             txtTenVatTu.Margin = new Padding(4, 5, 4, 5);
             txtTenVatTu.Name = "txtTenVatTu";
-            txtTenVatTu.PasswordChar = '\0';
             txtTenVatTu.PlaceholderText = "Nhập tên vật tư";
             txtTenVatTu.SelectedText = "";
             txtTenVatTu.ShadowDecoration.CustomizableEdges = customizableEdges14;
@@ -560,7 +554,7 @@
             dgvVatTu.BackgroundColor = Color.FloralWhite;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -570,28 +564,20 @@
             dgvVatTu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
             dataGridViewCellStyle3.ForeColor = Color.FromArgb(125, 137, 149);
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvVatTu.DefaultCellStyle = dataGridViewCellStyle3;
             dgvVatTu.GridColor = Color.FromArgb(231, 229, 255);
-            dgvVatTu.Location = new Point(14, 57);
+            dgvVatTu.Location = new Point(14, 48);
             dgvVatTu.Margin = new Padding(2);
             dgvVatTu.Name = "dgvVatTu";
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvVatTu.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvVatTu.RowHeadersVisible = false;
             dgvVatTu.RowHeadersWidth = 62;
             dgvVatTu.RowTemplate.Height = 33;
-            dgvVatTu.Size = new Size(576, 578);
+            dgvVatTu.Size = new Size(576, 592);
             dgvVatTu.TabIndex = 0;
             dgvVatTu.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvVatTu.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -624,7 +610,7 @@
             guna2GroupBox4.Controls.Add(btnTimKiem);
             guna2GroupBox4.Controls.Add(txtTimKiem);
             guna2GroupBox4.CustomizableEdges = customizableEdges5;
-            guna2GroupBox4.Font = new Font("Segoe UI", 9F);
+            guna2GroupBox4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
             guna2GroupBox4.ForeColor = Color.FromArgb(125, 137, 149);
             guna2GroupBox4.Location = new Point(523, 11);
             guna2GroupBox4.Margin = new Padding(2);
@@ -632,7 +618,7 @@
             guna2GroupBox4.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2GroupBox4.Size = new Size(603, 651);
             guna2GroupBox4.TabIndex = 45;
-            guna2GroupBox4.Text = "Danh Sách Nhà Cung Cấp";
+            guna2GroupBox4.Text = "Danh Sách Vật tư";
             // 
             // frmQL_VatTu
             // 

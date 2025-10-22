@@ -135,10 +135,10 @@
             // 
             pnlSubMenu2.Controls.Add(btnTaoPhieuBan);
             pnlSubMenu2.CustomizableEdges = customizableEdges4;
-            pnlSubMenu2.Location = new Point(0, 169);
+            pnlSubMenu2.Location = new Point(0, 164);
             pnlSubMenu2.Name = "pnlSubMenu2";
             pnlSubMenu2.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            pnlSubMenu2.Size = new Size(271, 81);
+            pnlSubMenu2.Size = new Size(271, 86);
             pnlSubMenu2.TabIndex = 12;
             // 
             // btnTaoPhieuBan
@@ -159,7 +159,7 @@
             btnTaoPhieuBan.Location = new Point(0, 3);
             btnTaoPhieuBan.Name = "btnTaoPhieuBan";
             btnTaoPhieuBan.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            btnTaoPhieuBan.Size = new Size(256, 56);
+            btnTaoPhieuBan.Size = new Size(271, 58);
             btnTaoPhieuBan.TabIndex = 0;
             btnTaoPhieuBan.Text = "Tạo đơn hàng";
             btnTaoPhieuBan.Click += btnTaoPhieuBan_Click;
@@ -175,11 +175,10 @@
             pnlSubMenu.Controls.Add(btnLoaiVatTu);
             pnlSubMenu.Controls.Add(btnVatTu);
             pnlSubMenu.CustomizableEdges = customizableEdges22;
-            pnlSubMenu.Dock = DockStyle.Bottom;
             pnlSubMenu.Location = new Point(0, 256);
             pnlSubMenu.Name = "pnlSubMenu";
             pnlSubMenu.ShadowDecoration.CustomizableEdges = customizableEdges23;
-            pnlSubMenu.Size = new Size(271, 464);
+            pnlSubMenu.Size = new Size(271, 417);
             pnlSubMenu.TabIndex = 11;
             pnlSubMenu.Visible = false;
             // 
@@ -279,7 +278,7 @@
             btnNhaCungCap.ImageSize = new Size(35, 35);
             btnNhaCungCap.Location = new Point(0, 170);
             btnNhaCungCap.Name = "btnNhaCungCap";
-            btnNhaCungCap.Padding = new Padding(20, 0, 0, 0);
+            btnNhaCungCap.Padding = new Padding(19, 0, 0, 0);
             btnNhaCungCap.ShadowDecoration.CustomizableEdges = customizableEdges13;
             btnNhaCungCap.Size = new Size(271, 56);
             btnNhaCungCap.TabIndex = 8;
@@ -475,7 +474,7 @@
             guna2ControlBox3.CustomizableEdges = customizableEdges32;
             guna2ControlBox3.FillColor = Color.FromArgb(18, 48, 100);
             guna2ControlBox3.IconColor = Color.White;
-            guna2ControlBox3.Location = new Point(1004, 0);
+            guna2ControlBox3.Location = new Point(1006, 3);
             guna2ControlBox3.Name = "guna2ControlBox3";
             guna2ControlBox3.ShadowDecoration.CustomizableEdges = customizableEdges33;
             guna2ControlBox3.Size = new Size(62, 44);
@@ -489,7 +488,7 @@
             guna2ControlBox2.CustomizableEdges = customizableEdges34;
             guna2ControlBox2.FillColor = Color.FromArgb(18, 48, 100);
             guna2ControlBox2.IconColor = Color.White;
-            guna2ControlBox2.Location = new Point(936, 0);
+            guna2ControlBox2.Location = new Point(938, 3);
             guna2ControlBox2.Name = "guna2ControlBox2";
             guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges35;
             guna2ControlBox2.Size = new Size(62, 44);
@@ -502,7 +501,7 @@
             guna2ControlBox1.CustomizableEdges = customizableEdges36;
             guna2ControlBox1.FillColor = Color.FromArgb(18, 48, 100);
             guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(1072, 0);
+            guna2ControlBox1.Location = new Point(1074, 3);
             guna2ControlBox1.Name = "guna2ControlBox1";
             guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges37;
             guna2ControlBox1.Size = new Size(62, 44);
@@ -516,8 +515,9 @@
             // 
             // panelHienThi
             // 
+            panelHienThi.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelHienThi.CustomizableEdges = customizableEdges40;
-            panelHienThi.Location = new Point(271, 47);
+            panelHienThi.Location = new Point(271, 46);
             panelHienThi.Name = "panelHienThi";
             panelHienThi.ShadowDecoration.CustomizableEdges = customizableEdges41;
             panelHienThi.Size = new Size(1137, 673);
@@ -529,9 +529,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(235, 240, 250);
             ClientSize = new Size(1408, 720);
-            Controls.Add(panelHienThi);
             Controls.Add(guna2Panel_top);
             Controls.Add(pnlMenu);
+            Controls.Add(panelHienThi);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmHome";
             StartPosition = FormStartPosition.CenterScreen;

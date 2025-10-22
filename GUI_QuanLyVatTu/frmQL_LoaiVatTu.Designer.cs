@@ -83,6 +83,7 @@
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvLoaiVatTu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvLoaiVatTu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvLoaiVatTu.BackgroundColor = Color.FloralWhite;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
@@ -103,7 +104,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvLoaiVatTu.DefaultCellStyle = dataGridViewCellStyle3;
             dgvLoaiVatTu.GridColor = Color.FromArgb(231, 229, 255);
-            dgvLoaiVatTu.Location = new Point(12, 47);
+            dgvLoaiVatTu.Location = new Point(12, 50);
             dgvLoaiVatTu.Margin = new Padding(2);
             dgvLoaiVatTu.Name = "dgvLoaiVatTu";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -117,7 +118,7 @@
             dgvLoaiVatTu.RowHeadersVisible = false;
             dgvLoaiVatTu.RowHeadersWidth = 62;
             dgvLoaiVatTu.RowTemplate.Height = 33;
-            dgvLoaiVatTu.Size = new Size(1092, 270);
+            dgvLoaiVatTu.Size = new Size(1092, 347);
             dgvLoaiVatTu.TabIndex = 0;
             dgvLoaiVatTu.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvLoaiVatTu.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -144,6 +145,7 @@
             // 
             // guna2GroupBox4
             // 
+            guna2GroupBox4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2GroupBox4.BorderRadius = 15;
             guna2GroupBox4.Controls.Add(dgvLoaiVatTu);
             guna2GroupBox4.Controls.Add(txtTimKiem);
@@ -151,11 +153,11 @@
             guna2GroupBox4.CustomizableEdges = customizableEdges5;
             guna2GroupBox4.Font = new Font("Segoe UI", 9F);
             guna2GroupBox4.ForeColor = Color.FromArgb(125, 137, 149);
-            guna2GroupBox4.Location = new Point(11, 332);
+            guna2GroupBox4.Location = new Point(11, 254);
             guna2GroupBox4.Margin = new Padding(2);
             guna2GroupBox4.Name = "guna2GroupBox4";
             guna2GroupBox4.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2GroupBox4.Size = new Size(1115, 330);
+            guna2GroupBox4.Size = new Size(1115, 408);
             guna2GroupBox4.TabIndex = 36;
             guna2GroupBox4.Text = "Danh Sách Loại Vật Tư";
             // 
@@ -175,11 +177,10 @@
             txtTimKiem.Location = new Point(630, 2);
             txtTimKiem.Margin = new Padding(4, 5, 4, 5);
             txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.PasswordChar = '\0';
             txtTimKiem.PlaceholderText = "Tìm kiếm...";
             txtTimKiem.SelectedText = "";
             txtTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtTimKiem.Size = new Size(354, 35);
+            txtTimKiem.Size = new Size(340, 35);
             txtTimKiem.TabIndex = 39;
             // 
             // btnTimKiem
@@ -218,10 +219,10 @@
             btnLamMoi.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnLamMoi.FillColor = Color.SkyBlue;
             btnLamMoi.FillColor2 = Color.FromArgb(255, 128, 255);
-            btnLamMoi.Font = new Font("Segoe UI", 9F);
+            btnLamMoi.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             btnLamMoi.ForeColor = Color.White;
             btnLamMoi.Image = (Image)resources.GetObject("btnLamMoi.Image");
-            btnLamMoi.Location = new Point(413, 257);
+            btnLamMoi.Location = new Point(976, 177);
             btnLamMoi.Margin = new Padding(2);
             btnLamMoi.Name = "btnLamMoi";
             btnLamMoi.ShadowDecoration.CustomizableEdges = customizableEdges8;
@@ -253,7 +254,7 @@
             guna2GroupBox1.Margin = new Padding(2);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            guna2GroupBox1.Size = new Size(1115, 317);
+            guna2GroupBox1.Size = new Size(1115, 239);
             guna2GroupBox1.TabIndex = 35;
             guna2GroupBox1.Text = "Hệ Thống Quản Lý Loại Vật Tư";
             // 
@@ -266,12 +267,12 @@
             dtpNgayTao.Font = new Font("Segoe UI", 9F);
             dtpNgayTao.ForeColor = Color.Black;
             dtpNgayTao.Format = DateTimePickerFormat.Long;
-            dtpNgayTao.Location = new Point(31, 178);
+            dtpNgayTao.Location = new Point(29, 177);
             dtpNgayTao.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpNgayTao.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpNgayTao.Name = "dtpNgayTao";
             dtpNgayTao.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            dtpNgayTao.Size = new Size(381, 45);
+            dtpNgayTao.Size = new Size(270, 45);
             dtpNgayTao.TabIndex = 56;
             dtpNgayTao.Value = new DateTime(2025, 5, 29, 12, 10, 18, 661);
             // 
@@ -280,7 +281,7 @@
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel2.ForeColor = Color.Black;
-            guna2HtmlLabel2.Location = new Point(31, 147);
+            guna2HtmlLabel2.Location = new Point(29, 152);
             guna2HtmlLabel2.Margin = new Padding(2);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(66, 22);
@@ -292,7 +293,7 @@
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = Color.Black;
-            guna2HtmlLabel1.Location = new Point(622, 149);
+            guna2HtmlLabel1.Location = new Point(710, 54);
             guna2HtmlLabel1.Margin = new Padding(2);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(55, 22);
@@ -312,14 +313,13 @@
             txtGhiChu.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGhiChu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtGhiChu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGhiChu.Location = new Point(620, 178);
+            txtGhiChu.Location = new Point(710, 79);
             txtGhiChu.Margin = new Padding(4, 5, 4, 5);
             txtGhiChu.Name = "txtGhiChu";
-            txtGhiChu.PasswordChar = '\0';
             txtGhiChu.PlaceholderText = "Nhập ghi chú...";
             txtGhiChu.SelectedText = "";
             txtGhiChu.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtGhiChu.Size = new Size(462, 46);
+            txtGhiChu.Size = new Size(382, 46);
             txtGhiChu.TabIndex = 52;
             // 
             // btnSua
@@ -334,9 +334,9 @@
             btnSua.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnSua.FillColor = Color.CornflowerBlue;
             btnSua.FillColor2 = Color.LightSteelBlue;
-            btnSua.Font = new Font("Segoe UI", 9F);
+            btnSua.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             btnSua.ForeColor = Color.White;
-            btnSua.Location = new Point(157, 257);
+            btnSua.Location = new Point(717, 177);
             btnSua.Margin = new Padding(2);
             btnSua.Name = "btnSua";
             btnSua.ShadowDecoration.CustomizableEdges = customizableEdges14;
@@ -357,9 +357,9 @@
             btnXoa.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnXoa.FillColor = Color.Crimson;
             btnXoa.FillColor2 = Color.FromArgb(255, 192, 192);
-            btnXoa.Font = new Font("Segoe UI", 9F);
+            btnXoa.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             btnXoa.ForeColor = Color.White;
-            btnXoa.Location = new Point(279, 257);
+            btnXoa.Location = new Point(839, 177);
             btnXoa.Margin = new Padding(2);
             btnXoa.Name = "btnXoa";
             btnXoa.ShadowDecoration.CustomizableEdges = customizableEdges16;
@@ -373,7 +373,7 @@
             guna2HtmlLabel10.BackColor = Color.Transparent;
             guna2HtmlLabel10.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel10.ForeColor = SystemColors.ActiveCaptionText;
-            guna2HtmlLabel10.Location = new Point(620, 57);
+            guna2HtmlLabel10.Location = new Point(297, 54);
             guna2HtmlLabel10.Margin = new Padding(2);
             guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             guna2HtmlLabel10.Size = new Size(100, 22);
@@ -385,12 +385,12 @@
             guna2HtmlLabel11.BackColor = Color.Transparent;
             guna2HtmlLabel11.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel11.ForeColor = Color.Black;
-            guna2HtmlLabel11.Location = new Point(28, 57);
+            guna2HtmlLabel11.Location = new Point(28, 54);
             guna2HtmlLabel11.Margin = new Padding(2);
             guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            guna2HtmlLabel11.Size = new Size(74, 22);
+            guna2HtmlLabel11.Size = new Size(102, 22);
             guna2HtmlLabel11.TabIndex = 43;
-            guna2HtmlLabel11.Text = "Loại vật tư";
+            guna2HtmlLabel11.Text = "Mã Loại Vật tư";
             // 
             // btnThem
             // 
@@ -404,10 +404,10 @@
             btnThem.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnThem.FillColor = Color.Green;
             btnThem.FillColor2 = Color.DarkSeaGreen;
-            btnThem.Font = new Font("Segoe UI", 9F);
+            btnThem.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             btnThem.ForeColor = Color.White;
             btnThem.Image = (Image)resources.GetObject("btnThem.Image");
-            btnThem.Location = new Point(31, 257);
+            btnThem.Location = new Point(591, 177);
             btnThem.Margin = new Padding(2);
             btnThem.Name = "btnThem";
             btnThem.ShadowDecoration.CustomizableEdges = customizableEdges18;
@@ -429,14 +429,13 @@
             txtLoaiVatTu.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtLoaiVatTu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtLoaiVatTu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLoaiVatTu.Location = new Point(29, 86);
+            txtLoaiVatTu.Location = new Point(29, 80);
             txtLoaiVatTu.Margin = new Padding(4, 5, 4, 5);
             txtLoaiVatTu.Name = "txtLoaiVatTu";
-            txtLoaiVatTu.PasswordChar = '\0';
-            txtLoaiVatTu.PlaceholderText = "Nhập loại vật tư";
+            txtLoaiVatTu.PlaceholderText = "";
             txtLoaiVatTu.SelectedText = "";
             txtLoaiVatTu.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            txtLoaiVatTu.Size = new Size(384, 45);
+            txtLoaiVatTu.Size = new Size(142, 45);
             txtLoaiVatTu.TabIndex = 37;
             // 
             // txtTenLoaiVatTu
@@ -452,14 +451,13 @@
             txtTenLoaiVatTu.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTenLoaiVatTu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtTenLoaiVatTu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenLoaiVatTu.Location = new Point(620, 86);
+            txtTenLoaiVatTu.Location = new Point(297, 80);
             txtTenLoaiVatTu.Margin = new Padding(4, 5, 4, 5);
             txtTenLoaiVatTu.Name = "txtTenLoaiVatTu";
-            txtTenLoaiVatTu.PasswordChar = '\0';
             txtTenLoaiVatTu.PlaceholderText = "Nhập tên loại vật tư";
             txtTenLoaiVatTu.SelectedText = "";
             txtTenLoaiVatTu.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            txtTenLoaiVatTu.Size = new Size(464, 45);
+            txtTenLoaiVatTu.Size = new Size(284, 45);
             txtTenLoaiVatTu.TabIndex = 36;
             // 
             // frmQL_LoaiVatTu
