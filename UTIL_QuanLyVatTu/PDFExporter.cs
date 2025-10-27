@@ -85,8 +85,8 @@ namespace GUI_QuanLyVatTu
                 AddCell(detailTable, "Vật tư mẫu 2", fontNormal);
                 AddCell(detailTable, "Hộp", fontNormal);
                 AddCell(detailTable, "1", fontNormal);
-                AddCell(detailTable, "500,000", fontNormal);
-                AddCell(detailTable, "500,000", fontNormal);
+                AddCell(detailTable, "10,000", fontNormal);
+                AddCell(detailTable, "5,000", fontNormal);
 
                 document.Add(detailTable);
                 document.Add(new Paragraph(" "));
