@@ -17,14 +17,21 @@ namespace GUI_QuanLyVatTu
         {
             InitializeComponent();
         }
-
+        private void LoadComboboxNhanVien()
+        {
+            var danhSachNV = new BUSNhanVien().GetNhanVienList();
+            cbo_MaNV.DataSource = danhSachNV;
+            cbo_MaNV.DisplayMember = "HoTen";
+            cbo_MaNV.ValueMember = "NhanVienID";
+            cbo_MaNV.SelectedIndex = -1;
+        }
         private void ResetForm()
         {
             txtMaDonHang.Text = bus.GenerateID();
             cboMaKhachHang.SelectedIndex = -1;
             cboMaKhachHang.Enabled = true;
 
-            txtMaNhanVien.Text = AuthUtil.user?.NhanVienID ?? "NV001";
+            
             dtpNgayDat.Value = DateTime.Now;
 
             cboTrangThai.SelectedIndex = cboTrangThai.Items.IndexOf("Chưa thanh toán");
@@ -50,7 +57,7 @@ namespace GUI_QuanLyVatTu
             {
                 DonHangID = txtMaDonHang.Text.Trim(),
                 KhachHangID = cboMaKhachHang.SelectedValue != null ? cboMaKhachHang.SelectedValue.ToString() : "",
-                NhanVienID = txtMaNhanVien.Text.Trim(),
+                NhanVienID = cbo_MaNV.SelectedValue != null ? cbo_MaNV.SelectedValue.ToString() : "",
                 NgayDat = dtpNgayDat.Value,
                 TrangThai = cboTrangThai.SelectedItem != null ? cboTrangThai.SelectedItem.ToString() : "Chưa thanh toán",
                 GhiChu = txtGhiChu.Text.Trim(),
@@ -124,7 +131,7 @@ namespace GUI_QuanLyVatTu
         private void frmQL_DonHang_Load(object sender, EventArgs e)
         {
             txtMaDonHang.Enabled = false;
-            txtMaNhanVien.Enabled = false;
+            
 
             var danhSachKH = new BUSKhachHang().GetAll();
             cboMaKhachHang.DataSource = danhSachKH;
@@ -148,6 +155,7 @@ namespace GUI_QuanLyVatTu
             cboPhuongThucThanhToan.SelectedIndex = 0;
 
             LoadData();
+            LoadComboboxNhanVien();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -182,7 +190,7 @@ namespace GUI_QuanLyVatTu
 
                 txtMaDonHang.Text = row.Cells["DonHangID"].Value.ToString();
                 cboMaKhachHang.SelectedValue = row.Cells["KhachHangID"].Value.ToString();
-                txtMaNhanVien.Text = row.Cells["NhanVienID"].Value.ToString();
+               cbo_MaNV.SelectedValue = row.Cells["NhanVienID"].Value.ToString();
                 dtpNgayDat.Value = Convert.ToDateTime(row.Cells["NgayDat"].Value);
 
                 string trangThai = row.Cells["TrangThai"].Value?.ToString() ?? "";
@@ -216,10 +224,16 @@ namespace GUI_QuanLyVatTu
 
         }
 
+
+        private void dgvDonHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        { }
+
+
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             frmInHoaDon frmInHD = new frmInHoaDon();
             frmInHD.ShowDialog();
+
         }
     }
 }
