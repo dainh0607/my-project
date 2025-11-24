@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
@@ -11,7 +10,7 @@ namespace DAL_QuanLyVatTu
 {
     public class DBUtil
     {
-        private static string connString = @"Data Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Trust Server Certificate=True";
+        private static string connString = @"Data Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Trust Server Certificate=TrueData Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Trust Server Certificate=TrueData Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Trust Server Certificate=True";
         public static SqlCommand GetCommand(string sql, List<Object> args, CommandType cmdType)
         {
             SqlConnection conn = new SqlConnection(connString);
@@ -20,7 +19,7 @@ namespace DAL_QuanLyVatTu
             for (int i = 0; i < args.Count; i++)
             {
                 cmd.Parameters.AddWithValue($"@{i
-    }", args[i]);
+        }", args[i]);
             }
             return cmd;
         }

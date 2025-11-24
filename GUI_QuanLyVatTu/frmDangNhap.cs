@@ -40,12 +40,6 @@ namespace GUI_QuanLyVatTu
                 DAL_NhanVien dalNhanVien = new DAL_NhanVien();
                 NhanVien nv = dalNhanVien.getNhanVien1(email, matKhau);
 
-                if (nv == null)
-                {
-                    MessageBox.Show(this, "Tài khoản hoặc mật khẩu không chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
                 if (!nv.TinhTrang)
                 {
                     MessageBox.Show(this, "Tài khoản đã ngưng hoạt động, vui lòng liên hệ quản lý.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

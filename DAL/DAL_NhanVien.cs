@@ -138,7 +138,7 @@ namespace DAL_QuanLyVatTu
                 }
             }
 
-            return prefix + "001"; // Nếu không có mã nào  
+            return prefix + "001";  
         }
 
         public string Insert(NhanVien nv)
@@ -159,12 +159,32 @@ namespace DAL_QuanLyVatTu
         public List<NhanVien> SearchNhanVien(string keyword)
         {
             string sql = @"SELECT * FROM NhanVien WHERE   
-           NhanVienID LIKE @kw OR  
-           HoTen LIKE @kw OR  
-           ChucVu LIKE @kw OR  
-           SoDienThoai LIKE @kw";
-            var args = new List<object> { "%" + keyword + "%" };
-            return dalNhanVien.SelectBySql(sql, args);
+            NhanVienID LIKE @kw OR  
+            HoTen LIKE @kw OR  
+            ChucVu LIKE @kw OR  
+            SoDienThoai LIKE @kw";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+        new SqlParameter("@kw", "%" + keyword + "%")
+            };
+
+            DataTable dt = DBUtil.ExecuteQuery(sql, parameters);
+
+            List<NhanVien> list = new List<NhanVien>();
+            foreach (DataRow row in dt.Rows)
+            {
+                NhanVien nv = new NhanVien
+                {
+                    NhanVienID = row["NhanVienID"].ToString(),
+                    HoTen = row["HoTen"].ToString(),
+                    ChucVu = row["ChucVu"].ToString(),
+                    SoDienThoai = row["SoDienThoai"].ToString()
+                };
+                list.Add(nv);
+            }
+
+            return list;
         }
 
     }
