@@ -60,7 +60,8 @@ namespace GUI_QuanLyVatTu
                 NhanVienID = cbo_MaNV.SelectedValue != null ? cbo_MaNV.SelectedValue.ToString() : "",
                 NgayDat = dtpNgayDat.Value,
                 TrangThai = cboTrangThai.SelectedItem != null ? cboTrangThai.SelectedItem.ToString() : "Chưa thanh toán",
-                GhiChu = txtGhiChu.Text.Trim()
+                GhiChu = txtGhiChu.Text.Trim(),
+                PhuongThucThanhToan = cboPhuongThucThanhToan.SelectedItem?.ToString() ?? "Tiền mặt" // 🔹 thêm dòng này
             };
         }
 
@@ -145,6 +146,13 @@ namespace GUI_QuanLyVatTu
             cboTrangThai.Items.Add("Đã hủy");
             cboTrangThai.Items.Add("Chưa thanh toán");
             cboTrangThai.SelectedIndex = 4;
+
+            // Thêm danh sách phương thức thanh toán
+            cboPhuongThucThanhToan.Items.Clear();
+            cboPhuongThucThanhToan.Items.Add("Tiền mặt");
+            cboPhuongThucThanhToan.Items.Add("Chuyển khoản");
+            cboPhuongThucThanhToan.Items.Add("Quẹt thẻ");
+            cboPhuongThucThanhToan.SelectedIndex = 0;
 
             LoadData();
             LoadComboboxNhanVien();

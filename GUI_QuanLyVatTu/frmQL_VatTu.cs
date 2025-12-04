@@ -297,6 +297,7 @@ namespace GUI_QuanLyVatTu
 
         }
 
+<<<<<<< HEAD
 
         private void guna2GroupBox4_Click(object sender, EventArgs e)
         {
@@ -307,6 +308,14 @@ namespace GUI_QuanLyVatTu
         {
             txtMaVatTu.Enabled = false;
 
+=======
+        private void guna2GroupBox4_Click(object sender, EventArgs e)
+        {
+        }
+        private void txtMaVatTu_TextChanged(object sender, EventArgs e)
+        {
+            txtMaVatTu.Enabled = false;
+>>>>>>> c309c8bd50db58620a85e69bd080b4177c551f2d
         }
     }
 }

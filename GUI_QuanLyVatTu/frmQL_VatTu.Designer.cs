@@ -619,12 +619,18 @@
             guna2GroupBox4.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2GroupBox4.Size = new Size(603, 651);
             guna2GroupBox4.TabIndex = 45;
+<<<<<<< HEAD
 
             guna2GroupBox4.Text = "Danh Sách Nhà Cung Cấp";
             guna2GroupBox4.Click += guna2GroupBox4_Click;
 
             guna2GroupBox4.Text = "Danh Sách Vật tư";
 
+=======
+            guna2GroupBox4.Text = "Danh Sách Nhà Cung Cấp";
+            guna2GroupBox4.Click += guna2GroupBox4_Click;
+            guna2GroupBox4.Text = "Danh Sách Vật tư";
+>>>>>>> c309c8bd50db58620a85e69bd080b4177c551f2d
             // 
             // frmQL_VatTu
             // 
