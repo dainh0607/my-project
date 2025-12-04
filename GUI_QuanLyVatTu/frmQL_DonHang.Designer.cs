@@ -50,32 +50,26 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-<<<<<<< HEAD
+
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-=======
+
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
->>>>>>> 572500aeb8a9c24faa620092263036c00f954023
+
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-<<<<<<< HEAD
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-=======
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
->>>>>>> 572500aeb8a9c24faa620092263036c00f954023
+
+            
+
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtGhiChu = new Guna.UI2.WinForms.Guna2TextBox();
             btnLamMoi = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -98,11 +92,11 @@
             cboTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
             cboMaKhachHang = new Guna.UI2.WinForms.Guna2ComboBox();
             dtpNgayDat = new Guna.UI2.WinForms.Guna2DateTimePicker();
-<<<<<<< HEAD
+
             cbo_MaNV = new Guna.UI2.WinForms.Guna2ComboBox();
-=======
+
             guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
->>>>>>> 572500aeb8a9c24faa620092263036c00f954023
+
             ((System.ComponentModel.ISupportInitialize)dgvDonHang).BeginInit();
             guna2GroupBox4.SuspendLayout();
             guna2GroupBox1.SuspendLayout();
@@ -451,11 +445,11 @@
             // 
             guna2GroupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2GroupBox1.BorderRadius = 15;
-<<<<<<< HEAD
+
             guna2GroupBox1.Controls.Add(cbo_MaNV);
-=======
+
             guna2GroupBox1.Controls.Add(guna2GradientButton1);
->>>>>>> 572500aeb8a9c24faa620092263036c00f954023
+
             guna2GroupBox1.Controls.Add(guna2HtmlLabel1);
             guna2GroupBox1.Controls.Add(cboTrangThai);
             guna2GroupBox1.Controls.Add(cboMaKhachHang);
@@ -506,13 +500,13 @@
             cboTrangThai.ItemHeight = 30;
             cboTrangThai.Location = new Point(388, 168);
             cboTrangThai.Name = "cboTrangThai";
-<<<<<<< HEAD
+
             cboTrangThai.ShadowDecoration.CustomizableEdges = customizableEdges24;
             cboTrangThai.Size = new Size(240, 36);
-=======
+
             cboTrangThai.ShadowDecoration.CustomizableEdges = customizableEdges22;
             cboTrangThai.Size = new Size(178, 36);
->>>>>>> 294c2ba8d0721b62bb0eabbb91583fec1003c275
+
             cboTrangThai.TabIndex = 57;
             // 
             // cboMaKhachHang
@@ -528,13 +522,13 @@
             cboMaKhachHang.ItemHeight = 30;
             cboMaKhachHang.Location = new Point(263, 75);
             cboMaKhachHang.Name = "cboMaKhachHang";
-<<<<<<< HEAD
+
             cboMaKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges26;
             cboMaKhachHang.Size = new Size(199, 36);
-=======
+
             cboMaKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges24;
             cboMaKhachHang.Size = new Size(207, 36);
->>>>>>> 294c2ba8d0721b62bb0eabbb91583fec1003c275
+
             cboMaKhachHang.TabIndex = 56;
             // 
             // dtpNgayDat
@@ -550,17 +544,17 @@
             dtpNgayDat.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpNgayDat.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpNgayDat.Name = "dtpNgayDat";
-<<<<<<< HEAD
+
             dtpNgayDat.ShadowDecoration.CustomizableEdges = customizableEdges28;
             dtpNgayDat.Size = new Size(295, 45);
-=======
+
             dtpNgayDat.ShadowDecoration.CustomizableEdges = customizableEdges26;
             dtpNgayDat.Size = new Size(259, 45);
->>>>>>> 294c2ba8d0721b62bb0eabbb91583fec1003c275
+
             dtpNgayDat.TabIndex = 41;
             dtpNgayDat.Value = new DateTime(2025, 6, 5, 10, 58, 0, 751);
             // 
-<<<<<<< HEAD
+
             // cbo_MaNV
             // 
             cbo_MaNV.BackColor = Color.Transparent;
@@ -577,7 +571,7 @@
             cbo_MaNV.ShadowDecoration.CustomizableEdges = customizableEdges20;
             cbo_MaNV.Size = new Size(175, 36);
             cbo_MaNV.TabIndex = 59;
-=======
+
             // guna2GradientButton1
             // 
             guna2GradientButton1.BackColor = Color.Transparent;
@@ -601,7 +595,7 @@
             guna2GradientButton1.TabIndex = 59;
             guna2GradientButton1.Text = "In Hóa Đơn";
             guna2GradientButton1.Click += guna2GradientButton1_Click;
->>>>>>> 572500aeb8a9c24faa620092263036c00f954023
+
             // 
             // frmQL_DonHang
             // 
@@ -646,10 +640,10 @@
         private Guna.UI2.WinForms.Guna2ComboBox cboMaKhachHang;
         private Guna.UI2.WinForms.Guna2ComboBox cboTrangThai;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-<<<<<<< HEAD
+
         private Guna.UI2.WinForms.Guna2ComboBox cbo_MaNV;
-=======
+
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
->>>>>>> 572500aeb8a9c24faa620092263036c00f954023
+
     }
 }
