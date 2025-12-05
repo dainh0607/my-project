@@ -12,7 +12,13 @@ namespace BLL_QuanLyVatTu
 {
     public class BUSNhanVien
     {
-        DAL_NhanVien dalNhanVien = new DAL_NhanVien();
+        private readonly IDAL_NhanVien dalNhanVien;
+
+        public BUSNhanVien(IDAL_NhanVien dal)
+        {
+            dalNhanVien = dal;
+        }
+
         public NhanVien DangNhap(string username, string password)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))

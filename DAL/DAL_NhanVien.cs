@@ -10,7 +10,7 @@ using DAL_QuanLyVatTu;
 
 namespace DAL_QuanLyVatTu
 {
-    public class DAL_NhanVien
+    public class DAL_NhanVien : IDAL_NhanVien
     {
         private static DAL_NhanVien dalNhanVien = new DAL_NhanVien();
 
@@ -50,7 +50,7 @@ namespace DAL_QuanLyVatTu
             DBUtil.Update(sql, parameters);
         }
 
-        public List<NhanVien> SelectBySql(string sql, List<object> args, CommandType cmdType = CommandType.Text)
+        public List<NhanVien> SelectBySql(string sql, List<object> args)
         {
             List<NhanVien> list = new List<NhanVien>();
             try

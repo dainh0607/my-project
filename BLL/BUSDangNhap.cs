@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using DAL_QuanLyVatTu;
 using DTO_QuanLyVatTu;
@@ -11,7 +12,25 @@ namespace BLL_QuanLyVatTu
 {
     public class BUSDangNhap
     {
-        private DAL_NhanVien dalNhanVien = new DAL_NhanVien();
+        private readonly IDAL_NhanVien _dal;
+
+        public BUSDangNhap(IDAL_NhanVien dal)
+        {
+            _dal = dal;
+        }
+
+        public string MaHoaMD5(string str)
+        {
+            MD5 md5 = MD5.Create();
+            byte[] inputBytes = Encoding.ASCII.GetBytes(str);
+            byte[] hash = md5.ComputeHash(inputBytes);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("X2"));
+            }
+            return sb.ToString();
+        }
 
         public string KiemTraDangNhap(string email, string matKhau)
         {
@@ -38,7 +57,7 @@ namespace BLL_QuanLyVatTu
             {
                 return "Email không hợp lệ!";
             }
-            NhanVien nhanVienHopLe = dalNhanVien.getNhanVien1(email, matKhau);
+            NhanVien nhanVienHopLe = _dal.getNhanVien1(email, matKhau);
 
             if (nhanVienHopLe == null)
             {
@@ -49,7 +68,7 @@ namespace BLL_QuanLyVatTu
 
         private NhanVien TimNhanVienTheoEmail(string email)
         {
-            var danhSach = dalNhanVien.selectAll();
+            var danhSach = _dal.selectAll();
             foreach (var nv in danhSach)
             {
                 if (nv.Email.Equals(email, StringComparison.OrdinalIgnoreCase))
