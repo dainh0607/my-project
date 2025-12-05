@@ -1,5 +1,6 @@
 ﻿using BLL_QuanLyVatTu;
 using DTO_QuanLyVatTu;
+using DAL_QuanLyVatTu;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,7 +20,8 @@ namespace GUI_QuanLyVatTu
         }
         private void LoadComboboxNhanVien()
         {
-            var danhSachNV = new BUSNhanVien().GetNhanVienList();
+            IDAL_NhanVien dalNhanVien = new DAL_NhanVien();
+            var danhSachNV = new BUSNhanVien(dalNhanVien).GetNhanVienList();
             cbo_MaNV.DataSource = danhSachNV;
             cbo_MaNV.DisplayMember = "HoTen";
             cbo_MaNV.ValueMember = "NhanVienID";
@@ -61,7 +63,7 @@ namespace GUI_QuanLyVatTu
                 NgayDat = dtpNgayDat.Value,
                 TrangThai = cboTrangThai.SelectedItem != null ? cboTrangThai.SelectedItem.ToString() : "Chưa thanh toán",
                 GhiChu = txtGhiChu.Text.Trim(),
-                PhuongThucThanhToan = cboPhuongThucThanhToan.SelectedItem?.ToString() ?? "Tiền mặt" // 🔹 thêm dòng này
+                //PhuongThucThanhToan = cboPhuongThucThanhToan.SelectedItem?.ToString() ?? "Tiền mặt" // 🔹 thêm dòng này
             };
         }
 

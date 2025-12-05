@@ -1,5 +1,6 @@
 ﻿using BLL_QuanLyVatTu;
 using DTO_QuanLyVatTu;
+using DAL_QuanLyVatTu;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +13,7 @@ namespace GUI_QuanLyVatTu
 {
     public partial class frmQL_NhanVien : Form
     {
-        private BUSNhanVien _busNhanVien = new BUSNhanVien();
+        private BUSNhanVien _busNhanVien = new BUSNhanVien(new DAL_NhanVien());
 
         public frmQL_NhanVien()
         {
