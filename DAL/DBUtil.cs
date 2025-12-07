@@ -10,17 +10,8 @@ namespace DAL_QuanLyVatTu
 {
     public class DBUtil
     {
-<<<<<<< HEAD
-        private static string connString = @"Data Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Trust Server Certificate=TrueData Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Trust Server Certificate=TrueData Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Trust Server Certificate=True";
-=======
-
-        
-
         private static string connString = @"Data Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Trust Server Certificate=TrueData Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Trust Server Certificate=TrueData Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Trust Server Certificate=True";
 
-        
-
->>>>>>> 20edaaf5e7853e8b61c4cb66e756861b87b54a25
         public static SqlCommand GetCommand(string sql, List<Object> args, CommandType cmdType)
         {
             SqlConnection conn = new SqlConnection(connString);

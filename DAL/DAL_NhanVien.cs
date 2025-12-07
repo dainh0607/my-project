@@ -187,5 +187,16 @@ namespace DAL_QuanLyVatTu
             return list;
         }
 
+        public bool KiemTraLienKetDuLieu(string maNhanVien)
+        {
+            string sql = "SELECT COUNT(*) FROM HoaDon WHERE NhanVienID = @0";
+            object result = DBUtil.ScalarQuery(sql, new List<object> { maNhanVien });
+
+            if (result != null && int.TryParse(result.ToString(), out int count))
+            {
+                return count > 0;
+            }
+            return false;
+        }
     }
 }
