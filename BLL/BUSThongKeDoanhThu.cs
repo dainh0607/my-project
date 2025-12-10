@@ -15,12 +15,12 @@ namespace BLL_QuanLyVatTu
         private readonly DAL_NhanVien dalNhanVien = new DAL_NhanVien();
         private readonly DAL_KhachHang dalKhachHang = new DAL_KhachHang();
 
-        public List<ThongKeDoanhThu> SelectAll()
+        public virtual List<ThongKeDoanhThu> SelectAll()
         {
             return dalThongKe.SelectAll();
         }
 
-        public List<ThongKeDoanhThu> ThongKeTheoDieuKien(
+        public virtual List<ThongKeDoanhThu> ThongKeTheoDieuKien(
             DateTime fromDate,
             DateTime toDate,
             string nhanVienID,
@@ -31,7 +31,7 @@ namespace BLL_QuanLyVatTu
             return dalThongKe.SelectByFilter(fromDate, toDate, nhanVienID, khachHangID, trangThai, phuongThuc);
         }
 
-        public DataTable GetNhanVienList()
+        public virtual DataTable GetNhanVienList()
         {
             var list = dalNhanVien.selectAll();
             DataTable dt = new DataTable();
@@ -44,7 +44,7 @@ namespace BLL_QuanLyVatTu
             return dt;
         }
 
-        public DataTable GetKhachHangList()
+        public virtual DataTable GetKhachHangList()
         {
             var list = dalKhachHang.SelectAll();
             DataTable dt = new DataTable();

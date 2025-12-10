@@ -11,7 +11,7 @@ namespace DAL_QuanLyVatTu
 {
     public class DAL_NhaCungCap
     {
-        public List<NhaCungCap> SelectBySql(string sql, List<object> args)
+        public virtual List<NhaCungCap> SelectBySql(string sql, List<object> args)
         {
             List<NhaCungCap> list = new List<NhaCungCap>();
             SqlDataReader reader = DBUtil.Query(sql, args);
@@ -32,13 +32,13 @@ namespace DAL_QuanLyVatTu
             return list;
         }
 
-        public List<NhaCungCap> SelectAll()
+        public virtual List<NhaCungCap> SelectAll()
         {
             string sql = "SELECT * FROM NhaCungCap";
             return SelectBySql(sql, new List<object>());
         }
 
-        public string Insert(NhaCungCap ncc)
+        public virtual string Insert(NhaCungCap ncc)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace DAL_QuanLyVatTu
             }
         }
 
-        public string Update(NhaCungCap ncc)
+        public virtual string Update(NhaCungCap ncc)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace DAL_QuanLyVatTu
             }
         }
 
-        public string Delete(string id)
+        public virtual string Delete(string id)
         {
             try
             {
@@ -102,7 +102,7 @@ namespace DAL_QuanLyVatTu
             }
         }
 
-        public string GenerateID()
+        public virtual string GenerateID()
         {
             string prefix = "NCC";
             string sql = "SELECT TOP 1 NhaCungCapID FROM NhaCungCap WHERE NhaCungCapID LIKE 'NCC%' ORDER BY NhaCungCapID DESC";

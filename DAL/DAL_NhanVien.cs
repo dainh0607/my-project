@@ -14,7 +14,7 @@ namespace DAL_QuanLyVatTu
     {
         private static DAL_NhanVien dalNhanVien = new DAL_NhanVien();
 
-        public NhanVien getNhanVien1(string email, string password)
+        public virtual NhanVien getNhanVien1(string email, string password)
         {
             string sql = "SELECT Top 1 * FROM NhanVien WHERE Email=@0 AND MatKhau=@1";
             List<object> thamSo = new List<object>();
@@ -41,7 +41,7 @@ namespace DAL_QuanLyVatTu
             return null;
         }
 
-        public void update(NhanVien nv)
+        public virtual void update(NhanVien nv)
         {
             string sql = "UPDATE NhanVien SET MatKhau = @0 WHERE NhanVienID = @1";
             List<object> parameters = new List<object>();
@@ -50,7 +50,7 @@ namespace DAL_QuanLyVatTu
             DBUtil.Update(sql, parameters);
         }
 
-        public List<NhanVien> SelectBySql(string sql, List<object> args, CommandType cmdType = CommandType.Text)
+        public virtual List<NhanVien> SelectBySql(string sql, List<object> args, CommandType cmdType = CommandType.Text)
         {
             List<NhanVien> list = new List<NhanVien>();
             try
@@ -78,13 +78,13 @@ namespace DAL_QuanLyVatTu
             return list;
         }
 
-        public List<NhanVien> selectAll()
+        public virtual List<NhanVien> selectAll()
         {
             String sql = "SELECT * FROM NhanVien";
             return SelectBySql(sql, new List<object>());
         }
 
-        public void updateNhanVien(NhanVien nv)
+        public virtual void updateNhanVien(NhanVien nv)
         {
             try
             {
@@ -106,7 +106,7 @@ namespace DAL_QuanLyVatTu
             }
         }
 
-        public string Delete(string maNV)
+        public virtual string Delete(string maNV)
         {
             try
             {
@@ -121,7 +121,7 @@ namespace DAL_QuanLyVatTu
             }
         }
 
-        public string generateMaNhanVien()
+        public virtual string generateMaNhanVien()
         {
             string prefix = "NV";
             string sql = "SELECT TOP 1 NhanVienID FROM NhanVien WHERE NhanVienID LIKE 'NV%' ORDER BY NhanVienID DESC";
@@ -141,7 +141,7 @@ namespace DAL_QuanLyVatTu
             return prefix + "001"; // Nếu không có mã nào  
         }
 
-        public string Insert(NhanVien nv)
+        public virtual string Insert(NhanVien nv)
         {
             try
             {
@@ -156,7 +156,7 @@ namespace DAL_QuanLyVatTu
             }
         }
 
-        public List<NhanVien> SearchNhanVien(string keyword)
+        public virtual List<NhanVien> SearchNhanVien(string keyword)
         {
             string sql = @"SELECT * FROM NhanVien WHERE   
            NhanVienID LIKE @kw OR  

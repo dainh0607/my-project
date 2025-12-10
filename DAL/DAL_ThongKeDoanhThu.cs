@@ -12,7 +12,7 @@ namespace DAL_QuanLyVatTu
 {
     public class DAL_ThongKeDoanhThu
     {
-        public List<ThongKeDoanhThu> SelectAll()
+        public virtual List<ThongKeDoanhThu> SelectAll()
         {
             string sql = @"
                 SELECT 
@@ -59,7 +59,7 @@ namespace DAL_QuanLyVatTu
             return list;
         }
 
-        public List<ThongKeDoanhThu> SelectByFilter(DateTime fromDate, DateTime toDate, string nhanVienID, string khachHangID, string trangThai, string phuongThuc)
+        public virtual List<ThongKeDoanhThu> SelectByFilter(DateTime fromDate, DateTime toDate, string nhanVienID, string khachHangID, string trangThai, string phuongThuc)
         {
             string sql = @"
                 SELECT 

@@ -12,7 +12,7 @@ namespace DAL_QuanLyVatTu
 {
     public class DAL_KhachHang
     {
-        public List<KhachHang> SelectBySql(string sql, List<Object> args, CommandType cmdType)
+        public virtual List<KhachHang> SelectBySql(string sql, List<Object> args, CommandType cmdType)
         {
             List<KhachHang> list = new List<KhachHang>();
             SqlDataReader reader = DBUtil.Query(sql, args, CommandType.Text);
@@ -33,13 +33,13 @@ namespace DAL_QuanLyVatTu
             return list;
         }
 
-        public List<KhachHang> SelectAll()
+        public virtual List<KhachHang> SelectAll()
         {
             string sql = "SELECT * FROM KhachHang";
             return SelectBySql(sql, new List<object>(), CommandType.Text);
         }
 
-        public string Insert(KhachHang kh)
+        public virtual string Insert(KhachHang kh)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace DAL_QuanLyVatTu
             }
         }
 
-        public string Update(KhachHang kh)
+        public virtual string Update(KhachHang kh)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace DAL_QuanLyVatTu
             }
         }
 
-        public string Delete(string id)
+        public virtual string Delete(string id)
         {
             try
             {
@@ -102,7 +102,7 @@ namespace DAL_QuanLyVatTu
             }
         }
 
-        public string GenerateID()
+        public virtual string GenerateID()
         {
             string prefix = "KH";
             string sql = "SELECT TOP 1 KhachHangID FROM KhachHang WHERE KhachHangID LIKE 'KH%' ORDER BY KhachHangID DESC";
