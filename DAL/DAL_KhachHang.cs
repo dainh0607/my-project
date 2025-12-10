@@ -56,34 +56,46 @@ namespace DAL_QuanLyVatTu
                     kh.GhiChu
                 };
                 DBUtil.Update(sql, args);
-                return null;
+                return "Thêm thành công";
             }
             catch (Exception ex)
             {
                 return ex.Message;
             }
         }
-
         public string Update(KhachHang kh)
         {
             try
             {
-                string sql = "UPDATE KhachHang SET HoTen = @1, DiaChi = @2, SoDienThoai = @3, Email = @4, NgayTao = @5, GhiChu = @6 WHERE KhachHangID = @0";
-                List<object> args = new List<object>
+                // 1. Kiểm tra tồn tại
+                string checkSql = "SELECT COUNT(1) FROM KhachHang WHERE KhachHangID = @0";
+                object exists = DBUtil.ScalarQuery(checkSql, new List<object> { kh.KhachHangID });
+                int cnt = 0;
+                if (exists != null && int.TryParse(exists.ToString(), out cnt) && cnt > 0)
                 {
-                    kh.KhachHangID,
-                    kh.HoTen,
-                    kh.DiaChi,
-                    kh.SoDienThoai,
-                    kh.Email,
-                    kh.NgayTao,
-                    kh.GhiChu
-                };
-                DBUtil.Update(sql, args);
-                return null;
+                    // 2. Thực hiện cập nhật
+                    string sql = "UPDATE KhachHang SET HoTen = @1, DiaChi = @2, SoDienThoai = @3, Email = @4, NgayTao = @5, GhiChu = @6 WHERE KhachHangID = @0";
+                    List<object> args = new List<object>
+            {
+                kh.KhachHangID,
+                kh.HoTen,
+                kh.DiaChi,
+                kh.SoDienThoai,
+                kh.Email,
+                kh.NgayTao,
+                kh.GhiChu
+            };
+                    DBUtil.Update(sql, args);
+                    return "Cập nhật thành công";
+                }
+                else
+                {
+                    return "Không tìm thấy khách hàng";
+                }
             }
             catch (Exception ex)
             {
+                // Trả về thông báo lỗi để test có thể kiểm tra hoặc log
                 return ex.Message;
             }
         }
@@ -92,15 +104,32 @@ namespace DAL_QuanLyVatTu
         {
             try
             {
-                string sql = "DELETE FROM KhachHang WHERE KhachHangID = @0";
-                DBUtil.Update(sql, new List<object> { id });
-                return null;
+                // 1. Kiểm tra tồn tại trước khi xóa
+                string checkSql = "SELECT COUNT(1) FROM KhachHang WHERE KhachHangID = @0";
+                object exists = DBUtil.ScalarQuery(checkSql, new List<object> { id });
+                int cnt = 0;
+                if (exists != null && int.TryParse(exists.ToString(), out cnt) && cnt > 0)
+                {
+                    string sql = "DELETE FROM KhachHang WHERE KhachHangID = @0";
+                    DBUtil.Update(sql, new List<object> { id });
+                    return "Xóa thành công";
+                }
+                else
+                {
+                    return "Không tìm thấy khách hàng";
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                // Có thể là ràng buộc FK -> trả về thông báo rõ hơn
+                return "Lỗi SQL: " + sqlEx.Message;
             }
             catch (Exception ex)
             {
                 return ex.Message;
             }
         }
+
 
         public string GenerateID()
         {
