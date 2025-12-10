@@ -1,0 +1,41 @@
+name: CI/CD Build WinForm App
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    # B1 - Lấy source từ Github
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # B2 - Cài .NET SDK
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: "8.0.x"
+
+    # B3 - Restore packages
+    - name: Restore dependencies
+      run: dotnet restore
+
+    # B4 - Build project WinForm
+    - name: Build project
+      run: dotnet build --configuration Release --no-restore
+
+    # B5 - Publish ra file exe
+    - name: Publish WinForm
+      run: dotnet publish -c Release -o publish
+
+    # B6 - Upload kết quả build để tải về
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: WinForm-App
+        path: publish/

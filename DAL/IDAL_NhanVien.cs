@@ -22,5 +22,6 @@ namespace DAL_QuanLyVatTu
         List<NhanVien> SelectBySql(string sql, List<object> args);
 
         string generateMaNhanVien();
+        bool KiemTraLienKetDuLieu(string maNhanVien);
     }
 }

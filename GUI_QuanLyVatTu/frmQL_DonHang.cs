@@ -63,11 +63,6 @@ namespace GUI_QuanLyVatTu
                 NgayDat = dtpNgayDat.Value,
                 TrangThai = cboTrangThai.SelectedItem != null ? cboTrangThai.SelectedItem.ToString() : "Chưa thanh toán",
                 GhiChu = txtGhiChu.Text.Trim(),
-<<<<<<< HEAD
-                //PhuongThucThanhToan = cboPhuongThucThanhToan.SelectedItem?.ToString() ?? "Tiền mặt" // 🔹 thêm dòng này
-=======
-                
->>>>>>> 20edaaf5e7853e8b61c4cb66e756861b87b54a25
             };
         }
 

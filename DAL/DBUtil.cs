@@ -10,10 +10,14 @@ namespace DAL_QuanLyVatTu
 {
     public class DBUtil
     {
+<<<<<<< HEAD
 
         private static string connString = @"Data Source=THOAN2410;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
 
  
+=======
+        private static string connString = @"Data Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Trust Server Certificate=TrueData Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Trust Server Certificate=TrueData Source=NGUYEN-HOANG-DA\NHD;Initial Catalog=Xuong_QuanLyVatTu;Integrated Security=True;Trust Server Certificate=True";
+>>>>>>> 5d674d9819f44bd8728fc315edbc7a64fff98622
 
         public static SqlCommand GetCommand(string sql, List<Object> args, CommandType cmdType)
         {

@@ -88,16 +88,21 @@ namespace BLL_QuanLyVatTu
             }
         }
 
-        public string DeleteNhanVien(string nv)
+        public string DeleteNhanVien(string maNhanVien)
         {
             try
             {
-                dalNhanVien.Delete(nv);
-                return null;
+                bool coLienKet = dalNhanVien.KiemTraLienKetDuLieu(maNhanVien);
+
+                if (coLienKet)
+                {
+                    return "Không thể xóa nhân viên này vì đã phát sinh đơn hàng/nghiệp vụ.";
+                }
+                return dalNhanVien.Delete(maNhanVien);
             }
             catch (Exception ex)
             {
-                return "Lỗi: " + ex.Message;
+                return "Lỗi hệ thống: " + ex.Message;
             }
         }
 
