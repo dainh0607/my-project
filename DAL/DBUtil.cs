@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
@@ -20,7 +19,7 @@ namespace DAL_QuanLyVatTu
             for (int i = 0; i < args.Count; i++)
             {
                 cmd.Parameters.AddWithValue($"@{i
-    }", args[i]);
+        }", args[i]);
             }
             return cmd;
         }

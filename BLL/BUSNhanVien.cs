@@ -12,7 +12,13 @@ namespace BLL_QuanLyVatTu
 {
     public class BUSNhanVien
     {
-        DAL_NhanVien dalNhanVien = new DAL_NhanVien();
+        private readonly IDAL_NhanVien dalNhanVien;
+
+        public BUSNhanVien(IDAL_NhanVien dal)
+        {
+            dalNhanVien = dal;
+        }
+
         public NhanVien DangNhap(string username, string password)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
@@ -82,16 +88,21 @@ namespace BLL_QuanLyVatTu
             }
         }
 
-        public string DeleteNhanVien(string nv)
+        public string DeleteNhanVien(string maNhanVien)
         {
             try
             {
-                dalNhanVien.Delete(nv);
-                return null;
+                bool coLienKet = dalNhanVien.KiemTraLienKetDuLieu(maNhanVien);
+
+                if (coLienKet)
+                {
+                    return "Không thể xóa nhân viên này vì đã phát sinh đơn hàng/nghiệp vụ.";
+                }
+                return dalNhanVien.Delete(maNhanVien);
             }
             catch (Exception ex)
             {
-                return "Lỗi: " + ex.Message;
+                return "Lỗi hệ thống: " + ex.Message;
             }
         }
 

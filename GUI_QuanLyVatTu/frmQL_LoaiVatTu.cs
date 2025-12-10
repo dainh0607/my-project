@@ -26,7 +26,7 @@ namespace GUI_QuanLyVatTu
         {
             danhSachLoai = busLoai.GetAll();
             dgvLoaiVatTu.DataSource = danhSachLoai;
-
+            txtLoaiVatTu.Enabled = false;
             txtLoaiVatTu.Text = busLoai.GenerateID();
             txtTenLoaiVatTu.Clear();
             txtGhiChu.Clear();
@@ -117,7 +117,7 @@ namespace GUI_QuanLyVatTu
 
             if (string.IsNullOrEmpty(keyword))
             {
-                LamMoi(); 
+                LamMoi();
                 return;
             }
 
@@ -141,6 +141,11 @@ namespace GUI_QuanLyVatTu
                 btnXoa.Enabled = true;
             }
 
+        }
+
+        private void txtLoaiVatTu_TextChanged(object sender, EventArgs e)
+        {
+            txtLoaiVatTu.Enabled = false;
         }
     }
 }

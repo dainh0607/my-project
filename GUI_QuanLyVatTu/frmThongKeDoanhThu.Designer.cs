@@ -149,6 +149,7 @@
             // 
             // grbChucNang
             // 
+            grbChucNang.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             grbChucNang.Controls.Add(btnLamMoi);
             grbChucNang.Controls.Add(btnThongKe);
             grbChucNang.Controls.Add(cboKhachHang);
@@ -324,6 +325,7 @@
             // 
             // gunaChart1
             // 
+            gunaChart1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             gunaChart1.Datasets.AddRange(new Guna.Charts.Interfaces.IGunaDataset[] { gunaBarDataset1 });
             chartFont1.FontName = "Arial";
             gunaChart1.Legend.LabelFont = chartFont1;
@@ -364,6 +366,7 @@
             // 
             // guna2CustomGradientPanel1
             // 
+            guna2CustomGradientPanel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2CustomGradientPanel1.Controls.Add(lblDaThanhToan);
             guna2CustomGradientPanel1.Controls.Add(lblTongSoDon);
             guna2CustomGradientPanel1.Controls.Add(lblTongDoanhThu);
@@ -413,6 +416,7 @@
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvThongKe.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvThongKe.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);

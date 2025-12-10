@@ -10,7 +10,7 @@ using DAL_QuanLyVatTu;
 
 namespace DAL_QuanLyVatTu
 {
-    public class DAL_NhanVien
+    public class DAL_NhanVien : IDAL_NhanVien
     {
         private static DAL_NhanVien dalNhanVien = new DAL_NhanVien();
 
@@ -51,6 +51,33 @@ namespace DAL_QuanLyVatTu
         }
 
         public virtual List<NhanVien> SelectBySql(string sql, List<object> args, CommandType cmdType = CommandType.Text)
+        {
+            List<NhanVien> list = new List<NhanVien>();
+            try
+            {
+                SqlDataReader reader = DBUtil.Query(sql, args);
+                while (reader.Read())
+                {
+                    NhanVien entity = new NhanVien();
+                    entity.NhanVienID = reader["NhanVienID"].ToString();
+                    entity.HoTen = reader["HoTen"].ToString();
+                    entity.ChucVu = reader["ChucVu"].ToString();
+                    entity.SoDienThoai = reader["SoDienThoai"].ToString();
+                    entity.VaiTro = bool.Parse(reader["VaiTro"].ToString());
+                    entity.TinhTrang = bool.Parse(reader["TinhTrang"].ToString());
+                    entity.Email = reader["Email"].ToString();
+                    entity.MatKhau = reader["MatKhau"].ToString();
+                    list.Add(entity);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return list;
+        }
+
         {
             List<NhanVien> list = new List<NhanVien>();
             try
@@ -138,7 +165,7 @@ namespace DAL_QuanLyVatTu
                 }
             }
 
-            return prefix + "001"; // Nếu không có mã nào  
+            return prefix + "001";  
         }
 
         public virtual string Insert(NhanVien nv)
@@ -159,13 +186,44 @@ namespace DAL_QuanLyVatTu
         public virtual List<NhanVien> SearchNhanVien(string keyword)
         {
             string sql = @"SELECT * FROM NhanVien WHERE   
-           NhanVienID LIKE @kw OR  
-           HoTen LIKE @kw OR  
-           ChucVu LIKE @kw OR  
-           SoDienThoai LIKE @kw";
-            var args = new List<object> { "%" + keyword + "%" };
-            return dalNhanVien.SelectBySql(sql, args);
+            NhanVienID LIKE @kw OR  
+            HoTen LIKE @kw OR  
+            ChucVu LIKE @kw OR  
+            SoDienThoai LIKE @kw";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+        new SqlParameter("@kw", "%" + keyword + "%")
+            };
+
+            DataTable dt = DBUtil.ExecuteQuery(sql, parameters);
+
+            List<NhanVien> list = new List<NhanVien>();
+            foreach (DataRow row in dt.Rows)
+            {
+                NhanVien nv = new NhanVien
+                {
+                    NhanVienID = row["NhanVienID"].ToString(),
+                    HoTen = row["HoTen"].ToString(),
+                    ChucVu = row["ChucVu"].ToString(),
+                    SoDienThoai = row["SoDienThoai"].ToString()
+                };
+                list.Add(nv);
+            }
+
+            return list;
         }
 
+        public bool KiemTraLienKetDuLieu(string maNhanVien)
+        {
+            string sql = "SELECT COUNT(*) FROM HoaDon WHERE NhanVienID = @0";
+            object result = DBUtil.ScalarQuery(sql, new List<object> { maNhanVien });
+
+            if (result != null && int.TryParse(result.ToString(), out int count))
+            {
+                return count > 0;
+            }
+            return false;
+        }
     }
 }
